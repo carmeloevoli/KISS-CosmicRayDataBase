@@ -1,0 +1,6 @@
+#        H/He
+#   file_name    number_data  exp_name
+files/554757837/data_exp1.dat      67      AMS02(2011/05-2013/11)
+files/554757837/data_exp2.dat      70      BESS-PolarI(2004/12)
+files/554757837/data_exp3.dat      70      BESS-PolarII(2007/12-2008/01)
+files/554757837/data_exp4.dat      83      PAMELA(2006/07-2008/12)
