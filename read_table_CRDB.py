@@ -15,8 +15,6 @@ def compute_total_error(stat_err, syst_err):
           syst_err (float):
         Returns:
           (float): total error :math:`\\sqrt(stat^2 + syst^2)`
-        """
- 
     """
     return np.sqrt(syst_err * syst_err + stat_err * stat_err)
 
