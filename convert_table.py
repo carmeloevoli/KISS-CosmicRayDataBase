@@ -14,8 +14,8 @@ def write_rigidity_table(credit, filename, R, f, f_err_low, f_err_high):
         file.write(line)
     file.close()     
 
-credit_asi = "credit: SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays \n"
-credit_crdb = "credit: CRDB Database lpsc.in2p3.fr/cosmic-rays-db \n"
+credit_asi = "# credit: SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays \n"
+credit_crdb = "# credit: CRDB Database lpsc.in2p3.fr/cosmic-rays-db \n"
     
 #  C Rigidity File
 ssdc_filename = "data/C_AMSPRL2017_rig_000.xml"
@@ -42,7 +42,7 @@ R, f, f_err_low, f_err_high = ASI.get_table(ssdc_filename)
 write_rigidity_table(credit_asi, output_filename, R, f, f_err_low, f_err_high)
 
 # H Rigidity file
-crdb_filename = "data/H_AMS02_CRDB.txt"
+crdb_filename = "data/H_AMS02_rig_CRDB.txt"
 output_filename = "kiss_tables/H_AMS02_rigidity.txt"
 
 R, f, f_err_low, f_err_high = CRDB.get_table(crdb_filename)
