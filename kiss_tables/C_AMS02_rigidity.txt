@@ -1,4 +1,4 @@
-credit: SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays 
+# credit: SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays 
 # rigidity [GV] - flux [] - flux_error_low [] - flux_error_high [] 
 2.02915e+00   1.43400e+00   8.52722e-02   8.52722e-02   
 2.26882e+00   1.44300e+00   7.15696e-02   7.15696e-02   
