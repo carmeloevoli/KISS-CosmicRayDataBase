@@ -21,7 +21,7 @@ def compute_total_error(stat_err, syst_err):
 def get_table(filename):
     R_low, R_up, y, y_stat_lo, y_stat_up, y_syst_lo, y_syst_up = np.loadtxt(filename,skiprows=2,usecols=(1,2,3,4,5,6,7),unpack=True)
     
-    print "read " + filename + " with data size : ", len(y)
+    print ("read " + filename + " with data size : ", len(y))
     
     rig = compute_mean_rigidity(R_low, R_up, 2.7)
     f = y
