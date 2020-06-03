@@ -59,10 +59,10 @@ def get_table_flux(filename):
         unf_error_high = get_value(item, "flux_unf_error_high")
 
         systematical_errors = np.array([systematical_error_low, acc_error_low, scale_error_low, unf_error_low]) 
-        f_err_low[counter] = compute_total_error(systematical_error_low, systematical_errors)
+        f_err_low[counter] = compute_total_error(statistical_error_low, systematical_errors)
 
         systematical_errors = np.array([systematical_error_high, acc_error_high, scale_error_high, unf_error_high]) 
-        f_err_high[counter] = compute_total_error(systematical_error_high, systematical_errors)
+        f_err_high[counter] = compute_total_error(statistical_error_high, systematical_errors)
         
         counter = counter + 1
 
@@ -105,10 +105,10 @@ def get_table_ratio(filename):
         unf_error_high = get_value(item, "fluxratio_unf_error_high")
 
         systematical_errors = np.array([systematical_error_low, acc_error_low, scale_error_low, unf_error_low])
-        r_err_low[counter] = compute_total_error(systematical_error_low, systematical_errors)
+        r_err_low[counter] = compute_total_error(statistical_error_low, systematical_errors)
 
         systematical_errors = np.array([systematical_error_high, acc_error_high, scale_error_high, unf_error_high])
-        r_err_high[counter] = compute_total_error(systematical_error_high, systematical_errors)
+        r_err_high[counter] = compute_total_error(statistical_error_high, systematical_errors)
     
         counter = counter + 1
 
