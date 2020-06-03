@@ -21,5 +21,15 @@ data_nuclei_AMS02("ASI/He_AMSPRL2017_rig_000.xml", "kiss_tables/He_AMS02_rigidit
 data_nuclei_AMS02("ASI/C_AMSPRL2017_rig_000.xml", "kiss_tables/C_AMS02_rigidity.txt")
 data_nuclei_AMS02("ASI/O_AMSPRL2017_rig_000.xml", "kiss_tables/O_AMS02_rigidity.txt")
 
+data_nuclei_AMS02("ASI/Ne_AMS_PRL____2020_rig_000.xml", "kiss_tables/Ne_AMS02_rigidity.txt")
+data_nuclei_AMS02("ASI/Mg_AMS_PRL____2020_rig_000.xml", "kiss_tables/Mg_AMS02_rigidity.txt")
+data_nuclei_AMS02("ASI/Si_AMS_PRL____2020_rig_000.xml", "kiss_tables/Si_AMS02_rigidity.txt")
+
 data_ratio_AMS02("ASI/C_O_ratio_AMS_PRL2017_rig_000.xml", "kiss_tables/CO_ratio_AMS02_rigidity.txt")
 data_ratio_AMS02("ASI/B_C_ratio_AMS_PRL2018_rig_000.xml", "kiss_tables/BC_ratio_AMS02_rigidity.txt")
+
+data_ratio_AMS02("ASI/Si_O_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/SiO_ratio_AMS02_rigidity.txt")
+data_ratio_AMS02("ASI/Si_Mg_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/SiMg_ratio_AMS02_rigidity.txt")
+data_ratio_AMS02("ASI/Ne_O_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/NeO_ratio_AMS02_rigidity.txt")
+data_ratio_AMS02("ASI/Ne_Mg_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/NeMg_ratio_AMS02_rigidity.txt")
+data_ratio_AMS02("ASI/Mg_O_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/MgO_ratio_AMS02_rigidity.txt")
