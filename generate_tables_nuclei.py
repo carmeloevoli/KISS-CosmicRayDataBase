@@ -35,4 +35,3 @@ data_ratio_AMS02("ASI/Si_Mg_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/SiM
 data_ratio_AMS02("ASI/Ne_O_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/NeO_ratio_AMS02_rigidity.txt")
 data_ratio_AMS02("ASI/Ne_Mg_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/NeMg_ratio_AMS02_rigidity.txt")
 data_ratio_AMS02("ASI/Mg_O_ratio_AMS_PRL____2020_rig_000.xml", "kiss_tables/MgO_ratio_AMS02_rigidity.txt")
-
