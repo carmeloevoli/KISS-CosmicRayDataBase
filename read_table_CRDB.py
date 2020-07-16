@@ -1,32 +1,20 @@
 import numpy as np
+import utils as u
 
-def compute_mean_rigidity(R_min, R_max, slope):
-    """ Compute the mean rigidity in the bin 
-    assuming a spectrum R^-slope 
-    """
-    rig_mean = (slope - 1.) / (slope - 2.);
-    rig_mean *= (R_max**(-slope + 2) - R_min**(-slope + 2)) / (R_max**(-slope + 1) - R_min**(-slope + 1)) 
-    return (rig_mean)
+def get_table_posfrac(filename):
+    E_min, E_max, y, y_stat_lo, y_stat_up, y_syst_lo, y_syst_up = np.loadtxt(filename, skiprows=2, usecols=(2,3,4,5,6,7,8), unpack=True)
+    size = len(E_min)
+    print ("read " + filename + " with data size : ", size)
 
-def compute_total_error(stat_err, syst_err):
-    """ Returns total error given statistycal and systematic errors
-        Args:
-          stat_err (float): 
-          syst_err (float):
-        Returns:
-          (float): total error :math:`\\sqrt(stat^2 + syst^2)`
-    """
-    return np.sqrt(syst_err * syst_err + stat_err * stat_err)
-
-def get_table(filename):
-    R_low, R_up, y, y_stat_lo, y_stat_up, y_syst_lo, y_syst_up = np.loadtxt(filename,skiprows=2,usecols=(1,2,3,4,5,6,7),unpack=True)
+    ek = np.zeros(size)
+    r = np.zeros(size)
+    r_err_low = np.zeros(size)
+    r_err_high = np.zeros(size)
     
-    print ("read " + filename + " with data size : ", len(y))
-    
-    rig = compute_mean_rigidity(R_low, R_up, 2.7)
-    f = y
+    for i in range(size):
+        ek[i] = u.compute_geometrical_mean(E_min[i], E_max[i])
+        r[i] = y[i]
+        r_err_low[i] = np.sqrt(y_syst_lo[i]**2 + y_stat_lo[i]**2)
+        r_err_high[i] = np.sqrt(y_syst_up[i]**2 + y_stat_up[i]**2)
 
-    f_err_low = compute_total_error(y_stat_lo, y_syst_lo)
-    f_err_high = compute_total_error(y_stat_up, y_syst_up)
-
-    return rig, f, f_err_low, f_err_high
+    return ek, r, r_err_low, r_err_high
