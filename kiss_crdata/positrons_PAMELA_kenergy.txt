@@ -1,5 +1,6 @@
-# credit: SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays
-# T [GeV] - flux [] - flux_error_low [] - flux_error_high [] 
+# SSDC Cosmic Ray Database tools.asdc.asi.it/CosmicRays
+# https://ui.adsabs.harvard.edu/abs/2013PhRvL.111h1102A
+# T [GeV] flux [m-2 s-1 sr-1 GeV-1] total_error_low total_error_high
 1.64090e+00   1.76246e+00   1.13481e-01   1.13481e-01   
 1.94230e+00   1.26240e+00   8.26097e-02   8.26097e-02   
 2.37493e+00   8.08300e-01   5.21518e-02   5.21518e-02   

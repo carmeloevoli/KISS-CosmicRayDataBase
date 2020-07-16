@@ -1,5 +1,6 @@
-# credit: arXiv:1808.10028 - Table I
-# T [GeV] - flux [] - flux_error_low [] - flux_error_high [] 
+# arXiv:1808.10028
+# https://ui.adsabs.harvard.edu/abs/2018PhRvD..98f2004A
+# T [GeV] flux [m-2 s-1 sr-1 GeV-1] total_error_low total_error_high
 3.34744e+02   3.14000e-06   1.04081e-06   2.01198e-06   
 3.75681e+02   2.10400e-06   6.99466e-07   1.34922e-06   
 4.21552e+02   1.49100e-06   4.95299e-07   9.55930e-07   

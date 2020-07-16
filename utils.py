@@ -6,7 +6,6 @@ def compute_mean_rigidity_Lafferty1995(R_min, R_max, slope):
     Lafferty and Wyatt, 1995, NIMPR A 335
     """
     R_ratio = R_min / (R_max - R_min)
-    
     R_tilde = R_min
     R_tilde *= np.power(R_ratio / (slope - 1.) * (1. - np.power(R_max / R_min, -slope + 1.)), -1. / slope)
     return (R_tilde)
@@ -40,3 +39,29 @@ def compute_total_error(stat_err, syst_err):
     for s in syst_err:
         total_systematical_error_squared += s * s;
     return np.sqrt(total_systematical_error_squared + stat_err * stat_err)
+
+def write_rigidity_table(credit, filename, R, f, f_err_low, f_err_high):
+    file = open(filename, "w")
+    file.write("# credit: " + credit + "\n")
+    file.write("# rigidity [GV] - flux [] - flux_error_low [] - flux_error_high [] \n")
+    for i in range(len(R)):
+        line = '{0:1.5e}'.format(R[i]) + "   "
+        line += '{0:1.5e}'.format(f[i]) + "   "
+        line += '{0:1.5e}'.format(f_err_low[i]) + "   "
+        line += '{0:1.5e}'.format(f_err_high[i]) + "   "
+        line += "\n"
+        file.write(line)
+    file.close()
+
+def write_kE_table(credit, filename, E, f, f_err_low, f_err_high):
+    file = open(filename, "w")
+    file.write("# credit: " + credit + "\n")
+    file.write("# kE [GeV] - flux [] - flux_error_low [] - flux_error_high [] \n")
+    for i in range(len(E)):
+        line = '{0:1.5e}'.format(E[i]) + "   "
+        line += '{0:1.5e}'.format(f[i]) + "   "
+        line += '{0:1.5e}'.format(f_err_low[i]) + "   "
+        line += '{0:1.5e}'.format(f_err_high[i]) + "   "
+        line += "\n"
+        file.write(line)
+    file.close()
