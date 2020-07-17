@@ -87,8 +87,23 @@ write_kiss_table("electrons_AMS02_kE.raw", "electrons_AMS02_kenergy.txt", "Laffe
 
 #### Electrons + Positrons
 write_kiss_table("leptons_FERMI_kE.raw", "leptons_FERMI_kenergy.txt", "Lafferty3.0")
-#
 write_kiss_table("leptons_AMS02_kE.raw", "leptons_AMS02_kenergy.txt", "Lafferty3.0")
 write_kiss_table("leptons_CALET_kE.raw", "leptons_CALET_kenergy.txt", "Lafferty3.0")
 write_kiss_table("leptons_DAMPE_kE.raw", "leptons_DAMPE_kenergy.txt", "Lafferty3.0")
 write_kiss_table("leptons_VERITAS_kE.raw", "leptons_VERITAS_kenergy.txt", "Lafferty3.0")
+
+### Nuclei
+write_kiss_table("H_AMS02_rig.raw", "H_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("Li_AMS02_rig.raw", "Li_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("Be_AMS02_rig.raw", "Be_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("B_AMS02_rig.raw", "B_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("C_AMS02_rig.raw", "C_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("N_AMS02_rig.raw", "N_AMS02_rigidity.txt", "Lafferty2.7")
+write_kiss_table("O_AMS02_rig.raw", "O_AMS02_rigidity.txt", "Lafferty2.7")
+
+write_kiss_table("LiC_AMS02_rig.raw", "LiC_AMS02_rigidity.txt", "geometrical")
+write_kiss_table("LiO_AMS02_rig.raw", "LiO_AMS02_rigidity.txt", "geometrical")
+write_kiss_table("BeC_AMS02_rig.raw", "BeC_AMS02_rigidity.txt", "geometrical")
+write_kiss_table("BeO_AMS02_rig.raw", "BeO_AMS02_rigidity.txt", "geometrical")
+write_kiss_table("BC_AMS02_rig.raw", "BC_AMS02_rigidity.txt", "geometrical")
+write_kiss_table("BO_AMS02_rig.raw", "BO_AMS02_rigidity.txt", "geometrical")
