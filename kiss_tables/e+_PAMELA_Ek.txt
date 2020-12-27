@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevLett.111.081102
+#Ref: 10.1103/PhysRevLett.111.081102 (2013PhRvL.111h1102A)
 #Experiment: PAMELA
 #Quantity: e+
 #Units: kinetic energy

@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevLett.122.041102
+#Ref: 10.1103/PhysRevLett.122.041102 (2019PhRvL.122d1102A)
 #Experiment: AMS-02
 #Quantity: e+
 #Units: kinetic energy

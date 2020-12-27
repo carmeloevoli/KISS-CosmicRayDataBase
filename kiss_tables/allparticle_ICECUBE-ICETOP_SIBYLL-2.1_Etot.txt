@@ -1,5 +1,5 @@
 #Source: KCDC
-#Ref: Aartsen et al., Physical Review D, 2019, Volume 100, Issue 8
+#Ref: Aartsen et al., Physical Review D, 2019, Volume 100, Issue 8 ()
 #Experiment: ICECUBE-ICETOP
 #Quantity: all particle
 #Units: total Energy

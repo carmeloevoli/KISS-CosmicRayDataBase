@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1103/PhysRevLett.122.181102
+#Ref: 10.1103/PhysRevLett.122.181102 (2019PhRvL.122r1102A)
 #Experiment: CALET
 #Quantity: H
 #Units: kinetic Energy

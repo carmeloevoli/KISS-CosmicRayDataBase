@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1126/sciadv.aax3793
+#Ref: 10.1126/sciadv.aax3793 (2019SciA....5.3793A)
 #Experiment: DAMPE
 #Quantity: H
 #Units: kinetic Energy

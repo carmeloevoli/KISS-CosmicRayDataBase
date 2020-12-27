@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1126/science.1199172
+#Ref: 10.1126/science.1199172 (2011Sci...332...69A)
 #Experiment: PAMELA
 #Quantity: H
 #Units: kinetic energy

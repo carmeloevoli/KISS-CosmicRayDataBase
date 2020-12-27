@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevLett.108.011103
+#Ref: 10.1103/PhysRevLett.108.011103 (2012PhRvL.108a1103A)
 #Experiment: FERMI
 #Quantity: e+
 #Units: kinetic energy

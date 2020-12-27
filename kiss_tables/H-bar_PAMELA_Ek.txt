@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1134/S002136401222002X
+#Ref: 10.1134/S002136401222002X (2013JETPL..96..621A)
 #Experiment: PAMELA
 #Quantity: H-bar
 #Units: kinetic energy

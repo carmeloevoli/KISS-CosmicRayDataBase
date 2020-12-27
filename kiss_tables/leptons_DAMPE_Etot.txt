@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1038/nature24475
+#Ref: 10.1038/nature24475 (2017Natur.552...63D)
 #Experiment: DAMPE
 #Quantity: leptons
 #Units: kinetic energy

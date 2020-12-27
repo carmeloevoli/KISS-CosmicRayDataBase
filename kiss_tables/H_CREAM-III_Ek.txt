@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.3847/1538-4357/aa68e4
+#Ref: 10.3847/1538-4357/aa68e4 (2017ApJ...839....5Y)
 #Experiment: CREAM-III
 #Quantity: H
 #Units: kinetic Energy

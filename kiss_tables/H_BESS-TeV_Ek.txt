@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1016/j.astropartphys.2007.05.001
+#Ref: 10.1016/j.astropartphys.2007.05.001 (2007APh....28..154S)
 #Experiment: BESS
 #Quantity: H
 #Units: kinetic Energy

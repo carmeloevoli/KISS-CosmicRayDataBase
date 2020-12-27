@@ -1,5 +1,5 @@
 #Source: KCDC
-#Ref: 10.1103/PhysRevD.100.082002
+#Ref: 10.1103/PhysRevD.100.082002 (2019PhRvD.100h2002A)
 #Experiment: ICECUBE-ICETOP
 #Quantity: He
 #Units: total energy

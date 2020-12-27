@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevLett.114.171103
+#Ref: 10.1103/PhysRevLett.114.171103 (2015PhRvL.114q1103A)
 #Experiment: AMS-02
 #Quantity: H
 #Units: kinetic energy

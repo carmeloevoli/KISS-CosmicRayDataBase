@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevD.95.082007
+#Ref: 10.1103/PhysRevD.95.082007 (2017PhRvD..95h2007A)
 #Experiment: FERMI
 #Quantity: leptons
 #Units: total energy

@@ -1,5 +1,5 @@
 #Source: KCDC
-#Ref: doi.org/10.22323/1.301.0316
+#Ref: doi.org/10.22323/1.301.0316 (2017ICRC...35..316A)
 #Experiment: KASCADE-Grande
 #Quantity: H
 #Units: total energy

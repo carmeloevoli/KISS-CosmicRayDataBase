@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: Panov et al., Bull. Russian Acad. Sci. 73, 564 (2009)
+#Ref: Panov et al., Bull. Russian Acad. Sci. 73, 564 (2009) ()
 #Experiment: ATIC02
 #Quantity: H
 #Units: total Energy

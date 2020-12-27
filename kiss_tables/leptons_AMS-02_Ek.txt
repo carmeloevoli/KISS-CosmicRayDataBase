@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1103/PhysRevLett.122.101101
+#Ref: 10.1103/PhysRevLett.122.101101 (2019PhRvL.122j1101A)
 #Experiment: AMS-02
 #Quantity: leptons
 #Units: kinetic energy
