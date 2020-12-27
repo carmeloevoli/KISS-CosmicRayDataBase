@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: Grebenyuk et al., AdSpR 64, 2546 (2019)
+#Ref: 10.1016/j.asr.2019.10.004
 #Experiment: NUCLEON
 #Quantity: H
 #Units: total energy

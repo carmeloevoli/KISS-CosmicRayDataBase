@@ -1,8 +1,8 @@
 #Source: KCDC
-#Ref: Antoni et al., Astroparticle Physics 24, 1 (2005)
+#Ref: 10.1016/j.astropartphys.2005.04.001
 #Experiment: KASCADE
 #Quantity: H
-#Units: total Energy
+#Units: total energy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
 1.12202e+06 4.67033e-13 3.83875e-14 3.83875e-14 0.00000e+00 0.00000e+00 

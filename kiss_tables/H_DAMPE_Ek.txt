@@ -1,8 +1,8 @@
 #Source: SSDC
-#Ref:  
+#Ref: 10.1126/sciadv.aax3793
 #Experiment: DAMPE
 #Quantity: H
-#Units: total Energy
+#Units: kinetic Energy
 #Url: https://tools.ssdc.asi.it/CosmicRays/
 #Comments: 
 5.01137e+01 2.97000e-01 2.40000e-02 2.40000e-02 0.00000e+00 0.00000e+00 

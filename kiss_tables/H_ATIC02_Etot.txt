@@ -2,7 +2,7 @@
 #Ref: Panov et al., Bull. Russian Acad. Sci. 73, 564 (2009)
 #Experiment: ATIC02
 #Quantity: H
-#Units: total energy
+#Units: total Energy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 3.10000e+04 9.16000e-09 2.48000e-09 2.48000e-09 2.48000e-09 2.48000e-09 

@@ -1,8 +1,8 @@
 #Source: KCDC
-#Ref: Aartsen et al., Physical Review D 100, 082002 (2019)
+#Ref: 10.1103/PhysRevD.100.082002
 #Experiment: ICECUBE-ICETOP
 #Quantity: H
-#Units: total Energy
+#Units: total energy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: Sibyll-2.1 only
 3.54813e+06 2.79060e-14 4.47860e-15 4.47860e-15 0.00000e+00 0.00000e+00 

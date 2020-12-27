@@ -1,8 +1,8 @@
 #Source: 
-#Ref: Di Siascio, EPJ Conf. 145, 05003 (2017) 
+#Ref: 10.1051/epjconf/201714505003
 #Experiment: ARGO
 #Quantity: light
-#Units: total Energy
+#Units: total energy
 #Url: 
 #Comments: Table provided by G. Di Sciascio
 1.77800e+04 6.12000e-08 4.80000e-09 4.00000e-09 6.00000e-10 6.00000e-10 

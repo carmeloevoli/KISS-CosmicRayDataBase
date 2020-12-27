@@ -2,7 +2,7 @@
 #Ref: KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)
 #Experiment: KASCADE-Grande
 #Quantity: light
-#Units: total Energy
+#Units: total energy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
 1.77828e+07 2.59237e-16 2.29232e-18 2.29232e-18 0.00000e+00 0.00000e+00 

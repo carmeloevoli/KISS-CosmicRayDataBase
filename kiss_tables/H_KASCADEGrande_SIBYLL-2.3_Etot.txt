@@ -1,8 +1,8 @@
 #Source: KCDC
-#Ref: KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)
+#Ref: doi.org/10.22323/1.301.0316
 #Experiment: KASCADE-Grande
 #Quantity: H
-#Units: total Energy
+#Units: total energy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
 3.75837e+07 5.32235e-18 9.48710e-20 9.48710e-20 0.00000e+00 0.00000e+00 

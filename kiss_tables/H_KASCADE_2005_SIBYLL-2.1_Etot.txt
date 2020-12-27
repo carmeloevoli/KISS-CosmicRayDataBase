@@ -1,5 +1,5 @@
 #Source: KCDC
-#Ref: Antoni et al., Astroparticle Physics 24, 1 (2005)
+#Ref: 10.1016/j.astropartphys.2005.04.001
 #Experiment: KASCADE
 #Quantity: H
 #Units: total Energy
