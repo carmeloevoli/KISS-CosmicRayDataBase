@@ -109,9 +109,34 @@ void MyLightARGO::readfile(std::fstream& infile) {
         infile >> E >> flux >> stat >> sys_1 >> sys_2;
         if (!infile.eof()) {
             E *= 1e3;  // TeV -> GeV
-            dataPoint data = {E, flux, stat, stat, sys_1, sys_2};
+            const double err_tot_do = quadrature(sys_1, stat);
+            const double err_tot_up = quadrature(sys_2, stat);
+            dataPoint data = {E, flux, stat, stat, err_tot_do, err_tot_up};
             m_dataTable.push_back(data);
         }
     }
     infile.close();
+}
+
+void MyLeptonVERITAS::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, E_min, E_max, N_events, fraction, fraction_error, flux, stat_error;
+        infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >>
+            stat_error;
+        if (!infile.eof()) {
+            E_min *= 1e3;       // TeV -> GeV
+            E_max *= 1e3;       // TeV -> GeV
+            flux *= 1e4;        // cm-2 s-1 GeV-1 -> m-2 s-1 GeV-1
+            stat_error *= 1e4;  // cm-2 s-1 GeV-1 -> m-2 s-1 GeV-1
+            const double syst_error_low = 0.33 * flux;
+            const double syst_error_high = 0.64 * flux;
+            const double err_tot_do = quadrature(syst_error_low, stat_error);
+            const double err_tot_up = quadrature(syst_error_high, stat_error);
+            const double x_mean = compute_x_mean(E_min, E_max, m_mode);
+            dataPoint data = {x_mean, flux, stat_error, stat_error, err_tot_do, err_tot_up};
+            m_dataTable.push_back(data);
+        }
+    }
 }

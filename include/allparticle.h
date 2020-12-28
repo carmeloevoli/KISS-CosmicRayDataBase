@@ -10,7 +10,8 @@ namespace ALLPARTICLE {
 
 void AUGER() {
     MyAllAUGER dataSet;
-    dataSet.set_reference("Pierre Auger collaboration, PoS ICRC2019 (2019) 450");
+    dataSet.set_doi("https://pos.sissa.it/358/450/");
+    dataSet.set_ADSbibcode("2019ICRC...36..450V");
     dataSet.set_source("");
     dataSet.set_url("https://www.auger.org/index.php/science/data");
     dataSet.set_mode("geometrical");
@@ -23,7 +24,8 @@ void AUGER() {
 
 void HAWC() {
     MyAllHAWC dataSet;
-    dataSet.set_reference("HAWC collaboration, Phys.Rev.D (2017) 96");
+    dataSet.set_doi("10.1103/PhysRevD.96.122001");
+    dataSet.set_ADSbibcode("2017PhRvD..96l2001A");
     dataSet.set_source("");
     dataSet.set_url("");
     dataSet.set_mode("geometrical");
@@ -36,7 +38,8 @@ void HAWC() {
 
 void ICECUBE_ICETOP() {
     KCDC dataSet("ICECUBE-ICETOP");
-    dataSet.set_reference("Aartsen et al., Physical Review D, 2019, Volume 100, Issue 8");
+    dataSet.set_doi("10.1103/PhysRevD.100.082002");
+    dataSet.set_ADSbibcode("2019PhRvD.100h2002A");
     dataSet.set_mode("geometrical");
     dataSet.set_xUnits("total Energy");
     dataSet.set_yType("all particle");
@@ -48,7 +51,7 @@ void ICECUBE_ICETOP() {
 void KASCADE() {
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Antoni et al., Astroparticle Physics, 24, Issues 1–2, 2005");
+        dataSet.set_doi("Antoni et al., Astroparticle Physics, 24, Issues 1–2, 2005");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -58,7 +61,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Antoni et al., Astroparticle Physics, 24, Issues 1–2, 2005");
+        dataSet.set_doi("Antoni et al., Astroparticle Physics, 24, Issues 1–2, 2005");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -68,7 +71,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Thesis M. Finger");
+        dataSet.set_doi("Thesis M. Finger");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -78,7 +81,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Thesis M. Finger");
+        dataSet.set_doi("Thesis M. Finger");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -88,7 +91,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Thesis M. Finger");
+        dataSet.set_doi("Thesis M. Finger");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -101,7 +104,8 @@ void KASCADE() {
 void KASCADEGrande() {
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("pos.sissa.it/236/359/");
+        dataSet.set_doi("10.22323/1.236.0359");
+        dataSet.set_ADSbibcode("2015ICRC...34..359B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -111,7 +115,8 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("pos.sissa.it/236/359/");
+        dataSet.set_doi("10.22323/1.236.0359");
+        dataSet.set_ADSbibcode("2015ICRC...34..359B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -121,7 +126,8 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("pos.sissa.it/236/359/");
+        dataSet.set_doi("10.22323/1.236.0359");
+        dataSet.set_ADSbibcode("2015ICRC...34..359B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -131,7 +137,8 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("pos.sissa.it/236/359/");
+        dataSet.set_doi("10.22323/1.236.0359");
+        dataSet.set_ADSbibcode("2015ICRC...34..359B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -141,7 +148,8 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("pos.sissa.it/236/359/");
+        dataSet.set_doi("10.22323/1.236.0359/");
+        dataSet.set_ADSbibcode("2015ICRC...34..359B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -153,7 +161,8 @@ void KASCADEGrande() {
 
 void NUCLEON() {
     CRDB dataSet("NUCLEON");
-    dataSet.set_reference("2019AdSpR..64.2546G");
+    dataSet.sed_doi("10.1016/j.asr.2019.10.004");
+    dataSet.set_ADSbibcode("2019AdSpR..64.2546G");
     dataSet.set_mode("geometrical");
     dataSet.set_xUnits("total Energy");
     dataSet.set_yType("all particle");
@@ -164,8 +173,7 @@ void NUCLEON() {
 
 void RUNJOB() {
     KCDC dataSet("RUNJOB");
-    dataSet.set_reference(
-        "RUNJOB Collaboration, APP, Volume 16, Issue 1, October 2001, Pages 13-46");
+    dataSet.set_doi("RUNJOB Collaboration, APP, Volume 16, Issue 1, October 2001, Pages 13-46");
     dataSet.set_mode("geometrical");
     dataSet.set_xUnits("total Energy");
     dataSet.set_yType("all particle");
@@ -176,7 +184,7 @@ void RUNJOB() {
 
 void TALE() {
     KCDC dataSet("TALE");
-    dataSet.set_reference("R. U. Abbasi et al 2018 ApJ 865 74");
+    dataSet.set_doi("R. U. Abbasi et al 2018 ApJ 865 74");
     dataSet.set_mode("geometrical");
     dataSet.set_xUnits("total Energy");
     dataSet.set_yType("all particle");
@@ -187,7 +195,8 @@ void TALE() {
 
 void TELESCOPEARRAY() {
     MyAllTA dataSet;
-    dataSet.set_reference("Telescope Array Collaboration, PoS ICRC2017 (2018) 1096");
+    dataSet.set_doi("10.22323/1.301.1096");
+    dataSet.set_ADSbibcode("2017ICRC...35.1096M");
     dataSet.set_source("");
     dataSet.set_url("https://pos.sissa.it/301/1096");
     dataSet.set_mode("geometrical");
@@ -201,7 +210,8 @@ void TELESCOPEARRAY() {
 void TIBET() {
     {
         MyAllTIBET dataSet("QGSJET+HD");
-        dataSet.set_reference("Amenomori et al., The Astrophysical Journal (2008) 678");
+        dataSet.set_doi("10.1086/529514");
+        dataSet.set_ADSbibcode("2008ApJ...678.1165A");
         dataSet.set_source("");
         dataSet.set_url("https://iopscience.iop.org/article/10.1086/529514");
         dataSet.set_mode("geometrical");
@@ -213,7 +223,8 @@ void TIBET() {
     }
     {
         MyAllTIBET dataSet("QGSJET+PD");
-        dataSet.set_reference("Amenomori et al., The Astrophysical Journal (2008) 678");
+        dataSet.set_doi("10.1086/529514");
+        dataSet.set_ADSbibcode("2008ApJ...678.1165A");
         dataSet.set_source("");
         dataSet.set_url("https://iopscience.iop.org/article/10.1086/529514");
         dataSet.set_mode("geometrical");
@@ -225,7 +236,8 @@ void TIBET() {
     }
     {
         MyAllTIBET dataSet("SIBYLL+HD");
-        dataSet.set_reference("Amenomori et al., The Astrophysical Journal (2008) 678");
+        dataSet.set_doi("10.1086/529514");
+        dataSet.set_ADSbibcode("2008ApJ...678.1165A");
         dataSet.set_source("");
         dataSet.set_url("https://iopscience.iop.org/article/10.1086/529514");
         dataSet.set_mode("geometrical");
@@ -240,7 +252,8 @@ void TIBET() {
 void TUNKA() {
     {
         KCDC dataSet("TUNKA");
-        dataSet.set_reference("Budnev et al., Astropart.Phys., 117 (2020) 102406");
+        dataSet.set_doi("10.1016/j.astropartphys.2019.102406");
+        dataSet.set_ADSbibcode("2020APh...11702406B");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");
@@ -250,7 +263,7 @@ void TUNKA() {
     }
     {
         KCDC dataSet("TUNKARex");
-        dataSet.set_reference("1908.10305");
+        dataSet.set_doi("1908.10305");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("all particle");

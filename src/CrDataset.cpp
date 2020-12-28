@@ -10,7 +10,7 @@ void CrDataset::save(std::string filename) const {
     std::cout << "\033[1;32m> saving data on file " << filename << "\033[0m\n";
     std::ofstream asciiFile(filename.c_str());
     asciiFile << "#Source: " << m_source << "\n";
-    asciiFile << "#Ref: " << m_reference << "\n";
+    asciiFile << "#Ref: " << m_doi << " (" << m_ads << ")\n";
     asciiFile << "#Experiment: " << m_experimentName << "\n";
     asciiFile << "#Quantity: " << m_yType << "\n";
     asciiFile << "#Units: " << m_xUnits << "\n";

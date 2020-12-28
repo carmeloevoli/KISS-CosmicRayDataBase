@@ -40,4 +40,10 @@ class MyLightARGO : public CrDataset {
     void readfile(std::fstream& infile) override;
 };
 
+class MyLeptonVERITAS : public CrDataset {
+   public:
+    MyLeptonVERITAS() { set_experimentName("VERITAS"); }
+    void readfile(std::fstream& infile) override;
+};
+
 #endif  // INCLUDE_MYDB_H_

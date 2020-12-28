@@ -27,6 +27,12 @@ else(GSL_FOUND)
 endif(GSL_FOUND)
 
 # copy data files in build
+file(GLOB KISS_DATA "source_tables/leptons/*.txt")
+file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/leptons)
+
+file(GLOB KISS_DATA "source_tables/antiprotons/*.txt")
+file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/antiprotons)
+
 file(GLOB KISS_DATA "source_tables/nuclei/*.txt")
 file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/nuclei)
 

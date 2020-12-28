@@ -8,10 +8,25 @@
 
 namespace NUCLEI {
 
+void AMS02() {
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("10.1103/PhysRevLett.114.171103");
+        dataSet.set_ADSbibcode("2015PhRvL.114q1103A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("H");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_H_AMS-02_Ek.txt");
+        dataSet.save("output/H_AMS-02_Ek.txt");
+    }
+}
+
 void ARGO() {
     MyLightARGO dataSet;
-    dataSet.set_reference("Di Siascio, EPJ Conf. 145, 05003 (2017) ");
-    dataSet.set_xUnits("total Energy");
+    dataSet.set_doi("10.1051/epjconf/201714505003");
+    dataSet.set_ADSbibcode("2017EPJWC.14505003D");
+    dataSet.set_xUnits("total energy");
     dataSet.set_yType("light");
     dataSet.set_comments("Table provided by G. Di Sciascio");
     dataSet.loadDataset("source/nuclei/mysource_light_ARGO_Etot.txt");
@@ -20,19 +35,43 @@ void ARGO() {
 
 void ATIC02() {
     CRDB dataSet("ATIC02");
-    dataSet.set_reference("Panov et al., Bull. Russian Acad. Sci. 73, 564 (2009)");
+    dataSet.set_doi("Panov et al., Bull. Russian Acad. Sci. 73, 564 (2009)");
     dataSet.set_mode("geometrical");
-    dataSet.set_xUnits("total energy");
+    dataSet.set_xUnits("total Energy");
     dataSet.set_yType("H");
     dataSet.set_comments("");
     dataSet.loadDataset("source/nuclei/CRDB_H_ATIC02_Etot.txt");
     dataSet.save("output/H_ATIC02_Etot.txt");
 }
 
+void BESS() {
+    CRDB dataSet("BESS");
+    dataSet.set_doi("10.1016/j.astropartphys.2007.05.001");
+    dataSet.set_ADSbibcode("2007APh....28..154S");
+    dataSet.set_mode("geometrical");
+    dataSet.set_xUnits("kinetic Energy");
+    dataSet.set_yType("H");
+    dataSet.set_comments("converted from original table");
+    dataSet.loadDataset("source/nuclei/CRDB_H_BESS-TeV_Ek.txt");
+    dataSet.save("output/H_BESS-TeV_Ek.txt");
+}
+
+void CALET() {
+    SSDC dataSet("CALET");
+    dataSet.set_doi("10.1103/PhysRevLett.122.181102");
+    dataSet.set_ADSbibcode("2019PhRvL.122r1102A");
+    dataSet.set_mode("geometrical");
+    dataSet.set_xUnits("kinetic Energy");
+    dataSet.set_yType("H");
+    dataSet.set_comments("");
+    dataSet.loadDataset("source/nuclei/SSDC_H_CALET_Ek.txt");
+    dataSet.save("output/H_CALET_Ek.txt");
+}
+
 void CREAM_II() {
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_reference("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("C");
@@ -42,7 +81,7 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_reference("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("O");
@@ -52,7 +91,7 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_reference("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("Mg");
@@ -62,7 +101,7 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_reference("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("Si");
@@ -72,7 +111,7 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_reference("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("Fe");
@@ -85,7 +124,8 @@ void CREAM_II() {
 void CREAM_III() {
     {
         CRDB dataSet("CREAM-III");
-        dataSet.set_reference("Yoon et al., ApJ 839, 5 (2017)");
+        dataSet.set_doi("10.3847/1538-4357/aa68e4");
+        dataSet.set_ADSbibcode("2017ApJ...839....5Y");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy");
         dataSet.set_yType("H");
@@ -95,7 +135,8 @@ void CREAM_III() {
     }
     {
         CRDB dataSet("CREAM-III");
-        dataSet.set_reference("Yoon et al., ApJ 839, 5 (2017)");
+        dataSet.set_doi("10.3847/1538-4357/aa68e4");
+        dataSet.set_ADSbibcode("2017ApJ...839....5Y");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("kinetic Energy per nucleon");
         dataSet.set_yType("He");
@@ -107,9 +148,10 @@ void CREAM_III() {
 
 void DAMPE() {
     SSDC dataSet("DAMPE");
-    dataSet.set_reference(" ");
+    dataSet.set_doi("10.1126/sciadv.aax3793");
+    dataSet.set_ADSbibcode("2019SciA....5.3793A");
     dataSet.set_mode("geometrical");
-    dataSet.set_xUnits("total Energy");
+    dataSet.set_xUnits("kinetic Energy");
     dataSet.set_yType("H");
     dataSet.set_comments("");
     dataSet.loadDataset("source/nuclei/SSDC_H_DAMPE_Ek.txt");
@@ -119,9 +161,10 @@ void DAMPE() {
 void ICECUBE_ICETOP() {
     {
         KCDC dataSet("ICECUBE-ICETOP");
-        dataSet.set_reference("Aartsen et al., Physical Review D 100, 082002 (2019)");
+        dataSet.set_doi("10.1103/PhysRevD.100.082002");
+        dataSet.set_ADSbibcode("2019PhRvD.100h2002A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("H");
         dataSet.set_comments("Sibyll-2.1 only");
         dataSet.loadDataset("source/nuclei/KCDC_H_ICECUBE-ICETOP_Etot.txt");
@@ -129,9 +172,10 @@ void ICECUBE_ICETOP() {
     }
     {
         KCDC dataSet("ICECUBE-ICETOP");
-        dataSet.set_reference("Aartsen et al., Physical Review D 100, 082002 (2019)");
+        dataSet.set_doi("10.1103/PhysRevD.100.082002");
+        dataSet.set_ADSbibcode("2019PhRvD.100h2002A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("He");
         dataSet.set_comments("Sibyll-2.1 only");
         dataSet.loadDataset("source/nuclei/KCDC_He_ICECUBE-ICETOP_Etot.txt");
@@ -142,9 +186,10 @@ void ICECUBE_ICETOP() {
 void KASCADE() {
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Antoni et al., Astroparticle Physics 24, 1 (2005)");
+        dataSet.set_doi("10.1016/j.astropartphys.2005.04.001");
+        dataSet.set_ADSbibcode("2005APh....24....1A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("H");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/KCDC_H_KASCADE_2005_QGSJET-01_Etot.txt");
@@ -152,7 +197,8 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("Antoni et al., Astroparticle Physics 24, 1 (2005)");
+        dataSet.set_doi("10.1016/j.astropartphys.2005.04.001");
+        dataSet.set_ADSbibcode("2005APh....24....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("H");
@@ -162,7 +208,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("");
+        dataSet.set_doi("");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("H");
@@ -172,7 +218,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("");
+        dataSet.set_doi("");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("H");
@@ -182,7 +228,7 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("");
+        dataSet.set_doi("");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("H");
@@ -192,7 +238,8 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("");
+        dataSet.set_doi("10.1016/j.astropartphys.2005.04.001");
+        dataSet.set_ADSbibcode("2005APh....24....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("He");
@@ -202,7 +249,8 @@ void KASCADE() {
     }
     {
         KCDC dataSet("KASCADE");
-        dataSet.set_reference("");
+        dataSet.set_doi("10.1016/j.astropartphys.2005.04.001");
+        dataSet.set_ADSbibcode("2005APh....24....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total Energy");
         dataSet.set_yType("He");
@@ -215,9 +263,10 @@ void KASCADE() {
 void KASCADEGrande() {
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
+        dataSet.set_doi("doi.org/10.22323/1.301.0316");
+        dataSet.set_ADSbibcode("2017ICRC...35..316A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("H");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/KCDC_H_KG_SIBYLL-2.3_Etot.txt");
@@ -225,9 +274,9 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
+        dataSet.set_doi("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("light");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/KCDC_light_KG_EPOS-LHC_Etot.txt");
@@ -235,9 +284,9 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
+        dataSet.set_doi("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("light");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/KCDC_light_KG_QGSJET-II-04_Etot.txt");
@@ -245,9 +294,9 @@ void KASCADEGrande() {
     }
     {
         KCDC dataSet("KASCADE-Grande");
-        dataSet.set_reference("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
+        dataSet.set_doi("KASCADE-Grande Collaboration, ICRC Proc. 301, 316 (2017)");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
+        dataSet.set_xUnits("total energy");
         dataSet.set_yType("light");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/KCDC_light_KG_SIBYLL-2.1_Etot.txt");
@@ -258,7 +307,8 @@ void KASCADEGrande() {
 void NUCLEON() {
     {
         CRDB dataSet("NUCLEON");
-        dataSet.set_reference("Grebenyuk et al., AdSpR 64, 2546 (2019)");
+        dataSet.set_doi("10.1016/j.asr.2019.10.004");
+        dataSet.set_ADSbibcode("2019AdSpR..64.2546G");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total energy");
         dataSet.set_yType("H");
@@ -268,13 +318,28 @@ void NUCLEON() {
     }
     {
         CRDB dataSet("NUCLEON");
-        dataSet.set_reference("Grebenyuk et al., AdSpR 64, 2546 (2019)");
+        dataSet.set_doi("10.1016/j.asr.2019.10.004");
+        dataSet.set_ADSbibcode("2019AdSpR..64.2546G");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("total energy");
         dataSet.set_yType("He");
         dataSet.set_comments("Table 2");
         dataSet.loadDataset("source/nuclei/CRDB_He_NUCLEON_Etot.txt");
         dataSet.save("output/He_NUCLEON_Etot.txt");
+    }
+}
+
+void PAMELA() {
+    {
+        CRDB dataSet("PAMELA");
+        dataSet.set_doi("10.1126/science.1199172");
+        dataSet.set_ADSbibcode("2011Sci...332...69A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("H");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_H_PAMELA_Ek.txt");
+        dataSet.save("output/H_PAMELA_Ek.txt");
     }
 }
 

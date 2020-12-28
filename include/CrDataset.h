@@ -41,7 +41,8 @@ class CrDataset {
     virtual ~CrDataset() = default;
 
     void set_source(std::string str) { m_source = str; }
-    void set_reference(std::string str) { m_reference = str; }
+    void set_doi(std::string str) { m_doi = str; }
+    void set_ADSbibcode(std::string str) { m_ads = str; }
     void set_xUnits(std::string str) { m_xUnits = str; }
     void set_yType(std::string str) { m_yType = str; }
     void set_comments(std::string str) { m_comments = str; }
@@ -58,7 +59,8 @@ class CrDataset {
    protected:
     std::vector<dataPoint> m_dataTable;
     std::string m_experimentName;
-    std::string m_reference;
+    std::string m_doi;
+    std::string m_ads;
     std::string m_source;
     std::string m_url;
     std::string m_mode;
