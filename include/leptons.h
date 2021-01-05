@@ -107,6 +107,20 @@ void VERITAS() {
     dataSet.save("output/leptons_VERITAS_Etot.txt");
 }
 
+void HESS() {
+    MyLeptonHESS dataSet;
+    dataSet.set_doi("10.1051/0004-6361/200913323");
+    dataSet.set_ADSbibcode("2009A&A...508..561A");
+    dataSet.set_mode("geometrical");
+    dataSet.set_xUnits("total energy");
+    dataSet.set_yType("leptons");
+    dataSet.set_comments(
+        "systematic errors not official, derived from "
+        "https://www.mpi-hd.mpg.de/hfm/HESS/pages/publications/auxiliary/auxinfo_electrons2.html");
+    dataSet.loadDataset("source/leptons/mysource_leptons_HESS_Etot.txt");
+    dataSet.save("output/leptons_HESS_Etot.txt");
+}
+
 }  // namespace LEPTONS
 
 #endif  // INCLUDE_LEPTONS_H_

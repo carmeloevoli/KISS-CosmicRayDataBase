@@ -161,7 +161,7 @@ void KASCADEGrande() {
 
 void NUCLEON() {
     CRDB dataSet("NUCLEON");
-    dataSet.sed_doi("10.1016/j.asr.2019.10.004");
+    dataSet.set_doi("10.1016/j.asr.2019.10.004");
     dataSet.set_ADSbibcode("2019AdSpR..64.2546G");
     dataSet.set_mode("geometrical");
     dataSet.set_xUnits("total Energy");

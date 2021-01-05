@@ -140,3 +140,19 @@ void MyLeptonVERITAS::readfile(std::fstream& infile) {
         }
     }
 }
+
+void MyLeptonHESS::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 0;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, flux, stat_error_low, stat_error_high, syst_error_low, syst_error_high;
+        infile >> E >> flux >> stat_error_low >> stat_error_high >> syst_error_low >>
+            syst_error_high;
+        if (!infile.eof()) {
+            const double err_tot_do = quadrature(syst_error_low, stat_error_low);
+            const double err_tot_up = quadrature(syst_error_high, stat_error_high);
+            dataPoint data = {E, flux, stat_error_low, stat_error_high, err_tot_do, err_tot_up};
+            m_dataTable.push_back(data);
+        }
+    }
+}

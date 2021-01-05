@@ -48,6 +48,7 @@ int main() {
         LEPTONS::FERMI();
         LEPTONS::PAMELA();
         LEPTONS::VERITAS();
+        LEPTONS::HESS();
     } catch (std::exception& e) {
         std::cout << "!Fatal Error: " << e.what() << '\n';
     }

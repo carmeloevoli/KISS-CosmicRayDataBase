@@ -46,4 +46,10 @@ class MyLeptonVERITAS : public CrDataset {
     void readfile(std::fstream& infile) override;
 };
 
+class MyLeptonHESS : public CrDataset {
+   public:
+    MyLeptonHESS() { set_experimentName("HESS"); }
+    void readfile(std::fstream& infile) override;
+};
+
 #endif  // INCLUDE_MYDB_H_
