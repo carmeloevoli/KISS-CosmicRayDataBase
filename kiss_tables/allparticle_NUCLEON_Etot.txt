@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 2019AdSpR..64.2546G ()
+#Ref: 10.1016/j.asr.2019.10.004 (2019AdSpR..64.2546G)
 #Experiment: NUCLEON
 #Quantity: all particle
 #Units: total Energy

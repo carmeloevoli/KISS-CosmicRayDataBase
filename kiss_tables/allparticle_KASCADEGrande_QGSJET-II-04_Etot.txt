@@ -1,5 +1,5 @@
 #Source: KCDC
-#Ref: pos.sissa.it/236/359/ ()
+#Ref: 10.22323/1.236.0359 (2015ICRC...34..359B)
 #Experiment: KASCADE-Grande
 #Quantity: all particle
 #Units: total Energy

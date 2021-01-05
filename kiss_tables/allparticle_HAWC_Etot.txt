@@ -1,5 +1,5 @@
 #Source: 
-#Ref: HAWC collaboration, Phys.Rev.D (2017) 96 ()
+#Ref: 10.1103/PhysRevD.96.122001 (2017PhRvD..96l2001A)
 #Experiment: HAWC
 #Quantity: all particle
 #Units: total Energy

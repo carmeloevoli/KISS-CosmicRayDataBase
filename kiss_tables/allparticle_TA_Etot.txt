@@ -1,5 +1,5 @@
 #Source: 
-#Ref: Telescope Array Collaboration, PoS ICRC2017 (2018) 1096 ()
+#Ref: 10.22323/1.301.1096 (2017ICRC...35.1096M)
 #Experiment: Telescope Array
 #Quantity: all particle
 #Units: total Energy

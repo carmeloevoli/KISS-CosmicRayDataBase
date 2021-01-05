@@ -1,5 +1,5 @@
 #Source: 
-#Ref: Amenomori et al., The Astrophysical Journal (2008) 678 ()
+#Ref: 10.1086/529514 (2008ApJ...678.1165A)
 #Experiment: TIBET
 #Quantity: all particle
 #Units: total Energy
