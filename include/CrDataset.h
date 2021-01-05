@@ -22,7 +22,7 @@ class dataPoint {
         os << std::setprecision(5) << std::scientific;
         os << data.m_x << " " << data.m_y << " ";
         os << data.m_err_tot_do << " " << data.m_err_tot_up << " ";
-        os << data.m_err_stat_do << " " << data.m_err_stat_do << " ";
+        os << data.m_err_stat_do << " " << data.m_err_stat_up << " ";
         return os;
     }
 
