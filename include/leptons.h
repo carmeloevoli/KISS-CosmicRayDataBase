@@ -22,6 +22,17 @@ void AMS02() {
         dataSet.save("output/e+_AMS-02_Ek.txt");
     }
     {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("10.1103/PhysRevLett.122.101101");
+        dataSet.set_ADSbibcode("2019PhRvL.122j1101A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("e-");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/leptons/CRDB_e-_AMS-02_Ek.txt");
+        dataSet.save("output/e-_AMS-02_Ek.txt");
+    }
+    {
         SSDC dataSet("AMS-02");
         dataSet.set_doi("10.1103/PhysRevLett.122.101101");
         dataSet.set_ADSbibcode("2019PhRvL.122j1101A");
@@ -72,6 +83,17 @@ void FERMI() {
     }
     {
         CRDB dataSet("FERMI");
+        dataSet.set_doi("10.1103/PhysRevLett.108.011103");
+        dataSet.set_ADSbibcode("2012PhRvL.108a1103A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("e-");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/leptons/CRDB_e-_FERMI_Ek.txt");
+        dataSet.save("output/e-_FERMI_Ek.txt");
+    }
+    {
+        CRDB dataSet("FERMI");
         dataSet.set_doi("10.1103/PhysRevD.95.082007");
         dataSet.set_ADSbibcode("2017PhRvD..95h2007A");
         dataSet.set_mode("geometrical");
@@ -84,15 +106,28 @@ void FERMI() {
 }
 
 void PAMELA() {
-    CRDB dataSet("PAMELA");
-    dataSet.set_doi("10.1103/PhysRevLett.111.081102");
-    dataSet.set_ADSbibcode("2013PhRvL.111h1102A");
-    dataSet.set_mode("geometrical");
-    dataSet.set_xUnits("kinetic energy");
-    dataSet.set_yType("e+");
-    dataSet.set_comments("");
-    dataSet.loadDataset("source/leptons/CRDB_e+_PAMELA_Ek.txt");
-    dataSet.save("output/e+_PAMELA_Ek.txt");
+    {
+        CRDB dataSet("PAMELA");
+        dataSet.set_doi("10.1103/PhysRevLett.111.081102");
+        dataSet.set_ADSbibcode("2013PhRvL.111h1102A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("e+");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/leptons/CRDB_e+_PAMELA_Ek.txt");
+        dataSet.save("output/e+_PAMELA_Ek.txt");
+    }
+    {
+        CRDB dataSet("PAMELA");
+        dataSet.set_doi("10.1103/PhysRevLett.106.201101");
+        dataSet.set_ADSbibcode("2011PhRvL.106t1101A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic energy");
+        dataSet.set_yType("e-");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/leptons/CRDB_e-_PAMELA_Ek.txt");
+        dataSet.save("output/e-_PAMELA_Ek.txt");
+    }
 }
 
 void VERITAS() {
