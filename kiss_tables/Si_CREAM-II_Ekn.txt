@@ -1,8 +1,8 @@
 #Source: CRDB
-#Ref: Ahn et al., ApJ 707, 593 (2009) ()
+#Ref: 10.1088/0004-637X/707/1/593 (2009ApJ...707..593A)
 #Experiment: CREAM-II
 #Quantity: Si
-#Units: kinetic Energy per nucleon
+#Units: kinetic Energy per nucleon (original)
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 2.82843e+01 4.54000e-04 7.26666e-05 7.26666e-05 5.60000e-05 5.60000e-05 

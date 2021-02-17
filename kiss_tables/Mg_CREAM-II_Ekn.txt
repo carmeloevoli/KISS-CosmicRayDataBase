@@ -1,8 +1,8 @@
 #Source: CRDB
-#Ref: Ahn et al., ApJ 707, 593 (2009) ()
+#Ref: 10.1088/0004-637X/707/1/593 (2009ApJ...707..593A)
 #Experiment: CREAM-II
 #Quantity: Mg
-#Units: kinetic Energy per nucleon
+#Units: kinetic Energy per nucleon (original)
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 2.82843e+01 4.68000e-04 8.22662e-05 8.22662e-05 6.70000e-05 6.70000e-05 

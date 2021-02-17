@@ -1,8 +1,8 @@
 #Source: CRDB
-#Ref: Ahn et al., ApJ 707, 593 (2009) ()
+#Ref: 10.1088/0004-637X/707/1/593 (2009ApJ...707..593A)
 #Experiment: CREAM-II
 #Quantity: O
-#Units: kinetic Energy per nucleon
+#Units: kinetic Energy per nucleon (original)
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 6.52917e+01 3.48000e-04 4.22962e-05 4.22962e-05 2.30000e-05 2.30000e-05 

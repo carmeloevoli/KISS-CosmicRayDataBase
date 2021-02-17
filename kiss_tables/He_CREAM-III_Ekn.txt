@@ -2,7 +2,7 @@
 #Ref: 10.3847/1538-4357/aa68e4 (2017ApJ...839....5Y)
 #Experiment: CREAM-III
 #Quantity: He
-#Units: kinetic Energy per nucleon
+#Units: kinetic Energy per nucleon (original)
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: Table 3
 5.01137e+04 2.20000e-10 8.06796e-11 1.10495e-10 8.00000e-11 1.10000e-10 
