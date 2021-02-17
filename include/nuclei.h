@@ -17,8 +17,74 @@ void AMS02() {
         dataSet.set_xUnits("kinetic energy");
         dataSet.set_yType("H");
         dataSet.set_comments("converted from original table");
-        dataSet.loadDataset("source/nuclei/CRDB_H_AMS-02_Ek.txt");
+        dataSet.loadDataset("source/nuclei/CRDB_H_AMS-02_Ek+.txt");
         dataSet.save("output/H_AMS-02_Ek.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("He");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_He_AMS-02_Etot+.txt");
+        dataSet.save("output/He_AMS-02_Etot.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("C");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_C_AMS-02_Etot+.txt");
+        dataSet.save("output/C_AMS-02_Etot.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("O");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_O_AMS-02_Etot+.txt");
+        dataSet.save("output/O_AMS-02_Etot.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("Mg");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_Ne_AMS-02_Etot+.txt");
+        dataSet.save("output/Ne_AMS-02_Etot.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("Mg");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_Mg_AMS-02_Etot+.txt");
+        dataSet.save("output/Mg_AMS-02_Etot.txt");
+    }
+    {
+        CRDB dataSet("AMS-02");
+        dataSet.set_doi("");
+        dataSet.set_ADSbibcode("");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("Si");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_Si_AMS-02_Etot+.txt");
+        dataSet.save("output/Si_AMS-02_Etot.txt");
     }
 }
 
@@ -71,9 +137,10 @@ void CALET() {
 void CREAM_II() {
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("C");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/CRDB_C_CREAM-II_Ekn.txt");
@@ -81,9 +148,21 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("C");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_C_CREAM-II_Etot+.txt");
+        dataSet.save("output/C_CREAM-II_Etot.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("O");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/CRDB_O_CREAM-II_Ekn.txt");
@@ -91,9 +170,43 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("O");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_O_CREAM-II_Etot+.txt");
+        dataSet.save("output/O_CREAM-II_Etot.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
+        dataSet.set_yType("Ne");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_Ne_CREAM-II_Ekn.txt");
+        dataSet.save("output/Ne_CREAM-II_Ekn.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("Ne");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_Ne_CREAM-II_Etot+.txt");
+        dataSet.save("output/Ne_CREAM-II_Etot.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("Mg");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/CRDB_Mg_CREAM-II_Ekn.txt");
@@ -101,9 +214,21 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("Mg");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_Mg_CREAM-II_Etot+.txt");
+        dataSet.save("output/Mg_CREAM-II_Etot.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("Si");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/CRDB_Si_CREAM-II_Ekn.txt");
@@ -111,13 +236,36 @@ void CREAM_II() {
     }
     {
         CRDB dataSet("CREAM-II");
-        dataSet.set_doi("Ahn et al., ApJ 707, 593 (2009)");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("Si");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_Si_CREAM-II_Etot+.txt");
+        dataSet.save("output/Si_CREAM-II_Etot.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("Fe");
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/CRDB_Fe_CREAM-II_Ekn.txt");
         dataSet.save("output/Fe_CREAM-II_Ekn.txt");
+    }
+    {
+        CRDB dataSet("CREAM-II");
+        dataSet.set_doi("10.1088/0004-637X/707/1/593");
+        dataSet.set_ADSbibcode("2009ApJ...707..593A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("Fe");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/CRDB_Fe_CREAM-II_Etot+.txt");
+        dataSet.save("output/Fe_CREAM-II_Etot.txt");
     }
 }
 
@@ -138,11 +286,22 @@ void CREAM_III() {
         dataSet.set_doi("10.3847/1538-4357/aa68e4");
         dataSet.set_ADSbibcode("2017ApJ...839....5Y");
         dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("kinetic Energy per nucleon");
+        dataSet.set_xUnits("kinetic Energy per nucleon (original)");
         dataSet.set_yType("He");
         dataSet.set_comments("Table 3");
         dataSet.loadDataset("source/nuclei/CRDB_He_CREAM-I+III_Ekn.txt");
         dataSet.save("output/He_CREAM-III_Ekn.txt");
+    }
+    {
+        CRDB dataSet("CREAM-III");
+        dataSet.set_doi("10.3847/1538-4357/aa68e4");
+        dataSet.set_ADSbibcode("2017ApJ...839....5Y");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("He");
+        dataSet.set_comments("Table 3");
+        dataSet.loadDataset("source/nuclei/CRDB_He_CREAM-I+III_Etot+.txt");
+        dataSet.save("output/He_CREAM-III_Etot.txt");
     }
 }
 
@@ -156,6 +315,18 @@ void DAMPE() {
     dataSet.set_comments("");
     dataSet.loadDataset("source/nuclei/SSDC_H_DAMPE_Ek.txt");
     dataSet.save("output/H_DAMPE_Ek.txt");
+}
+
+void HESS() {
+    SSDC dataSet("HESS");
+    dataSet.set_doi("10.1103/PhysRevD.75.042004");
+    dataSet.set_ADSbibcode("2007PhRvD..75d2004A");
+    dataSet.set_mode("geometrical");
+    dataSet.set_xUnits("total Energy");
+    dataSet.set_yType("Fe");
+    dataSet.set_comments("");
+    dataSet.loadDataset("source/nuclei/SSDC_Fe_HESS_Ek.txt");
+    dataSet.save("output/Fe_HESS_Etot.txt");
 }
 
 void ICECUBE_ICETOP() {
