@@ -52,4 +52,25 @@ class MyLeptonHESS : public CrDataset {
     void readfile(std::fstream& infile) override;
 };
 
+class MyIronAMS02rigidity : public CrDataset {
+   public:
+    MyIronAMS02rigidity() { set_experimentName("AMS-02"); }
+    void readfile(std::fstream& infile) override;
+};
+
+class MyIronAMS02totalenergy : public CrDataset {
+   public:
+    MyIronAMS02totalenergy() { set_experimentName("AMS-02"); }
+    void readfile(std::fstream& infile) override;
+};
+
+class MyHeavyCALET : public CrDataset {
+   public:
+    MyHeavyCALET(size_t A) : m_A(A) { set_experimentName("CALET"); }
+    void readfile(std::fstream& infile) override;
+
+   protected:
+    size_t m_A;
+};
+
 #endif  // INCLUDE_MYDB_H_

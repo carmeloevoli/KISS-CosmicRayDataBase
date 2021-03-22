@@ -123,8 +123,7 @@ void MyLeptonVERITAS::readfile(std::fstream& infile) {
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
     while (infile.good()) {
         double E, E_min, E_max, N_events, fraction, fraction_error, flux, stat_error;
-        infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >>
-            stat_error;
+        infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >> stat_error;
         if (!infile.eof()) {
             E_min *= 1e3;       // TeV -> GeV
             E_max *= 1e3;       // TeV -> GeV
@@ -146,12 +145,61 @@ void MyLeptonHESS::readfile(std::fstream& infile) {
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
     while (infile.good()) {
         double E, flux, stat_error_low, stat_error_high, syst_error_low, syst_error_high;
-        infile >> E >> flux >> stat_error_low >> stat_error_high >> syst_error_low >>
-            syst_error_high;
+        infile >> E >> flux >> stat_error_low >> stat_error_high >> syst_error_low >> syst_error_high;
         if (!infile.eof()) {
             const double err_tot_do = quadrature(syst_error_low, stat_error_low);
             const double err_tot_up = quadrature(syst_error_high, stat_error_high);
             dataPoint data = {E, flux, stat_error_low, stat_error_high, err_tot_do, err_tot_up};
+            m_dataTable.push_back(data);
+        }
+    }
+}
+
+void MyIronAMS02rigidity::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double R_min, R_max, flux, Stat, Acc, Unf, Scale, Syst;
+        infile >> R_min >> R_max >> flux >> Stat >> Acc >> Unf >> Scale >> Syst;
+        if (!infile.eof()) {
+            const double R = compute_x_mean_Lafferty1995(R_min, R_max, 2.7);
+            const double err_tot = quadrature(Stat, Syst);
+            dataPoint data = {R, flux, Stat, Stat, err_tot, err_tot};
+            m_dataTable.push_back(data);
+        }
+    }
+}
+
+void MyIronAMS02totalenergy::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    const double Z = 26;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double R_min, R_max, flux, Stat, Acc, Unf, Scale, Syst;
+        infile >> R_min >> R_max >> flux >> Stat >> Acc >> Unf >> Scale >> Syst;
+        if (!infile.eof()) {
+            const double R = compute_x_mean_geometrical(R_min, R_max);
+            const double E = R * Z;
+            const double err_tot = quadrature(Stat, Syst);
+            dataPoint data = {E, flux / Z, Stat / Z, Stat / Z, err_tot / Z, err_tot / Z};
+            m_dataTable.push_back(data);
+        }
+    }
+}
+
+void MyHeavyCALET::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, Flux, stat, syst_1_do, syst_1_up, syst_2_do, syst_2_up;
+        infile >> E_min >> E_max >> Flux >> stat >> syst_1_do >> syst_1_up >> syst_2_do >> syst_2_up;
+        if (!infile.eof()) {
+            const double E = compute_x_mean_geometrical(E_min, E_max) * (double)m_A;
+            const double syst_do = syst_1_do + syst_2_do;
+            const double syst_up = syst_1_up + syst_2_up;
+            const double err_tot_do = quadrature(stat, syst_do);
+            const double err_tot_up = quadrature(stat, syst_up);
+            dataPoint data = {E, Flux / m_A, stat / m_A, stat / m_A, err_tot_do / m_A, err_tot_up / m_A};
             m_dataTable.push_back(data);
         }
     }

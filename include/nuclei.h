@@ -5,6 +5,7 @@
 #include "CRDB.h"
 #include "KCDC.h"
 #include "SSDC.h"
+#include "mydb.h"
 
 namespace NUCLEI {
 
@@ -86,6 +87,17 @@ void AMS02() {
         dataSet.loadDataset("source/nuclei/CRDB_Si_AMS-02_Etot+.txt");
         dataSet.save("output/Si_AMS-02_Etot.txt");
     }
+    {
+        MyIronAMS02totalenergy dataSet;
+        dataSet.set_doi("10.1103/PhysRevLett.126.041104");
+        dataSet.set_ADSbibcode("2021PhRvL.126d1104A");
+        dataSet.set_mode("Lafferty2.7");
+        dataSet.set_xUnits("total energy(converted)");
+        dataSet.set_yType("Fe");
+        dataSet.set_comments("table read from Supp.Material");
+        dataSet.loadDataset("source/nuclei/myFe_AMS02_rig.txt");
+        dataSet.save("output/Fe_AMS-02_Etot.txt");
+    }
 }
 
 void ARGO() {
@@ -123,15 +135,39 @@ void BESS() {
 }
 
 void CALET() {
-    SSDC dataSet("CALET");
-    dataSet.set_doi("10.1103/PhysRevLett.122.181102");
-    dataSet.set_ADSbibcode("2019PhRvL.122r1102A");
-    dataSet.set_mode("geometrical");
-    dataSet.set_xUnits("kinetic Energy");
-    dataSet.set_yType("H");
-    dataSet.set_comments("");
-    dataSet.loadDataset("source/nuclei/SSDC_H_CALET_Ek.txt");
-    dataSet.save("output/H_CALET_Ek.txt");
+    {
+        SSDC dataSet("CALET");
+        dataSet.set_doi("10.1103/PhysRevLett.122.181102");
+        dataSet.set_ADSbibcode("2019PhRvL.122r1102A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("kinetic Energy");
+        dataSet.set_yType("H");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_H_CALET_Ek.txt");
+        dataSet.save("output/H_CALET_Ek.txt");
+    }
+    {
+        MyHeavyCALET dataSet(12);
+        dataSet.set_doi("110.1103/PhysRevLett.125.251102");
+        dataSet.set_ADSbibcode("2020PhRvL.125y1102A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("C");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/myC_CALET_Ekn.txt");
+        dataSet.save("output/C_CALET_Etot.txt");
+    }
+    {
+        MyHeavyCALET dataSet(16);
+        dataSet.set_doi("110.1103/PhysRevLett.125.251102");
+        dataSet.set_ADSbibcode("2020PhRvL.125y1102A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total Energy");
+        dataSet.set_yType("C");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/myO_CALET_Ekn.txt");
+        dataSet.save("output/O_CALET_Etot.txt");
+    }
 }
 
 void CREAM_II() {
