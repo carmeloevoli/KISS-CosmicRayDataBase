@@ -122,6 +122,8 @@ void ATIC02() {
     dataSet.save("output/H_ATIC02_Etot.txt");
 }
 
+void AUGER() {}
+
 void BESS() {
     CRDB dataSet("BESS");
     dataSet.set_doi("10.1016/j.astropartphys.2007.05.001");
@@ -547,6 +549,39 @@ void PAMELA() {
         dataSet.set_comments("converted from original table");
         dataSet.loadDataset("source/nuclei/CRDB_H_PAMELA_Ek.txt");
         dataSet.save("output/H_PAMELA_Ek.txt");
+    }
+    {
+        CRDB dataSet("PAMELA");
+        dataSet.set_doi("10.1126/science.1199172");
+        dataSet.set_ADSbibcode("2011Sci...332...69A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("He");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_He_PAMELA_Etot.txt");
+        dataSet.save("output/He_PAMELA_Etot.txt");
+    }
+    {
+        CRDB dataSet("PAMELA-CALO");
+        dataSet.set_doi("10.1016/j.asr.2012.09.029");
+        dataSet.set_ADSbibcode("2013AdSpR..51..219A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("He");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_He_PAMELA-CALO_Etot.txt");
+        dataSet.save("output/He_PAMELA-CALO_Etot.txt");
+    }
+    {
+        CRDB dataSet("PAMELA");
+        dataSet.set_doi("10.1088/0004-637X/791/2/93");
+        dataSet.set_ADSbibcode("2014ApJ...791...93A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("total energy");
+        dataSet.set_yType("C");
+        dataSet.set_comments("converted from original table");
+        dataSet.loadDataset("source/nuclei/CRDB_C_PAMELA_Etot.txt");
+        dataSet.save("output/C_PAMELA_Etot.txt");
     }
 }
 

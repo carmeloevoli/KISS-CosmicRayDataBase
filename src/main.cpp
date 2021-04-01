@@ -14,6 +14,7 @@ int main() {
         // ALLAMS02::fluxes();
 
         // all particle spectrum
+        ALLPARTICLE::ARGO();
         // ALLPARTICLE::AUGER();
         // ALLPARTICLE::HAWC();
         // ALLPARTICLE::ICECUBE_ICETOP();

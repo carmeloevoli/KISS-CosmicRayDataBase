@@ -6,6 +6,12 @@
 
 #include "include/CrDataset.h"
 
+class MyAllARGO : public CrDataset {
+   public:
+    MyAllARGO() { set_experimentName("ARGO"); }
+    void readfile(std::fstream& infile) override;
+};
+
 class MyAllAUGER : public CrDataset {
    public:
     MyAllAUGER() { set_experimentName("AUGER"); }

@@ -8,6 +8,20 @@
 
 namespace ALLPARTICLE {
 
+void ARGO() {
+    MyAllARGO dataSet;
+    dataSet.set_doi("unpublished");
+    dataSet.set_ADSbibcode("unpublished");
+    dataSet.set_source("");
+    dataSet.set_url("");
+    dataSet.set_mode("geometrical");
+    dataSet.set_xUnits("total Energy");
+    dataSet.set_yType("all particle");
+    dataSet.set_comments("");
+    dataSet.loadDataset("source/allparticle/mysource_ARGO_Etot.txt");
+    dataSet.save("output/allparticle_ARGO_Etot.txt");
+}
+
 void AUGER() {
     MyAllAUGER dataSet;
     dataSet.set_doi("https://pos.sissa.it/358/450/");

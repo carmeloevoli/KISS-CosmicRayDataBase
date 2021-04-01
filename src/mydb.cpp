@@ -8,6 +8,24 @@
 
 #define MAX_NUM_OF_CHAIR_IN_A_LINE 512
 
+void MyAllARGO::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double logEmin, logEmax, flux, stat, syst;
+        infile >> logEmin >> logEmax >> flux >> stat >> syst;
+        if (!infile.eof()) {
+            const double E_min = std::pow(10., logEmin) * 1e3;  // TeV -> GeV
+            const double E_max = std::pow(10., logEmax) * 1e3;  // TeV -> GeV
+            const double x_mean = compute_x_mean(E_min, E_max, m_mode);
+            const double err_tot = quadrature(stat, syst);
+            dataPoint data = {x_mean, flux, stat, stat, err_tot, err_tot};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
 void MyAllAUGER::readfile(std::fstream& infile) {
     const int num_of_header_lines = 4;
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
