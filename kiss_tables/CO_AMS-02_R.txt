@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1103/PhysRevLett.119.251101 ()
+#Ref: 10.1016/j.physrep.2020.09.003 (2021PhR...894....1A)
 #Experiment: AMS-02
 #Quantity: C/O
 #Units: rigidity(original)
