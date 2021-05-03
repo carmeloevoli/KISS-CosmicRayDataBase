@@ -2,14 +2,92 @@
 #define INCLUDE_AMS02_H_
 
 #include "SSDC.h"
+#include "mydb.h"
 
 namespace ALLAMS02 {
 
 void ratios() {
     {
         SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("He/O");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_HeO_AMS-02_R.txt");
+        dataSet.save("output/HeO_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
         dataSet.set_doi("10.1103/PhysRevLett.120.021101");
         dataSet.set_ADSbibcode("2018PhRvL.120b1101A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Li/B");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_LiB_AMS-02_R.txt");
+        dataSet.save("output/LiB_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Li/C");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_LiC_AMS-02_R.txt");
+        dataSet.save("output/LiC_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Li/O");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_LiO_AMS-02_R.txt");
+        dataSet.save("output/LiO_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1103/PhysRevLett.120.021101");
+        dataSet.set_ADSbibcode("2018PhRvL.120b1101A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Be/B");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_BeB_AMS-02_R.txt");
+        dataSet.save("output/BeB_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Be/C");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_BeC_AMS-02_R.txt");
+        dataSet.save("output/BeC_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("Be/O");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_BeO_AMS-02_R.txt");
+        dataSet.save("output/BeO_AMS-02_R.txt");
+    }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("rigidity(original)");
         dataSet.set_yType("B/C");
@@ -19,8 +97,8 @@ void ratios() {
     }
     {
         SSDC dataSet("AMS-02");
-        dataSet.set_doi("10.1103/PhysRevLett.120.021101");
-        dataSet.set_ADSbibcode("2018PhRvL.120b1101A");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("rigidity(original)");
         dataSet.set_yType("B/O");
@@ -30,8 +108,8 @@ void ratios() {
     }
     {
         SSDC dataSet("AMS-02");
-        dataSet.set_doi("10.1103/PhysRevLett.119.251101");
-        dataSet.set_ADSbibcode("");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
         dataSet.set_mode("geometrical");
         dataSet.set_xUnits("rigidity(original)");
         dataSet.set_yType("C/O");
@@ -39,6 +117,18 @@ void ratios() {
         dataSet.loadDataset("source/nuclei/SSDC_CO_AMS-02_R.txt");
         dataSet.save("output/CO_AMS-02_R.txt");
     }
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1016/j.physrep.2020.09.003");
+        dataSet.set_ADSbibcode("2021PhR...894....1A");
+        dataSet.set_mode("geometrical");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("N/O");
+        dataSet.set_comments("");
+        dataSet.loadDataset("source/nuclei/SSDC_NO_AMS-02_R.txt");
+        dataSet.save("output/NO_AMS-02_R.txt");
+    }
+    //
     {
         SSDC dataSet("AMS-02");
         dataSet.set_doi("10.1103/PhysRevLett.124.211102");
@@ -75,18 +165,18 @@ void ratios() {
 }
 
 void fluxes() {
-     {
-       SSDC dataSet("AMS-02");
-       dataSet.set_doi("10.1103/PhysRevLett.114.171103");
-       dataSet.set_ADSbibcode("2015PhRvL.114q1103A");
-       dataSet.set_mode("Lafferty2.7");
-       dataSet.set_xUnits("rigidity(original)");
-       dataSet.set_yType("H");
-       dataSet.set_comments("Z=1");
-       dataSet.loadDataset("source/nuclei/SSDC_H_AMS-02_R.txt");
-       dataSet.save("output/H_AMS-02_R.txt");
-     }
-     {
+    {
+        SSDC dataSet("AMS-02");
+        dataSet.set_doi("10.1103/PhysRevLett.114.171103");
+        dataSet.set_ADSbibcode("2015PhRvL.114q1103A");
+        dataSet.set_mode("Lafferty2.7");
+        dataSet.set_xUnits("rigidity(original)");
+        dataSet.set_yType("H");
+        dataSet.set_comments("Z=1");
+        dataSet.loadDataset("source/nuclei/SSDC_H_AMS-02_R.txt");
+        dataSet.save("output/H_AMS-02_R.txt");
+    }
+    {
         SSDC dataSet("AMS-02");
         dataSet.set_doi("10.1103/PhysRevLett.119.251101");
         dataSet.set_ADSbibcode("");
@@ -96,8 +186,8 @@ void fluxes() {
         dataSet.set_comments("Z=2");
         dataSet.loadDataset("source/nuclei/SSDC_He_AMS-02_R.txt");
         dataSet.save("output/He_AMS-02_R.txt");
-     }
-     {
+    }
+    {
         SSDC dataSet("AMS-02");
         dataSet.set_doi("10.1103/PhysRevLett.120.021101");
         dataSet.set_ADSbibcode("2018PhRvL.120b1101A");
@@ -195,6 +285,17 @@ void fluxes() {
         dataSet.set_comments("Z=14");
         dataSet.loadDataset("source/nuclei/SSDC_Si_AMS-02_R.txt");
         dataSet.save("output/Si_AMS-02_R.txt");
+    }
+    {
+        MyIronAMS02rigidity dataSet;
+        dataSet.set_doi("10.1103/PhysRevLett.126.041104");
+        dataSet.set_ADSbibcode("2021PhRvL.126d1104A");
+        dataSet.set_mode("Lafferty2.7");
+        dataSet.set_xUnits("rigidity(converted)");
+        dataSet.set_yType("Fe");
+        dataSet.set_comments("table read from Supp.Material");
+        dataSet.loadDataset("source/nuclei/myFe_AMS02_rig.txt");
+        dataSet.save("output/Fe_AMS-02_R.txt");
     }
 }
 

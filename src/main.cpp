@@ -10,8 +10,8 @@
 int main() {
     try {
         // all original AMS-02
-        // ALLAMS02::ratios();
-        // ALLAMS02::fluxes();
+        ALLAMS02::ratios();
+        ALLAMS02::fluxes();
 
         // all particle spectrum
         ALLPARTICLE::ARGO();
