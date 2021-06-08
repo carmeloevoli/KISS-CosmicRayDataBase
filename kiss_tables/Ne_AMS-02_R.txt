@@ -4,7 +4,7 @@
 #Quantity: Ne
 #Units: rigidity(original)
 #Url: https://tools.ssdc.asi.it/CosmicRays/
-#Comments: Z=10
+#Comments: 
 2.27076e+00 2.37100e-01 1.08780e-02 1.08780e-02 1.30000e-03 1.30000e-03 
 2.53056e+00 2.20000e-01 8.96772e-03 8.96772e-03 1.10000e-03 1.10000e-03 
 2.81508e+00 1.99500e-01 7.65310e-03 7.65310e-03 9.00000e-04 9.00000e-04 
