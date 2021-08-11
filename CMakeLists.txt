@@ -48,6 +48,7 @@ set( KISS_SRCS
 	src/CRDB.cpp
 	src/KCDC.cpp
 	src/mydb.cpp
+	src/nuclei.cpp
 	src/SSDC.cpp
 	src/utils.cpp
 )

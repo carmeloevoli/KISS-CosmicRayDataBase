@@ -14,7 +14,7 @@ int main() {
         ALLAMS02::fluxes();
 
         // all particle spectrum
-        ALLPARTICLE::ARGO();
+        // ALLPARTICLE::ARGO();
         // ALLPARTICLE::AUGER();
         // ALLPARTICLE::HAWC();
         // ALLPARTICLE::ICECUBE_ICETOP();
@@ -28,20 +28,21 @@ int main() {
         // ALLPARTICLE::TUNKA();
 
         // nuclei
-        NUCLEI::AMS02();
-        NUCLEI::ARGO();
-        NUCLEI::ATIC02();
-        NUCLEI::BESS();
-        NUCLEI::CALET();
-        NUCLEI::CREAM_II();
-        NUCLEI::CREAM_III();
-        NUCLEI::DAMPE();
-        NUCLEI::HESS();
-        NUCLEI::ICECUBE_ICETOP();
-        NUCLEI::KASCADE();
-        NUCLEI::KASCADEGrande();
-        NUCLEI::NUCLEON();
-        NUCLEI::PAMELA();
+        // NUCLEI::AMS02();
+        // NUCLEI::ARGO();
+        // NUCLEI::ATIC02();
+        // NUCLEI::BESS();
+        // NUCLEI::CALET();
+        // NUCLEI::CREAM_II();
+        // NUCLEI::CREAM_III();
+        // NUCLEI::DAMPE();
+        // NUCLEI::HESS();
+        // NUCLEI::ICECUBE_ICETOP();
+        // NUCLEI::KASCADE();
+        // NUCLEI::KASCADEGrande();
+        // NUCLEI::NUCLEON();
+        // NUCLEI::PAMELA();
+        NUCLEI::TUNKA();
 
         // antiprotons
         // ANTIPROTONS::AMS02();

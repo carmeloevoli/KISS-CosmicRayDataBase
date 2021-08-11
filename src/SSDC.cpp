@@ -12,7 +12,7 @@
 #define MAX_NUM_OF_CHAIR_IN_A_LINE 512
 
 void SSDC::readfile(std::fstream& infile) {
-    const int num_of_header_lines = 2;
+    const int num_of_header_lines = 3;
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
     while (infile.good()) {
         double Elo, Eup, y, ystat_lo, ystat_up, ysyst_lo, ysyst_up;
