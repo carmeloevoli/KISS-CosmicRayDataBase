@@ -222,3 +222,19 @@ void MyHeavyCALET::readfile(std::fstream& infile) {
         }
     }
 }
+
+void MyHeliumDAMPE::readfile(std::fstream& infile) {
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, flux, stat, syst_ana, syst_had;
+        infile >> E_min >> E_max >> flux >> stat >> syst_ana >> syst_had;
+        if (!infile.eof()) {
+            const double E = compute_x_mean_geometrical(E_min * 1e3, E_max * 1e3);
+            const double syst = syst_ana + syst_had;
+            const double err_tot = quadrature(stat, syst);
+            dataPoint data = {E, flux, stat, stat, err_tot, err_tot};
+            m_dataTable.push_back(data);
+        }
+    }
+}

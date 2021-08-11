@@ -79,4 +79,10 @@ class MyHeavyCALET : public CrDataset {
     size_t m_A;
 };
 
+class MyHeliumDAMPE : public CrDataset {
+   public:
+    MyHeliumDAMPE() { set_experimentName("DAMPE"); }
+    void readfile(std::fstream& infile) override;
+};
+
 #endif  // INCLUDE_MYDB_H_
