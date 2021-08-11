@@ -1,7 +1,7 @@
 #Source: 
 #Ref: 110.1103/PhysRevLett.125.251102 (2020PhRvL.125y1102A)
 #Experiment: CALET
-#Quantity: C
+#Quantity: O
 #Units: total Energy
 #Url: 
 #Comments: 
