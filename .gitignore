@@ -1,7 +1,4 @@
-.DS_Store
-.cproject
-.project
-.settings/
+*.DS_Store
 build/
-kisscr.code-workspace
-source_tables
+*.code-workspace
+BIN/
