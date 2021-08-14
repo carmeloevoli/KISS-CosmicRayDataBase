@@ -23,7 +23,7 @@
                 "BAR=100"
             ],
             "forcedInclude": [
-                "${workspaceFolder}/include/CrDataset.h"
+                "${workspaceFolder}/include/kiss.h"
             ],
             "compilerPath": "/usr/local/bin/gcc-10",
             "cStandard": "gnu17",

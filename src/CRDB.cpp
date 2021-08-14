@@ -1,31 +1,31 @@
-// Copyright 2020 Carmelo Evoli
-#include "include/CRDB.h"
+// Copyright 2020 Carmelo Evoli - MIT License
+#include "KISS/CRDB.h"
 
-#include <cmath>
 #include <fstream>
-#include <iostream>
-#include <string>
-#include <vector>
 
-#include "include/utils.h"
+#include "KISS/utils.h"
 
 #define MAX_NUM_OF_CHAIR_IN_A_LINE 512
+#define NUM_OF_HEADER_LINES 2
 
-void CRDB::readfile(std::fstream& infile) {
-    const int num_of_header_lines = 2;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+namespace KISS {
+
+void CRDB::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    for (int i = 0; i < NUM_OF_HEADER_LINES; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
     while (infile.good()) {
         std::string Qty;
-        double E, Elo, Eup, y, ystat_lo, ystat_up, ysyst_lo, ysyst_up, yerrtot_lo, yerrtot_up;
-        infile >> Qty >> E >> Elo >> Eup >> y >> ystat_lo >> ystat_up >> ysyst_lo >> ysyst_up >>
-            yerrtot_lo >> yerrtot_up;
+        double E, Elo, Eup, y, statLo, statUp, systLo, systUp, totLo, totUp;
+        infile >> Qty >> E >> Elo >> Eup >> y >> statLo >> statUp >> systLo >> systUp >> totLo >> totUp;
         if (!infile.eof()) {
-            const double x_mean = compute_x_mean(Elo, Eup, m_mode);
-            const double err_tot_do = std::sqrt(ystat_lo * ystat_lo + ysyst_lo * ysyst_lo);
-            const double err_tot_up = std::sqrt(ystat_up * ystat_up + ysyst_up * ysyst_up);
-            dataPoint data = {x_mean, y, ystat_lo, ystat_up, err_tot_do, err_tot_up};
+            const double xMean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            const double errTotLo = Utils::quadrature(statLo, systLo);
+            const double errTotUp = Utils::quadrature(statUp, systUp);
+            dataPoint data = {{xMean, y}, {statLo, statUp}, {errTotLo, errTotUp}};
             m_dataTable.push_back(data);
         }
     }
     infile.close();
 }
+
+}  // namespace KISS

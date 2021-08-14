@@ -1,17 +1,28 @@
-// Copyright 2020 Carmelo Evoli
+// Copyright 2020 Carmelo Evoli - MIT License
 #include <iostream>
 
-#include "include/AMS02.h"
-#include "include/allparticle.h"
-#include "include/antiprotons.h"
-#include "include/leptons.h"
-#include "include/nuclei.h"
+#include "include/kiss.h"
 
 int main() {
     try {
+        AMS02::run();
+        exit(1);
+        ATIC02::run();
+        BESS::run();
+        CREAM::run();
+        HESS::run();
+        ICECUBE_ICETOP::run();
+        KASCADE_Grande::run();
+        KASCADE::run();
+        NUCLEON::run();
+        PAMELA::run();
+        RUNJOB::run();
+        TALE::run();
+        TUNKA::run();
+
         // all original AMS-02
-        ALLAMS02::ratios();
-        ALLAMS02::fluxes();
+        // ALLAMS02::ratios();
+        // ALLAMS02::fluxes();
 
         // all particle spectrum
         // ALLPARTICLE::ARGO();
@@ -42,7 +53,7 @@ int main() {
         // NUCLEI::KASCADEGrande();
         // NUCLEI::NUCLEON();
         // NUCLEI::PAMELA();
-        NUCLEI::TUNKA();
+        // NUCLEI::TUNKA();
 
         // antiprotons
         // ANTIPROTONS::AMS02();
