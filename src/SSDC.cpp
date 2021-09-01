@@ -20,7 +20,6 @@ void SSDC::readfile(std::string filename) {
     pugi::xml_document doc;
     pugi::xml_parse_result result = doc.load_file(filename.c_str());
     if (!result) throw std::runtime_error("error in loadig the XML file.");
-    std::cout << "Load result : " << result.description() << "\n";
     const auto tree = doc.child("XML");
 
     for (pugi::xml_node node : tree.children("DATA")) {

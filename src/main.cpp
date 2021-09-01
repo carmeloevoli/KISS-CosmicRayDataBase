@@ -6,7 +6,6 @@
 int main() {
     try {
         AMS02::run();
-        exit(1);
         ATIC02::run();
         BESS::run();
         CREAM::run();
