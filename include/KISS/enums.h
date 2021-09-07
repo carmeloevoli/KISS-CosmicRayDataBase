@@ -97,6 +97,10 @@ inline std::string ToString(XQuantities v) {
 
 enum YQuantities {
     allParticle,
+    electron,
+    positron,
+    lepton,
+    positronfraction,
     light,
     H,
     He,
@@ -153,6 +157,14 @@ inline std::string ToString(YQuantities v) {
     switch (v) {
         case allParticle:
             return "allParticle";
+        case electron:
+            return "e-";
+        case positron:
+            return "e+";
+        case lepton:
+            return "e+e-";
+        case positronfraction:
+            return "posfraction";
         case light:
             return "light";
         case H:
