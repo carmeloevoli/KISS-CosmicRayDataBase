@@ -173,38 +173,6 @@ void MyLeptonHESS::readfile(std::fstream& infile) {
     }
 }
 
-void MyIronAMS02rigidity::readfile(std::fstream& infile) {
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double R_min, R_max, flux, Stat, Acc, Unf, Scale, Syst;
-        infile >> R_min >> R_max >> flux >> Stat >> Acc >> Unf >> Scale >> Syst;
-        if (!infile.eof()) {
-            const double R = compute_x_mean_Lafferty1995(R_min, R_max, 2.7);
-            const double err_tot = quadrature(Stat, Syst);
-            dataPoint data = {R, flux, Stat, Stat, err_tot, err_tot};
-            m_dataTable.push_back(data);
-        }
-    }
-}
-
-void MyIronAMS02totalenergy::readfile(std::fstream& infile) {
-    const int num_of_header_lines = 1;
-    const double Z = 26;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double R_min, R_max, flux, Stat, Acc, Unf, Scale, Syst;
-        infile >> R_min >> R_max >> flux >> Stat >> Acc >> Unf >> Scale >> Syst;
-        if (!infile.eof()) {
-            const double R = compute_x_mean_geometrical(R_min, R_max);
-            const double E = R * Z;
-            const double err_tot = quadrature(Stat, Syst);
-            dataPoint data = {E, flux / Z, Stat / Z, Stat / Z, err_tot / Z, err_tot / Z};
-            m_dataTable.push_back(data);
-        }
-    }
-}
-
 void MyHeavyCALET::readfile(std::fstream& infile) {
     const int num_of_header_lines = 1;
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
