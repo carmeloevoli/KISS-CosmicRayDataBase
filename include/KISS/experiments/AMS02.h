@@ -5,6 +5,33 @@
 
 namespace AMS02 {
 
+void leptons() {
+    {
+        KISS::SSDC data(KISS::ams02, KISS::kEnergy, KISS::positron, KISS::Laff3_0);
+        data.setDOI("10.1016/j.physrep.2020.09.003");
+        data.setADSbibcode("2021PhR...894....1A");
+        data.run();
+    }
+    {
+        KISS::SSDC data(KISS::ams02, KISS::kEnergy, KISS::electron, KISS::Laff3_0);
+        data.setDOI("10.1016/j.physrep.2020.09.003");
+        data.setADSbibcode("2021PhR...894....1A");
+        data.run();
+    }
+    {
+        KISS::SSDC data(KISS::ams02, KISS::kEnergy, KISS::lepton, KISS::Laff3_0);
+        data.setDOI("10.1016/j.physrep.2020.09.003");
+        data.setADSbibcode("2021PhR...894....1A");
+        data.run();
+    }
+    {
+        KISS::SSDC data(KISS::ams02, KISS::kEnergy, KISS::positronfraction, KISS::Laff3_0);
+        data.setDOI("10.1016/j.physrep.2020.09.003");
+        data.setADSbibcode("2021PhR...894....1A");
+        data.run();
+    }
+}
+
 void fluxes() {
     {
         KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::H, KISS::Laff2_7);
@@ -228,6 +255,7 @@ void ratios() {
 }
 
 void run() {
+    leptons();
     fluxes();
     ratios();
 }
