@@ -44,7 +44,7 @@ double computeMeanEnergy(double Emin, double Emax, KISS::EnergyModes mode) {
         return computeMeanEnergyPowerLaw(Emin, Emax, 3.0);
     } else if (mode == KISS::Laff2_7) {
         return computeMeanEnergyLafferty1995(Emin, Emax, 2.7);
-    } else if (mode == KISS::PL3_0) {
+    } else if (mode == KISS::Laff3_0) {
         return computeMeanEnergyLafferty1995(Emin, Emax, 3.0);
     } else {
         throw std::invalid_argument("mean energy mode not implemented");
