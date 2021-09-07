@@ -67,7 +67,7 @@ void SSDC::readfile(std::string filename) {
             xMean = Utils::computeMeanEnergy(x_min, x_max, m_energyMode);
         } else if (m_xQuantity == kEnergy) {
             double x_min = node.child("kinetic_energy_min").first_child().text().as_double();
-            double x_max = node.child("kinetic_energy_min").first_child().text().as_double();
+            double x_max = node.child("kinetic_energy_max").first_child().text().as_double();
             xMean = Utils::computeMeanEnergy(x_min, x_max, m_energyMode);
         } else {
             throw std::runtime_error("energy value not valid");
