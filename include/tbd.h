@@ -196,18 +196,6 @@ void CALET() {
     dataSet.save("output/leptons_CALET_Etot.txt");
 }
 
-void DAMPE() {
-    SSDC dataSet("DAMPE");
-    dataSet.set_doi("10.1038/nature24475");
-    dataSet.set_ADSbibcode("2017Natur.552...63D");
-    dataSet.set_mode("geometrical");
-    dataSet.set_xUnits("kinetic energy");
-    dataSet.set_yType("leptons");
-    dataSet.set_comments("");
-    dataSet.loadDataset("source/leptons/SSDC_leptons_DAMPE_Etot.txt");
-    dataSet.save("output/leptons_DAMPE_Etot.txt");
-}
-
 void FERMI() {
     {
         CRDB dataSet("FERMI");
@@ -445,31 +433,6 @@ void CALET() {
         dataSet.set_comments("");
         dataSet.loadDataset("source/nuclei/myFe_CALET_Ekn.txt");
         dataSet.save("output/Fe_CALET_Etot.txt");
-    }
-}
-
-void DAMPE() {
-    {
-        SSDC dataSet("DAMPE");
-        dataSet.set_doi("10.1126/sciadv.aax3793");
-        dataSet.set_ADSbibcode("2019SciA....5.3793A");
-        dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
-        dataSet.set_yType("H");
-        dataSet.set_comments("");
-        dataSet.loadDataset("source/nuclei/SSDC_H_DAMPE_Etot.txt");
-        dataSet.save("output/H_DAMPE_Etot.txt");
-    }
-    {
-        MyHeliumDAMPE dataSet;
-        dataSet.set_doi("");
-        dataSet.set_ADSbibcode("");
-        dataSet.set_mode("geometrical");
-        dataSet.set_xUnits("total Energy");
-        dataSet.set_yType("He");
-        dataSet.set_comments("");
-        dataSet.loadDataset("source/nuclei/myHe_DAMPE_Etot.txt");
-        dataSet.save("output/He_DAMPE_Etot.txt");
     }
 }
 

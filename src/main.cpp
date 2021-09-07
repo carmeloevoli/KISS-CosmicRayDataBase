@@ -9,6 +9,7 @@ int main() {
         ATIC02::run();
         BESS::run();
         CREAM::run();
+        DAMPE::run();
         HESS::run();
         ICECUBE_ICETOP::run();
         KASCADE_Grande::run();
