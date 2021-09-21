@@ -26,6 +26,7 @@ enum CrExperiments {
     calet,
     cream,
     dampe,
+    fermi,
     hess,
     icecube,
     kascadeGrande,
@@ -53,6 +54,8 @@ inline std::string ToString(CrExperiments v) {
             return "CREAM";
         case dampe:
             return "DAMPE";
+        case fermi:
+            return "FERMI";
         case hess:
             return "HESS";
         case icecube:
