@@ -76,6 +76,8 @@ inline std::string ToString(CrExperiments v) {
             return "TUNKA-133";
         case tunkarex:
             return "TUNKA-Rex";
+        case veritas:
+            return "VERITAS";
         default:
             throw std::invalid_argument("Experiment Name not found.");
     }
@@ -103,6 +105,7 @@ enum YQuantities {
     electron,
     positron,
     lepton,
+    antiproton,
     positronfraction,
     light,
     H,
@@ -168,6 +171,8 @@ inline std::string ToString(YQuantities v) {
             return "e+e-";
         case positronfraction:
             return "posfraction";
+        case antiproton:
+            return "pbar";
         case light:
             return "light";
         case H:

@@ -12,12 +12,12 @@ void run() {
         data.setADSbibcode("2017Natur.552...63D");
         data.run();
     }
-    // {
-    //     KISS::SSDC data(KISS::dampe, KISS::kEnergy, KISS::H, KISS::Laff2_7);
-    //     data.setDOI("10.1126/sciadv.aax3793");
-    //     data.setADSbibcode("2019SciA....5.3793A");
-    //     data.run();
-    // }
+    {
+        KISS::SSDC data(KISS::calet, KISS::kEnergy, KISS::H, KISS::Laff2_7);
+        data.setDOI("10.1126/sciadv.aax3793");
+        data.setADSbibcode("2019SciA....5.3793A");
+        data.run();
+    }
 }
 
 }  // namespace CALET

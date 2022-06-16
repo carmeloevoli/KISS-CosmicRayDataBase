@@ -17,5 +17,6 @@
 #include "KISS/experiments/RUNJOB.h"
 #include "KISS/experiments/TALE.h"
 #include "KISS/experiments/TUNKA.h"
+#include "KISS/experiments/VERITAS.h"
 
 #endif  //  KISS_KISS_H_
