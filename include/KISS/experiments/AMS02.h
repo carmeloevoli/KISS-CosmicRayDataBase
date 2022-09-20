@@ -103,9 +103,21 @@ void fluxes() {
         data.run();
     }
     {
+        KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::Na, KISS::Laff2_7);
+        data.setDOI("10.1103/PhysRevLett.127.021101");
+        data.setADSbibcode("2021PhRvL.127b1101A");
+        data.run();
+    }
+    {
         KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::Mg, KISS::Laff2_7);
         data.setDOI("10.1103/PhysRevLett.124.211102");
         data.setADSbibcode("2020PhRvL.124u1102A");
+        data.run();
+    }
+    {
+        KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::Al, KISS::Laff2_7);
+        data.setDOI("10.1103/PhysRevLett.127.021101");
+        data.setADSbibcode("2021PhRvL.127b1101A");
         data.run();
     }
     {
@@ -264,10 +276,10 @@ void ratios() {
 }
 
 void run() {
-    //    leptons();
+    leptons();
     antiprotons();
-    //    fluxes();
-    //    ratios();
+    fluxes();
+    ratios();
 }
 
 }  // namespace AMS02

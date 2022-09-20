@@ -8,7 +8,7 @@ int main() {
         AMS02::run();
         // ATIC02::run();
         // BESS::run();
-        // CALET::run();
+        CALET::run();
         // CREAM::run();
         // DAMPE::run();
         // FERMI::run();

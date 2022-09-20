@@ -9,8 +9,8 @@
 namespace KISS {
 
 bool IsFlux(YQuantities yQuantity) {
-    const std::vector<YQuantities> fluxes{H,  He, Li, Be, B,        C,        N,      O,         F,
-                                          Ne, Mg, Si, Fe, electron, positron, lepton, antiproton};
+    const std::vector<YQuantities> fluxes{H,  He, Li, Be, B,  C,        N,        O,      F,         Ne,
+                                          Na, Mg, Al, Si, Fe, electron, positron, lepton, antiproton};
     return (std::find(fluxes.begin(), fluxes.end(), yQuantity) != fluxes.end());
 }
 
