@@ -18,6 +18,12 @@ void run() {
         data.setADSbibcode("2019SciA....5.3793A");
         data.run();
     }
+    {
+        KISS::SSDC data(KISS::calet, KISS::kEnergy, KISS::Ni, KISS::Laff2_7);
+        data.setDOI("10.1103/PhysRevLett.128.131103");
+        data.setADSbibcode("2022PhRvL.128m1103A");
+        data.run();
+    }
 }
 
 }  // namespace CALET

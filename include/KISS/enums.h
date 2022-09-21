@@ -134,6 +134,7 @@ enum YQuantities {
     Cr,
     Mn,
     Fe,
+    Ni,
     B_C,
     B_O,
     Be_B,
@@ -205,6 +206,8 @@ inline std::string ToString(YQuantities v) {
             return "Si";
         case Fe:
             return "Fe";
+        case Ni:
+            return "Ni";
         case B_C:
             return "B_C";
         case B_O:
