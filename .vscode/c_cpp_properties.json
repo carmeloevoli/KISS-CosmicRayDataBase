@@ -25,7 +25,7 @@
             "forcedInclude": [
                 "${workspaceFolder}/include/kiss.h"
             ],
-            "compilerPath": "/usr/local/bin/gcc-11",
+            "compilerPath": "/usr/local/bin/gcc-12",
             "cStandard": "gnu17",
             "cppStandard": "c++14",
             "browse": {

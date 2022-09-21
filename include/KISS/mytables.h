@@ -50,7 +50,7 @@ namespace KISS {
 
 class MyLeptonVeritas : public CrDataset {
    public:
-    explicit MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
+    MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
         setSource(mytables);
         setDOI("10.1103/PhysRevD.98.062004");
         setADSbibcode("2018PhRvD..98f2004A");
@@ -70,6 +70,17 @@ class MyLeptonHess : public CrDataset {
     void readfile(std::string filename);
 };
 
+class MyHeliumDAMPE : public CrDataset {
+   public:
+    MyHeliumDAMPE(EnergyModes mode) : CrDataset(dampe, totalEnergy, He, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.126.201102");
+        setADSbibcode("2021PhRvL.126t1102A");
+    }
+
+    void readfile(std::string filename);
+};
+
 // class MyHeavyCALET : public CrDataset {
 //    public:
 //     MyHeavyCALET(size_t A) : m_A(A) { set_experimentName("CALET"); }
@@ -77,12 +88,6 @@ class MyLeptonHess : public CrDataset {
 
 //    protected:
 //     size_t m_A;
-// };
-
-// class MyHeliumDAMPE : public CrDataset {
-//    public:
-//     MyHeliumDAMPE() { set_experimentName("DAMPE"); }
-//     void readfile(std::fstream& infile) override;
 // };
 
 }  // namespace KISS

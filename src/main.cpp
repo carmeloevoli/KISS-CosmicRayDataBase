@@ -10,7 +10,7 @@ int main() {
         // BESS::run();
         CALET::run();
         // CREAM::run();
-        // DAMPE::run();
+        DAMPE::run();
         // FERMI::run();
         // HESS::run();
         // ICECUBE_ICETOP::run();

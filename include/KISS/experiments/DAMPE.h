@@ -2,6 +2,7 @@
 #define KISS_EXPERIMENTS_DAMPE_H_
 
 #include "KISS/SSDC.h"
+#include "KISS/mytables.h"
 
 namespace DAMPE {
 
@@ -18,20 +19,12 @@ void run() {
         data.setADSbibcode("2019SciA....5.3793A");
         data.run();
     }
+    {
+        KISS::MyHeliumDAMPE data(KISS::geometrical);
+        data.run();
+    }
 }
 
 }  // namespace DAMPE
 
 #endif
-
-//     {
-//         MyHeliumDAMPE dataSet;
-//         dataSet.set_doi("");
-//         dataSet.set_ADSbibcode("");
-//         dataSet.set_mode("geometrical");
-//         dataSet.set_xUnits("total Energy");
-//         dataSet.set_yType("He");
-//         dataSet.set_comments("");
-//         dataSet.loadDataset("source/nuclei/myHe_DAMPE_Etot.txt");
-//         dataSet.save("output/He_DAMPE_Etot.txt");
-//     }
