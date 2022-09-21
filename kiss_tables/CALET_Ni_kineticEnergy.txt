@@ -1,0 +1,15 @@
+#Source: SSDC
+#Ref: 10.1103/PhysRevLett.128.131103 (2022PhRvL.128m1103A)
+#Experiment: CALET
+#Y Quantity: Ni
+#X Quantity: kineticEnergy
+#Url: https://tools.ssdc.asi.it/CosmicRays/
+#Comments: 
+#Colums: x, y, y total errors, y statistical errors
+1.073e+01 1.610e-04 1.620e-05 1.133e-05 4.000e-06 4.000e-06 
+1.624e+01 7.480e-05 4.646e-06 6.198e-06 1.900e-06 1.900e-06 
+2.512e+01 2.690e-05 2.388e-06 1.718e-06 8.000e-07 8.000e-07 
+3.977e+01 8.410e-06 7.642e-07 5.754e-07 2.900e-07 2.900e-07 
+6.449e+01 2.510e-06 1.860e-07 2.084e-07 1.100e-07 1.100e-07 
+1.069e+02 7.230e-07 6.317e-08 1.053e-07 5.000e-08 5.000e-08 
+1.815e+02 1.790e-07 3.895e-08 2.645e-08 1.900e-08 1.900e-08 
