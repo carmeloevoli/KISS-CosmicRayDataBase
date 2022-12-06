@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.6)
 
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-12")
+set(CMAKE_CXX_COMPILER "/opt/homebrew/Cellar/gcc/12.2.0/bin/g++-12")
 set(CMAKE_CXX_FLAGS "-O3 -ftree-vectorize -std=c++14")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(KISS_INCLUDES)
@@ -41,12 +41,6 @@ file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/CRDB/)
 
 file(GLOB KISS_DATA "${DATA_DIR}/SSDC/*.xml")
 file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/SSDC/)
-
-#file(GLOB KISS_DATA "source_tables/antiprotons/*.txt")
-#file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/antiprotons)
-
-#file(GLOB KISS_DATA "source_tables/nuclei/*.txt")
-#file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/nuclei)
 
 # create the output dir
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)

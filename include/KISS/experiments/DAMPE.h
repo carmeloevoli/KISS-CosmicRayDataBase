@@ -20,7 +20,9 @@ void run() {
         data.run();
     }
     {
-        KISS::MyHeliumDAMPE data(KISS::geometrical);
+        KISS::SSDC data(KISS::dampe, KISS::kEnergy, KISS::He, KISS::Laff2_7);
+        data.setDOI("10.1103/PhysRevLett.126.201102");
+        data.setADSbibcode("2021PhRvL.126t1102A");
         data.run();
     }
 }
