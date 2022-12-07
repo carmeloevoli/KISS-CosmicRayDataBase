@@ -21,6 +21,7 @@ inline std::string ToString(Sources v) {
 
 enum CrExperiments {
     ams02,
+    argo,
     atic02,
     bess,
     calet,
