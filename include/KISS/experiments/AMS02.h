@@ -34,7 +34,7 @@ void leptons() {
 
 void antiprotons() {
     {
-        KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::antiproton, KISS::Laff3_0);
+        KISS::SSDC data(KISS::ams02, KISS::rigidity, KISS::antiproton, KISS::Laff2_7);
         data.setDOI("10.1016/j.physrep.2020.09.003");
         data.setADSbibcode("2021PhR...894....1A");
         data.run();

@@ -72,7 +72,7 @@ void CrDataset::save() const {
     asciiFile << "#X Quantity: " << ToString(m_xQuantity) << "\n";
     asciiFile << "#Url: " << m_url << "\n";
     asciiFile << "#Comments: " << m_comments << "\n";
-    asciiFile << "#Colums: x, y, y total errors, y statistical errors\n";
+    asciiFile << "#Colums: x, y, y statistical errors, y systematic errors\n";
     for (auto data : m_dataTable) {
         asciiFile << data << "\n";
     }

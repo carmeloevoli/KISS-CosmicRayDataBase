@@ -66,7 +66,7 @@ void SSDC::readfile(std::string filename) {
             double x_min = node.child("rigidity_min").first_child().text().as_double();
             double x_max = node.child("rigidity_max").first_child().text().as_double();
             xMean = Utils::computeMeanEnergy(x_min, x_max, m_energyMode);
-        } else if (m_xQuantity == kEnergy) {
+        } else if (m_xQuantity == kEnergy || m_xQuantity == kEnergyPerNucleon) {
             double x_min = node.child("kinetic_energy_min").first_child().text().as_double();
             double x_max = node.child("kinetic_energy_max").first_child().text().as_double();
             xMean = Utils::computeMeanEnergy(x_min, x_max, m_energyMode);
