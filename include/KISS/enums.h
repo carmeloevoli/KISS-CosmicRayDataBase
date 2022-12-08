@@ -28,6 +28,7 @@ enum CrExperiments {
     cream,
     dampe,
     fermi,
+    hawc,
     hess,
     icecube,
     kascadeGrande,
@@ -45,6 +46,8 @@ inline std::string ToString(CrExperiments v) {
     switch (v) {
         case ams02:
             return "AMS-02";
+        case argo:
+            return "ARGO-YBJ";
         case atic02:
             return "ATIC-02";
         case bess:
@@ -57,6 +60,8 @@ inline std::string ToString(CrExperiments v) {
             return "DAMPE";
         case fermi:
             return "FERMI";
+        case hawc:
+            return "HAWC";
         case hess:
             return "HESS";
         case icecube:
@@ -80,7 +85,7 @@ inline std::string ToString(CrExperiments v) {
         case veritas:
             return "VERITAS";
         default:
-            throw std::invalid_argument("Experiment Name not found.");
+            throw std::invalid_argument("Experiment name not found.");
     }
 }
 

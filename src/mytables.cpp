@@ -25,10 +25,8 @@ void MyLeptonVeritas::readfile(std::string filename) {
             stat_error *= 1e4;  // cm-2 s-1 GeV-1 -> m-2 s-1 GeV-1
             const double syst_error_low = 0.33 * flux;
             const double syst_error_high = 0.64 * flux;
-            const double errTotLo = Utils::quadrature(syst_error_low, stat_error);
-            const double errTotUp = Utils::quadrature(syst_error_high, stat_error);
             const double xMean = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-            dataPoint data = {{xMean, flux}, {0., 0.}, {errTotLo, errTotUp}};
+            dataPoint data = {{xMean, flux}, {stat_error, stat_error}, {syst_error_low, syst_error_high}};
             m_dataTable.push_back(data);
         }
     }
@@ -43,9 +41,7 @@ void MyLeptonHess::readfile(std::string filename) {
         double E, flux, errStatLo, errStatUp, errSystLo, errSystUp;
         infile >> E >> flux >> errStatLo >> errStatUp >> errSystLo >> errSystUp;
         if (!infile.eof()) {
-            const double errTotLo = Utils::quadrature(errSystLo, errStatLo);
-            const double errTotUp = Utils::quadrature(errSystUp, errStatUp);
-            dataPoint data = {{E, flux}, {0., 0.}, {errTotLo, errTotUp}};
+            dataPoint data = {{E, flux}, {errStatLo, errStatLo}, {errSystLo, errSystUp}};
             m_dataTable.push_back(data);
         }
     }
@@ -75,9 +71,7 @@ void MyLightHAWC::readfile(std::string filename) {
         double E, flux, errStat, errSystUp, errSystLo;
         infile >> E >> flux >> errStat >> errSystUp >> errSystLo;
         if (!infile.eof()) {
-            const double errTotLo = Utils::quadrature(errStat, errSystLo);
-            const double errTotUp = Utils::quadrature(errStat, errSystUp);
-            dataPoint data = {{E, flux}, {errStat, errStat}, {errTotLo, errTotUp}};
+            dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
             m_dataTable.push_back(data);
         }
     }

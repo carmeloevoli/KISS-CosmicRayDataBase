@@ -4,23 +4,24 @@
 
 namespace KISS {
 
+using Pair = std::pair<double, double>;
+
 class dataPoint {
    public:
-    dataPoint(std::pair<double, double> point, std::pair<double, double> errStat, std::pair<double, double> errTotal)
-        : m_point(point), m_errStat(errStat), m_errTotal(errTotal) {}
+    dataPoint(Pair point, Pair errStat, Pair errSys) : m_point(point), m_errStat(errStat), m_errSys(errSys) {}
 
     friend std::ostream& operator<<(std::ostream& os, const dataPoint& data) {
         os << std::setprecision(3) << std::scientific;
         os << data.m_point.first << " " << data.m_point.second << " ";
-        os << data.m_errTotal.first << " " << data.m_errTotal.second << " ";
         os << data.m_errStat.first << " " << data.m_errStat.second << " ";
+        os << data.m_errSys.first << " " << data.m_errSys.second << " ";
         return os;
     }
 
    protected:
-    std::pair<double, double> m_point;
-    std::pair<double, double> m_errStat;
-    std::pair<double, double> m_errTotal;
+    Pair m_point;
+    Pair m_errStat;
+    Pair m_errSys;
 };
 
 }  // namespace KISS

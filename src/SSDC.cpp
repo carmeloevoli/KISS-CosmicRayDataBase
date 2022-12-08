@@ -74,31 +74,25 @@ void SSDC::readfile(std::string filename) {
             throw std::runtime_error("energy value not valid");
         }
 
-        double y = -1, statLo = 0, statUp = 0, errTotLo = 0, errTotUp = 0;
+        double y = -1, statLo = 0, statUp = 0, systLo = 0, systUp = 0;
 
         if (IsFlux(m_yQuantity)) {
-            double systLo, systUp;
             y = node.child("flux").first_child().text().as_double();
             statLo = node.child("flux_statistical_error_low").first_child().text().as_double();
             statUp = node.child("flux_statistical_error_high").first_child().text().as_double();
             systLo = node.child("flux_systematical_error_low").first_child().text().as_double();
             systUp = node.child("flux_systematical_error_high").first_child().text().as_double();
-            errTotLo = Utils::quadrature(statLo, systLo);
-            errTotUp = Utils::quadrature(statUp, systUp);
         } else if (IsRatio(m_yQuantity)) {
-            double systLo, systUp;
             y = node.child("fluxratio").first_child().text().as_double();
             statLo = node.child("fluxratio_statistical_error_low").first_child().text().as_double();
             statUp = node.child("fluxratio_statistical_error_high").first_child().text().as_double();
             systLo = node.child("fluxratio_systematical_error_low").first_child().text().as_double();
             systUp = node.child("fluxratio_systematical_error_high").first_child().text().as_double();
-            errTotLo = Utils::quadrature(statLo, systLo);
-            errTotUp = Utils::quadrature(statUp, systUp);
         } else
             throw std::invalid_argument("y-quantity not valid");
 
         if (y > 0.) {
-            dataPoint data = {{xMean, y}, {statLo, statUp}, {errTotLo, errTotUp}};
+            dataPoint data = {{xMean, y}, {statLo, statUp}, {systLo, systUp}};
             m_dataTable.push_back(data);
         }
     }

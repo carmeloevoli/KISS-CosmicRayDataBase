@@ -10,7 +10,7 @@
 
 namespace Utils {
 
-inline double quadrature(double a, double b) { return std::sqrt(a * a + b * b); }
+// inline double quadrature(double a, double b) { return std::sqrt(a * a + b * b); }
 
 double computeMeanEnergy(double x_min, double x_max, KISS::EnergyModes mode);
 

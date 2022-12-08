@@ -43,7 +43,7 @@ class MyLightARGO : public CrDataset {
 
 class MyLightHAWC : public CrDataset {
    public:
-    MyLightHAWC(EnergyModes mode) : CrDataset(argo, totalEnergy, light, mode) {
+    MyLightHAWC(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
         setSource(mytables);
         setDOI("doi.org/10.1103/PhysRevD.105.063021");
         setADSbibcode("2022PhRvD.105f3021A");

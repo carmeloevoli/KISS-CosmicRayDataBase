@@ -19,9 +19,7 @@ void CRDB::readfile(std::string filename) {
         infile >> Qty >> E >> Elo >> Eup >> y >> statLo >> statUp >> systLo >> systUp >> totLo >> totUp;
         if (!infile.eof()) {
             const double xMean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
-            const double errTotLo = Utils::quadrature(statLo, systLo);
-            const double errTotUp = Utils::quadrature(statUp, systUp);
-            dataPoint data = {{xMean, y}, {statLo, statUp}, {errTotLo, errTotUp}};
+            dataPoint data = {{xMean, y}, {statLo, statUp}, {systLo, systUp}};
             m_dataTable.push_back(data);
         }
     }
