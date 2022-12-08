@@ -42,6 +42,9 @@ file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/CRDB/)
 file(GLOB KISS_DATA "${DATA_DIR}/SSDC/*.xml")
 file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/SSDC/)
 
+file(GLOB KISS_DATA "${DATA_DIR}/mytables/*.txt")
+file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/mytables/)
+
 # create the output dir
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)
 
