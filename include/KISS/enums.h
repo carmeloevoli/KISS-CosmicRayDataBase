@@ -37,6 +37,7 @@ enum CrExperiments {
     pamela,
     runjob,
     tale,
+    tracer,
     tunka133,
     tunkarex,
     veritas
@@ -78,6 +79,8 @@ inline std::string ToString(CrExperiments v) {
             return "RUNJOB";
         case tale:
             return "TALE";
+        case tracer:
+            return "TRACER";
         case tunka133:
             return "TUNKA-133";
         case tunkarex:

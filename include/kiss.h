@@ -18,6 +18,7 @@
 #include "KISS/experiments/PAMELA.h"
 #include "KISS/experiments/RUNJOB.h"
 #include "KISS/experiments/TALE.h"
+#include "KISS/experiments/TRACER.h"
 #include "KISS/experiments/TUNKA.h"
 #include "KISS/experiments/VERITAS.h"
 

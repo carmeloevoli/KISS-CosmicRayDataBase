@@ -10,21 +10,63 @@ void run() {
         KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
         data.setDOI("10.1016/j.asr.2019.10.004");
         data.setADSbibcode("2019AdSpR..64.2546G");
-        data.run();  // ("source/allparticle/CRDB_NUCLEON_Etot.txt");
+        data.run();
     }
     {
         KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::H, KISS::geometrical);
         data.setDOI("10.1016/j.asr.2019.10.004");
         data.setADSbibcode("2019AdSpR..64.2546G");
         data.setComments("From Table 2");
-        data.run();  // ("source/nuclei/CRDB_H_NUCLEON_Etot.txt");
+        data.run();
     }
     {
         KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::He, KISS::geometrical);
         data.setDOI("10.1016/j.asr.2019.10.004");
         data.setADSbibcode("2019AdSpR..64.2546G");
         data.setComments("From Table 2");
-        data.run();  // ("source/nuclei/CRDB_He_NUCLEON_Etot.txt");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::C, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::O, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::Ne, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::Mg, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::Si, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::totalEnergy, KISS::Fe, KISS::geometrical);
+        data.setDOI("10.1016/j.asr.2019.10.004");
+        data.setADSbibcode("2019AdSpR..64.2546G");
+        data.setComments("From Table 2");
+        data.run();
     }
 }
 

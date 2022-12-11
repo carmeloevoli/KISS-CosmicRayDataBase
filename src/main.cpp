@@ -6,23 +6,24 @@
 int main() {
     try {
         AMS02::run();
-        // ARGO::run();
+        ARGO::run();
         // ATIC02::run();
         // BESS::run();
         CALET::run();
-        // CREAM::run();
+        CREAM::run();
         DAMPE::run();
         // FERMI::run();
-        // HAWC::run();
-        // HESS::run();
-        // ICECUBE_ICETOP::run();
+        HAWC::run();
+        HESS::run();
+        ICECUBE_ICETOP::run();
         // KASCADE_Grande::run();
-        // KASCADE::run();
-        // NUCLEON::run();
+        KASCADE::run();
+        NUCLEON::run();
         // PAMELA::run();
         // RUNJOB::run();
         // TALE::run();
-        // TUNKA::run();
+        TRACER::run();
+        TUNKA::run();
         // VERITAS::run();
 
         // ALLAMS02::ratios();
