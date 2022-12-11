@@ -1,0 +1,14 @@
+#Source: CRDB
+#Ref: 10.1016/j.asr.2019.10.004 (2019AdSpR..64.2546G)
+#Experiment: NUCLEON
+#Y Quantity: Fe
+#X Quantity: totalEnergy
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: From Table 2
+#Colums: x, y, y statistical errors, y systematic errors
+1.260e+04 1.860e-08 4.810e-10 4.810e-10 2.320e-09 2.320e-09 
+2.000e+04 6.550e-09 2.250e-10 2.250e-10 8.520e-10 8.520e-10 
+3.160e+04 2.050e-09 8.780e-11 8.780e-11 2.950e-10 2.950e-10 
+5.010e+04 6.560e-10 4.040e-11 4.040e-11 1.130e-10 1.130e-10 
+7.940e+04 2.020e-10 1.580e-11 1.580e-11 4.310e-11 4.310e-11 
+1.260e+05 6.020e-11 6.700e-12 6.700e-12 1.740e-11 1.740e-11 

@@ -1,0 +1,15 @@
+#Source: CRDB
+#Ref: 10.1016/j.asr.2019.10.004 (2019AdSpR..64.2546G)
+#Experiment: NUCLEON
+#Y Quantity: Mg
+#X Quantity: totalEnergy
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: From Table 2
+#Colums: x, y, y statistical errors, y systematic errors
+7.940e+03 2.350e-08 5.800e-10 5.800e-10 3.260e-09 3.260e-09 
+1.260e+04 8.270e-09 2.630e-10 2.630e-10 1.200e-09 1.200e-09 
+2.000e+04 2.840e-09 1.260e-10 1.260e-10 4.690e-10 4.690e-10 
+3.160e+04 8.940e-10 4.990e-11 4.990e-11 1.760e-10 1.760e-10 
+5.010e+04 2.750e-10 2.230e-11 2.230e-11 6.810e-11 6.810e-11 
+7.940e+04 8.190e-11 8.370e-12 8.370e-12 2.670e-11 2.670e-11 
+1.260e+05 2.330e-11 3.410e-12 3.410e-12 1.080e-11 1.080e-11 
