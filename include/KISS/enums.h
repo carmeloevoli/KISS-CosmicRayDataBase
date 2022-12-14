@@ -23,6 +23,8 @@ enum CrExperiments {
     ams02,
     argo,
     atic02,
+    auger2019,
+    auger2021,
     bess,
     calet,
     cream,
@@ -36,7 +38,9 @@ enum CrExperiments {
     nucleon,
     pamela,
     runjob,
+    ta,
     tale,
+    tibet,
     tracer,
     tunka133,
     tunkarex,
@@ -51,6 +55,10 @@ inline std::string ToString(CrExperiments v) {
             return "ARGO-YBJ";
         case atic02:
             return "ATIC-02";
+        case auger2019:
+            return "Auger2019";
+        case auger2021:
+            return "Auger2021";
         case bess:
             return "BESS-TeV";
         case calet:
@@ -66,7 +74,7 @@ inline std::string ToString(CrExperiments v) {
         case hess:
             return "HESS";
         case icecube:
-            return "ICECUBE-ICETOP";
+            return "IceCube";
         case kascadeGrande:
             return "KASCADE-Grande";
         case kascade:
@@ -77,8 +85,12 @@ inline std::string ToString(CrExperiments v) {
             return "PAMELA";
         case runjob:
             return "RUNJOB";
+        case ta:
+            return "TA";
         case tale:
             return "TALE";
+        case tibet:
+            return "Tibet";
         case tracer:
             return "TRACER";
         case tunka133:

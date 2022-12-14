@@ -6,8 +6,14 @@
 namespace HAWC {
 
 void run() {
-    KISS::MyLightHAWC data(KISS::geometrical);
-    data.run();
+    {
+        KISS::MyLightHAWC data(KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::MyAllHAWC data(KISS::geometrical);
+        data.run();
+    }
 }
 
 }  // namespace HAWC

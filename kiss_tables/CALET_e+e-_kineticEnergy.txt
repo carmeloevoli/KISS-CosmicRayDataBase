@@ -1,5 +1,5 @@
 #Source: SSDC
-#Ref: 10.1103/PhysRevLett.120.261102 (2018PhRvL.120z1102A/)
+#Ref: 10.1103/PhysRevLett.120.261102 (2018PhRvL.120z1102A)
 #Experiment: CALET
 #Y Quantity: e+e-
 #X Quantity: kineticEnergy

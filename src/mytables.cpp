@@ -78,6 +78,120 @@ void MyLightHAWC::readfile(std::string filename) {
     infile.close();
 }
 
+void MyAllHAWC::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double lgEmin, lgEmax, nEvents, flux, stat, sys_MC, sys_up, sys_do;
+        infile >> lgEmin >> lgEmax >> nEvents >> flux >> stat >> sys_MC >> sys_up >> sys_do;
+        if (!infile.eof()) {
+            const double Elo = std::pow(10., lgEmin);
+            const double Eup = std::pow(10., lgEmax);
+            const double x_mean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            const double y = flux;
+            const double sys_tot_up = sys_MC + sys_up;
+            const double sys_tot_do = sys_MC + sys_do;
+            dataPoint data = {{x_mean, y}, {stat, stat}, {sys_tot_do, sys_tot_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyAllAuger2021::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double log10E, errLog10E, J, sigma_stat_lo, sigma_stat_up, sigma_sys_lo, sigma_sys_up;
+        infile >> log10E >> errLog10E >> J >> sigma_stat_lo >> sigma_stat_up >> sigma_sys_lo >> sigma_sys_up;
+        if (!infile.eof()) {
+            const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
+            const double y = J / 3.1e4;                    // [km-2 sr-1 yr-1 eV-1 -> m-2 sr-1 s-1 GeV-1]
+            const double yerr_stat_lo = sigma_stat_lo / 3.1e4;
+            const double yerr_stat_up = sigma_stat_up / 3.1e4;
+            const double yerr_sys_lo = sigma_sys_lo / 3.1e4;
+            const double yerr_sys_up = sigma_sys_up / 3.1e4;
+            dataPoint data = {{E, y}, {yerr_stat_lo, yerr_stat_up}, {yerr_sys_lo, yerr_sys_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyAllAuger2019::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 4;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double log10E, EJ, Err_up, Err_low;
+        infile >> log10E >> EJ >> Err_up >> Err_low;
+        if (!infile.eof()) {
+            const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
+            const double y = EJ / E;
+            const double err_tot_lo = Err_low / E;
+            const double err_tot_up = Err_up / E;
+            dataPoint data = {{E, y}, {0., 0.}, {err_tot_lo, err_tot_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyAllTale::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double log10Emin, log10Emax, numEvents, E3J, sigma_stat, sigma_sys_up, sigma_sys_lo;
+        infile >> log10Emin >> log10Emax >> numEvents >> E3J >> sigma_stat >> sigma_sys_up >> sigma_sys_lo;
+        if (!infile.eof()) {
+            const double Elo = std::pow(10., log10Emin);
+            const double Eup = std::pow(10., log10Emax);
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) / 1e9;
+            const double y = E3J / std::pow(E, 3.) / 1e18;
+            const double yerr_stat = sigma_stat / std::pow(E, 3.) / 1e18;
+            const double yerr_sys_lo = sigma_sys_lo / std::pow(E, 3.) / 1e18;
+            const double yerr_sys_up = sigma_sys_up / std::pow(E, 3.) / 1e18;
+            dataPoint data = {{E, y}, {yerr_stat, yerr_stat}, {yerr_sys_lo, yerr_sys_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyIceCube::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double log10E, binWidth, J, stat, sys_lo, sys_up;
+        infile >> log10E >> binWidth >> J >> stat >> sys_lo >> sys_up;
+        if (!infile.eof()) {
+            const double E = std::pow(10., log10E);
+            dataPoint data = {{E, J}, {stat, stat}, {sys_lo, sys_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyAllTibet::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, dJdE, dJdE_err;
+        infile >> E >> dJdE >> dJdE_err;
+        if (!infile.eof()) {
+            dataPoint data = {{E, dJdE}, {0, 0}, {dJdE_err, dJdE_err}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
 // void MyHeliumDAMPE::readfile(std::string filename) {
 //     std::fstream infile(filename.c_str());
 //     const int num_of_header_lines = 0;
@@ -133,24 +247,6 @@ void MyLightHAWC::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllAUGER::readfile(std::fstream& infile) {
-//     const int num_of_header_lines = 4;
-//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-//     while (infile.good()) {
-//         double log10E, EJ, Err_up, Err_low;
-//         infile >> log10E >> EJ >> Err_up >> Err_low;
-//         if (!infile.eof()) {
-//             const double x_mean = std::pow(10., log10E) / 1e9;
-//             const double y = EJ / x_mean;
-//             const double err_tot_do = Err_low / x_mean;
-//             const double err_tot_up = Err_up / x_mean;
-//             dataPoint data = {x_mean, y, 0, 0, err_tot_do, err_tot_up};
-//             m_dataTable.push_back(data);
-//         }
-//     }
-//     infile.close();
-// }
-
 // void MyAllTA::readfile(std::fstream& infile) {
 //     const int num_of_header_lines = 4;
 //     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
@@ -169,28 +265,6 @@ void MyLightHAWC::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllHAWC::readfile(std::fstream& infile) {
-//     const int num_of_header_lines = 1;
-//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-//     while (infile.good()) {
-//         double lgEmin, lgEmax, flux, stat, sys_MC, sys_up, sys_do;
-//         infile >> lgEmin >> lgEmax >> flux >> stat >> sys_MC >> sys_up >> sys_do;
-//         if (!infile.eof()) {
-//             const double Elo = std::pow(10., lgEmin);
-//             const double Eup = std::pow(10., lgEmax);
-//             const double x_mean = compute_x_mean(Elo, Eup, m_mode);
-//             const double y = flux;
-//             const double sys_tot_up = sys_MC + sys_up;
-//             const double sys_tot_do = sys_MC + sys_do;
-//             const double err_tot_do = quadrature(sys_tot_do, stat);
-//             const double err_tot_up = quadrature(sys_tot_up, stat);
-//             dataPoint data = {x_mean, y, 0, 0, err_tot_do, err_tot_up};
-//             m_dataTable.push_back(data);
-//         }
-//     }
-//     infile.close();
-// }
-
 // MyAllTIBET::MyAllTIBET(std::string hadmod) {
 //     set_experimentName("TIBET");
 //     if (hadmod == "QGSJET+HD")
@@ -199,31 +273,6 @@ void MyLightHAWC::readfile(std::string filename) {
 //         m_hadmod = QGSJETPD;
 //     else if (hadmod == "SIBYLL+HD")
 //         m_hadmod = SIBYLLHD;
-// }
-
-// void MyAllTIBET::readfile(std::fstream& infile) {
-//     const int num_of_header_lines = 1;
-//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-//     while (infile.good()) {
-//         double E, dJdE_1, dJdE_err_1, dJdE_2, dJdE_err_2, dJdE_3, dJdE_err_3;
-//         infile >> E >> dJdE_1 >> dJdE_err_1 >> dJdE_2 >> dJdE_err_2 >> dJdE_3 >> dJdE_err_3;
-//         if (!infile.eof()) {
-//             double dJdE, dJdE_err;
-//             if (m_hadmod == QGSJETHD) {
-//                 dJdE = dJdE_1;
-//                 dJdE_err = dJdE_err_1;
-//             } else if (m_hadmod == QGSJETPD) {
-//                 dJdE = dJdE_2;
-//                 dJdE_err = dJdE_err_2;
-//             } else if (m_hadmod == SIBYLLHD) {
-//                 dJdE = dJdE_3;
-//                 dJdE_err = dJdE_err_3;
-//             }
-//             dataPoint data = {E, dJdE, 0, 0, dJdE_err, dJdE_err};
-//             m_dataTable.push_back(data);
-//         }
-//     }
-//     infile.close();
 // }
 
 }  // namespace KISS

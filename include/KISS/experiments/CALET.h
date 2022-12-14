@@ -9,7 +9,7 @@ void run() {
     {
         KISS::SSDC data(KISS::calet, KISS::kEnergy, KISS::lepton, KISS::Laff3_0);
         data.setDOI("10.1103/PhysRevLett.120.261102");
-        data.setADSbibcode("2018PhRvL.120z1102A/");
+        data.setADSbibcode("2018PhRvL.120z1102A");
         data.run();
     }
     {

@@ -49,46 +49,46 @@ void run() {
         data.setDescription("2005_QGSJET-01");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
-        data.run();  // ("source/nuclei/KCDC_H_KASCADE_2005_QGSJET-01_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
         data.setDescription("2005_SIBYLL-2.1");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
-        data.run();  // ("source/nuclei/KCDC_H_KASCADE_2005_SIBYLL-2.1_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
         data.setDescription("2011_QGSJET-II-02");
         data.setComments("From Marcel Finger PhD Thesis");
-        data.run();  // ("source/nuclei/KCDC_H_KASCADE_2011_QGSJET-II-02_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
         data.setDescription("2011_SIBYLL-2.1");
         data.setComments("From Marcel Finger PhD Thesis");
-        data.run();  // ("source/nuclei/KCDC_H_KASCADE_2011_SIBYLL-2.1_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
         data.setDescription("2011_QGSJET-01");
         data.setComments("From Marcel Finger PhD Thesis");
-        data.run();  // ("source/nuclei/KCDC_H_KASCADE_2011_QGSJET-01_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::unknown);
         data.setDescription("2005_QGSJET-01");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
-        data.run();  // ("source/nuclei/KCDC_He_KASCADE_2005_QGSJET-01_Etot.txt");
+        data.run();
     }
     {
         KISS::KCDC data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::unknown);
         data.setDescription("2005_SIBYLL-2.1");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
-        data.run();  //  ("source/nuclei/KCDC_He_KASCADE_2005_SIBYLL-2.1_Etot.txt");
+        data.run();
     }
 }
 

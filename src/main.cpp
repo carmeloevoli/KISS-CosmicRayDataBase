@@ -7,72 +7,25 @@ int main() {
     try {
         AMS02::run();
         ARGO::run();
-        // ATIC02::run();
-        // BESS::run();
+        ATIC02::run();
+        AUGER::run();
+        BESS::run();
         CALET::run();
         CREAM::run();
         DAMPE::run();
-        // FERMI::run();
+        FERMI::run();
         HAWC::run();
         HESS::run();
-        ICECUBE_ICETOP::run();
-        // KASCADE_Grande::run();
+        ICECUBE::run();
+        KASCADE_Grande::run();
         KASCADE::run();
         NUCLEON::run();
-        // PAMELA::run();
-        // RUNJOB::run();
-        // TALE::run();
+        PAMELA::run();
+        TALE::run();
+        TIBET::run();
         TRACER::run();
         TUNKA::run();
-        // VERITAS::run();
-
-        // ALLAMS02::ratios();
-        // ALLAMS02::fluxes();
-
-        // all particle spectrum
-        // ALLPARTICLE::ARGO();
-        // ALLPARTICLE::AUGER();
-        // ALLPARTICLE::HAWC();
-        // ALLPARTICLE::ICECUBE_ICETOP();
-        // ALLPARTICLE::KASCADE();
-        // ALLPARTICLE::KASCADEGrande();
-        // ALLPARTICLE::NUCLEON();
-        // ALLPARTICLE::RUNJOB();
-        // ALLPARTICLE::TALE();
-        // ALLPARTICLE::TELESCOPEARRAY();
-        // ALLPARTICLE::TIBET();
-        // ALLPARTICLE::TUNKA();
-
-        // nuclei
-        // NUCLEI::AMS02();
-        // NUCLEI::ARGO();
-        // NUCLEI::ATIC02();
-        // NUCLEI::BESS();
-        // NUCLEI::CALET();
-        // NUCLEI::CREAM_II();
-        // NUCLEI::CREAM_III();
-        // NUCLEI::DAMPE();
-        // NUCLEI::HESS();
-        // NUCLEI::ICECUBE_ICETOP();
-        // NUCLEI::KASCADE();
-        // NUCLEI::KASCADEGrande();
-        // NUCLEI::NUCLEON();
-        // NUCLEI::PAMELA();
-        // NUCLEI::TUNKA();
-
-        // antiprotons
-        // ANTIPROTONS::AMS02();
-        // ANTIPROTONS::BESS();
-        // ANTIPROTONS::PAMELA();
-
-        // leptons
-        // LEPTONS::AMS02();
-        // LEPTONS::CALET();
-        // LEPTONS::DAMPE();
-        // LEPTONS::FERMI();
-        // LEPTONS::PAMELA();
-        // LEPTONS::VERITAS();
-        // LEPTONS::HESS();
+        VERITAS::run();
     } catch (std::exception& e) {
         std::cout << "!Fatal Error: " << e.what() << '\n';
     }

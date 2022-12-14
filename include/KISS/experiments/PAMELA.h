@@ -25,27 +25,6 @@ void run() {
         data.run();
     }
     {
-        KISS::CRDB data(KISS::pamela, KISS::totalEnergy, KISS::H, KISS::Laff2_7);
-        data.setDOI("10.1126/science.1199172");
-        data.setADSbibcode("2011Sci...332...69A");
-        data.setComments("converted from original table in rigidity");
-        data.run();
-    }
-    {
-        KISS::CRDB data(KISS::pamela, KISS::totalEnergy, KISS::He, KISS::Laff2_7);
-        data.setDOI("10.1126/science.1199172");
-        data.setADSbibcode("2011Sci...332...69A");
-        data.setComments("converted from original table in rigidity");
-        data.run();
-    }
-    {
-        KISS::CRDB data(KISS::pamela, KISS::totalEnergy, KISS::C, KISS::Laff2_7);
-        data.setDOI("10.1088/0004-637X/791/2/93");
-        data.setADSbibcode("2014ApJ...791...93A");
-        data.setComments("converted from original table in rigidity");
-        data.run();
-    }
-    {
         KISS::SSDC data(KISS::pamela, KISS::kEnergy, KISS::positron, KISS::Laff3_0);
         data.setDOI("10.1103/PhysRevLett.111.081102");
         data.setADSbibcode("2013PhRvL.111h1102A");
