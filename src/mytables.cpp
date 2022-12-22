@@ -166,11 +166,11 @@ void MyIceCube::readfile(std::string filename) {
     const int num_of_header_lines = 1;
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
     while (infile.good()) {
-        double log10E, binWidth, J, stat, sys_lo, sys_up;
-        infile >> log10E >> binWidth >> J >> stat >> sys_lo >> sys_up;
+        double log10E, binWidth, J, stat_lo, stat_up, sys_lo, sys_up;
+        infile >> log10E >> binWidth >> J >> stat_lo >> stat_up >> sys_lo >> sys_up;
         if (!infile.eof()) {
             const double E = std::pow(10., log10E);
-            dataPoint data = {{E, J}, {stat, stat}, {sys_lo, sys_up}};
+            dataPoint data = {{E, J}, {stat_lo, stat_up}, {sys_lo, sys_up}};
             m_dataTable.push_back(data);
         }
     }
