@@ -18,6 +18,14 @@ void run() {
         KISS::MyIceCube data(KISS::geometrical, KISS::He);
         data.run();
     }
+    {
+        KISS::MyIceCube data(KISS::geometrical, KISS::O);
+        data.run();
+    }
+    {
+        KISS::MyIceCube data(KISS::geometrical, KISS::Fe);
+        data.run();
+    }
 }
 
 }  // namespace ICECUBE
