@@ -26,6 +26,7 @@ enum CrExperiments {
     auger2019,
     auger2021,
     bess,
+    besspolar,
     calet,
     cream,
     dampe,
@@ -61,6 +62,8 @@ inline std::string ToString(CrExperiments v) {
             return "Auger2021";
         case bess:
             return "BESS-TeV";
+        case besspolar:
+            return "BESS-PolarII";
         case calet:
             return "CALET";
         case cream:
