@@ -1,6 +1,7 @@
 #ifndef KISS_EXPERIMENTS_AMS02_H_
 #define KISS_EXPERIMENTS_AMS02_H_
 
+#include "KISS/CRDB.h"
 #include "KISS/SSDC.h"
 
 namespace AMS02 {
@@ -28,6 +29,18 @@ void leptons() {
         KISS::SSDC data(KISS::ams02, KISS::kEnergy, KISS::positronfraction, KISS::Laff3_0);
         data.setDOI("10.1016/j.physrep.2020.09.003");
         data.setADSbibcode("2021PhR...894....1A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::ams02, KISS::rigidity, KISS::H_electron, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.117.091103");
+        data.setADSbibcode("2016PhRvL.117i1103A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::ams02, KISS::rigidity, KISS::H_positron, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.117.091103");
+        data.setADSbibcode("2016PhRvL.117i1103A");
         data.run();
     }
 }
