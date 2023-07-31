@@ -1,11 +1,12 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1103/PhysRevLett.124.211102 (2021PhRvL.126d1104A)
 #Experiment: AMS-02
 #Y Quantity: Fe_Si
 #X Quantity: rigidity
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
+2.805e+00 4.990e-01 5.100e-03 5.100e-03 2.550e-02 2.550e-02 
 3.126e+00 4.988e-01 4.500e-03 4.500e-03 2.130e-02 2.130e-02 
 3.461e+00 4.980e-01 4.100e-03 4.100e-03 1.940e-02 1.940e-02 
 3.825e+00 5.050e-01 4.000e-03 4.000e-03 1.890e-02 1.890e-02 

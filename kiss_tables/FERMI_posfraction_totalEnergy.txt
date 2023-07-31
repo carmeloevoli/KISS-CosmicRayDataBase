@@ -1,9 +1,9 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1103/PhysRevD.95.082007 (2017PhRvD..95h2007A)
 #Experiment: FERMI
 #Y Quantity: posfraction
-#X Quantity: kineticEnergy
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#X Quantity: totalEnergy
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
 2.245e+01 9.400e-02 3.000e-03 3.000e-03 1.000e-02 1.000e-02 

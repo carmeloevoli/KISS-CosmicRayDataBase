@@ -1,6 +1,6 @@
 #Source: CRDB
 #Ref: 10.1088/0004-637X/707/1/593 (2009ApJ...707..593A)
-#Experiment: CREAM (II)
+#Experiment: CREAM
 #Y Quantity: O
 #X Quantity: kineticEnergyPerNucleon
 #Url: https://lpsc.in2p3.fr/crdb

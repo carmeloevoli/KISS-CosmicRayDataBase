@@ -1,9 +1,9 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1038/nature24475 (2017Natur.552...63D)
 #Experiment: DAMPE
 #Y Quantity: e+e-
-#X Quantity: kineticEnergy
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#X Quantity: totalEnergy
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
 2.567e+01 1.160e-02 0.000e+00 0.000e+00 3.000e-04 3.000e-04 

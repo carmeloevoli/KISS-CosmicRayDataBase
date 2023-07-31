@@ -1,9 +1,9 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1103/PhysRevLett.111.081102 (2013PhRvL.111h1102A)
 #Experiment: PAMELA
 #Y Quantity: e+
 #X Quantity: kineticEnergy
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
 1.641e+00 1.762e+00 2.360e-02 2.360e-02 1.110e-01 1.110e-01 
@@ -23,4 +23,3 @@
 5.184e+01 1.086e-04 1.320e-05 1.320e-05 1.200e-05 1.200e-05 
 8.001e+01 3.450e-05 5.700e-06 5.700e-06 5.000e-06 5.000e-06 
 1.387e+02 1.176e-05 2.590e-06 2.590e-06 2.400e-06 2.400e-06 
-2.433e+02 9.100e-07 0.000e+00 0.000e+00 0.000e+00 0.000e+00 

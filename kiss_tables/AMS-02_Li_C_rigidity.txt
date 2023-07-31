@@ -1,9 +1,9 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1016/j.physrep.2020.09.003 (2021PhR...894....1A)
 #Experiment: AMS-02
 #Y Quantity: Li_C
 #X Quantity: rigidity
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
 2.032e+00 1.670e-01 9.000e-04 9.000e-04 5.000e-03 5.000e-03 

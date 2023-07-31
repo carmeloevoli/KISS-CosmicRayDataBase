@@ -1,0 +1,14 @@
+#Source: CRDB
+#Ref: 10.1088/0004-637X/742/1/14 (2011ApJ...742...14O)
+#Experiment: TRACER
+#Y Quantity: B
+#X Quantity: kineticEnergyPerNucleon
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: 
+#Colums: x, y, y statistical errors, y systematic errors
+8.944e-01 1.130e+00 3.000e-02 3.000e-02 1.000e-01 1.000e-01 
+1.140e+00 7.300e-01 2.000e-02 2.000e-02 1.000e-02 1.000e-02 
+1.487e+00 3.800e-01 1.000e-02 1.000e-02 1.000e-02 1.000e-02 
+2.867e+01 4.900e-04 1.000e-05 1.000e-05 1.000e-04 1.000e-04 
+1.933e+02 1.600e-06 1.000e-07 1.000e-07 4.000e-07 4.000e-07 
+2.739e+03 4.000e-09 3.000e-09 8.000e-09 2.000e-09 2.000e-09 

@@ -1,9 +1,9 @@
-#Source: SSDC
+#Source: CRDB
 #Ref: 10.1103/PhysRevLett.124.211102 (2020PhRvL.124u1102A)
 #Experiment: AMS-02
 #Y Quantity: Mg_O
 #X Quantity: rigidity
-#Url: https://tools.ssdc.asi.it/CosmicRays/
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors
 2.272e+00 1.994e-01 1.000e-03 1.000e-03 6.600e-03 6.600e-03 
