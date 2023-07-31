@@ -7,6 +7,12 @@ namespace CREAM {
 
 void run() {
     {
+        KISS::CRDB data(KISS::isscream, KISS::kEnergy, KISS::H, KISS::Laff2_7);
+        data.setDOI(" ");
+        data.setADSbibcode(" ");
+        data.run();
+    }
+    {
         KISS::CRDB data(KISS::cream, KISS::kEnergy, KISS::H, KISS::Laff2_7);
         data.setDOI("10.3847/1538-4357/aa68e4");
         data.setADSbibcode("2017ApJ...839....5Y");

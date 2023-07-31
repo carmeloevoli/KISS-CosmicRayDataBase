@@ -34,6 +34,7 @@ enum CrExperiments {
     hawc,
     hess,
     icecube,
+    isscream,
     kascadeGrande,
     kascade,
     nucleon,
@@ -78,6 +79,8 @@ inline std::string ToString(CrExperiments v) {
             return "HESS";
         case icecube:
             return "IceCube";
+        case isscream:
+            return "ISS-CREAM";
         case kascadeGrande:
             return "KASCADE-Grande";
         case kascade:
