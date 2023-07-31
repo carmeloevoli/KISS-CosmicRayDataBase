@@ -7,6 +7,12 @@ namespace TRACER {
 
 void run() {
     {
+        KISS::CRDB data(KISS::tracer, KISS::kEnergyPerNucleon, KISS::B, KISS::geometrical);
+        data.setDOI("10.1088/0004-637X/742/1/14");
+        data.setADSbibcode("2011ApJ...742...14O");
+        data.run();
+    }
+    {
         KISS::CRDB data(KISS::tracer, KISS::kEnergyPerNucleon, KISS::C, KISS::geometrical);
         data.setDOI("10.1088/0004-637X/742/1/14");
         data.setADSbibcode("2011ApJ...742...14O");
@@ -38,6 +44,12 @@ void run() {
     }
     {
         KISS::CRDB data(KISS::tracer, KISS::kEnergyPerNucleon, KISS::Fe, KISS::geometrical);
+        data.setDOI("10.1088/0004-637X/742/1/14");
+        data.setADSbibcode("2011ApJ...742...14O");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::tracer, KISS::kEnergyPerNucleon, KISS::B_C, KISS::geometrical);
         data.setDOI("10.1088/0004-637X/742/1/14");
         data.setADSbibcode("2011ApJ...742...14O");
         data.run();

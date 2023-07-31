@@ -36,6 +36,7 @@ double computeMeanEnergyGeometrical(double Emin, double Emax) {
 }
 
 double computeMeanEnergy(double Emin, double Emax, KISS::EnergyModes mode) {
+    if (Emax <= Emin) return Emin;
     if (mode == KISS::geometrical) {
         return computeMeanEnergyGeometrical(Emin, Emax);
     } else if (mode == KISS::PL2_7) {

@@ -5,25 +5,28 @@
 
 int main() {
     try {
+        // DIRECT MEASUREMENTS
         AMS02::run();
-        ARGO::run();
         ATIC02::run();
-        AUGER::run();
         BESS::run();
         CALET::run();
         CREAM::run();
         DAMPE::run();
         FERMI::run();
+        NUCLEON::run();
+        PAMELA::run();
+        TRACER::run();
+
+        // INDIRECT MEASUREMENTS
+        ARGO::run();
+        AUGER::run();
         HAWC::run();
         HESS::run();
         ICECUBE::run();
         KASCADE_Grande::run();
         KASCADE::run();
-        NUCLEON::run();
-        PAMELA::run();
         TALE::run();
         TIBET::run();
-        TRACER::run();
         TUNKA::run();
         VERITAS::run();
     } catch (std::exception& e) {
