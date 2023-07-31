@@ -7,23 +7,24 @@ namespace ICECUBE {
 
 void run() {
     {
-        KISS::MyIceCube data(KISS::geometrical, KISS::allParticle);
+        KISS::CRDB data(KISS::icecube, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDescription("SIBYLL-2.1");
+        data.setDOI("10.1103/PhysRevD.100.082002");
+        data.setADSbibcode("2019PhRvD.100h2002A");
         data.run();
     }
     {
-        KISS::MyIceCube data(KISS::geometrical, KISS::H);
+        KISS::CRDB data(KISS::icecube, KISS::totalEnergy, KISS::H, KISS::geometrical);
+        data.setDescription("SIBYLL-2.1");
+        data.setDOI("10.1103/PhysRevD.100.082002");
+        data.setADSbibcode("2019PhRvD.100h2002A");
         data.run();
     }
     {
-        KISS::MyIceCube data(KISS::geometrical, KISS::He);
-        data.run();
-    }
-    {
-        KISS::MyIceCube data(KISS::geometrical, KISS::O);
-        data.run();
-    }
-    {
-        KISS::MyIceCube data(KISS::geometrical, KISS::Fe);
+        KISS::CRDB data(KISS::icecube, KISS::totalEnergy, KISS::He, KISS::geometrical);
+        data.setDescription("SIBYLL-2.1");
+        data.setDOI("10.1103/PhysRevD.100.082002");
+        data.setADSbibcode("2019PhRvD.100h2002A");
         data.run();
     }
 }
