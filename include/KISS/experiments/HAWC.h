@@ -11,7 +11,9 @@ void run() {
         data.run();
     }
     {
-        KISS::MyAllHAWC data(KISS::geometrical);
+        KISS::CRDB data(KISS::hawc, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevD.96.122001");
+        data.setADSbibcode("2017PhRvD..96l2001A");
         data.run();
     }
 }

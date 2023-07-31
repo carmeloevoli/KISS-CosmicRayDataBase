@@ -78,27 +78,6 @@ void MyLightHAWC::readfile(std::string filename) {
     infile.close();
 }
 
-void MyAllHAWC::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double lgEmin, lgEmax, nEvents, flux, stat, sys_MC, sys_up, sys_do;
-        infile >> lgEmin >> lgEmax >> nEvents >> flux >> stat >> sys_MC >> sys_up >> sys_do;
-        if (!infile.eof()) {
-            const double Elo = std::pow(10., lgEmin);
-            const double Eup = std::pow(10., lgEmax);
-            const double x_mean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
-            const double y = flux;
-            const double sys_tot_up = sys_MC + sys_up;
-            const double sys_tot_do = sys_MC + sys_do;
-            dataPoint data = {{x_mean, y}, {stat, stat}, {sys_tot_do, sys_tot_up}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
 void MyAllAuger2021::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
     const int num_of_header_lines = 1;

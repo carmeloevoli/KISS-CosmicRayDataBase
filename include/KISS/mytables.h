@@ -85,17 +85,6 @@ class MyAllTale : public CrDataset {
     void readfile(std::string filename) override;
 };
 
-class MyAllHAWC : public CrDataset {
-   public:
-    MyAllHAWC(EnergyModes mode) : CrDataset(hawc, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevD.96.122001");
-        setADSbibcode("2017PhRvD..96l2001A");
-    }
-
-    void readfile(std::string filename) override;
-};
-
 class MyIceCube : public CrDataset {
    public:
     MyIceCube(EnergyModes mode, YQuantities yQuantity) : CrDataset(icecube, totalEnergy, yQuantity, mode) {
