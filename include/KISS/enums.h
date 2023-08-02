@@ -37,6 +37,7 @@ enum CrExperiments {
     isscream,
     kascadeGrande,
     kascade,
+    maket,
     nucleon,
     pamela,
     runjob,
@@ -85,6 +86,8 @@ inline std::string ToString(CrExperiments v) {
             return "KASCADE-Grande";
         case kascade:
             return "KASCADE";
+        case maket:
+            return "Maket-ANI";
         case nucleon:
             return "NUCLEON";
         case pamela:

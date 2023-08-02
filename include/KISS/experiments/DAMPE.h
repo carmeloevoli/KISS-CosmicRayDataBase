@@ -2,6 +2,7 @@
 #define KISS_EXPERIMENTS_DAMPE_H_
 
 #include "KISS/CRDB.h"
+#include "KISS/mytables.h"
 
 namespace DAMPE {
 
@@ -34,6 +35,10 @@ void run() {
         KISS::CRDB data(KISS::dampe, KISS::kEnergyPerNucleon, KISS::B_O, KISS::geometrical);
         data.setDOI(" ");
         data.setADSbibcode(" ");
+        data.run();
+    }
+    {
+        KISS::MyLightDAMPE data(KISS::geometrical);
         data.run();
     }
 }

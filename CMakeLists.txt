@@ -31,7 +31,7 @@ list(APPEND KISS_INCLUDES libs/pugixml/include)
 # endif(GSL_FOUND)
 
 # copy data files in build
-set(DATA_DIR "/Users/carmeloevoli/Work/codes/CosmicRayDataBaseSources")
+#set(DATA_DIR "/Users/carmeloevoli/Work/codes/CosmicRayDataBaseSources")
 
 file(GLOB KISS_DATA "${DATA_DIR}/KCDC/*.txt")
 file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/KCDC/)

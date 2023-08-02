@@ -57,16 +57,30 @@ void run() {
     }
     {
         KISS::KCDC data(KISS::kascadeGrande, KISS::totalEnergy, KISS::light, KISS::unknown);
-        data.setDescription("QGSJET-II-04");
+        data.setDescription("SIBYLL-2.1");
         data.setDOI("10.22323/1.301.0316");
         data.setADSbibcode("2017ICRC...35..316A");
         data.run();
     }
     {
-        KISS::KCDC data(KISS::kascadeGrande, KISS::totalEnergy, KISS::light, KISS::unknown);
-        data.setDescription("SIBYLL-2.1");
-        data.setDOI("10.22323/1.301.0316");
-        data.setADSbibcode("2017ICRC...35..316A");
+        KISS::CRDB data(KISS::kascadeGrande, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.setDescription("QGSJET-II-02");
+        // data.setDOI("10.22323/1.301.0316");
+        // data.setADSbibcode("2017ICRC...35..316A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::kascadeGrande, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.setDescription("QGSJET-II-03");
+        // data.setDOI("10.22323/1.301.0316");
+        // data.setADSbibcode("2017ICRC...35..316A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::kascadeGrande, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.setDescription("QGSJET-II-04");
+        // data.setDOI("10.22323/1.301.0316");
+        // data.setADSbibcode("2017ICRC...35..316A");
         data.run();
     }
 }

@@ -18,6 +18,10 @@ void run() {
         KISS::MyAllTibet data(KISS::geometrical, "SIBYLL+HD");
         data.run();
     }
+    {
+        KISS::CRDB data(KISS::tibet, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.run();
+    }
 }
 
 }  // namespace TIBET

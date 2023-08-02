@@ -155,24 +155,21 @@ void MyAllTibet::readfile(std::string filename) {
     infile.close();
 }
 
-// void MyHeliumDAMPE::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     const int num_of_header_lines = 0;
-//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-//     while (infile.good()) {
-//         double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
-//         infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had;
-//         if (!infile.eof()) {
-//             E_min *= 1e3;  // TeV -> GeV
-//             E_max *= 1e3;  // TeV -> GeV
-//             const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//             const double syst = Utils::quadrature(syst_ana, syst_had);
-//             const double err_tot = Utils::quadrature(stat, syst);
-//             dataPoint data = {{E, flux}, {stat, stat}, {err_tot, err_tot}};
-//             m_dataTable.push_back(data);
-//         }
-//     }
-// }
+void MyLightDAMPE::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
+        infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            const double syst = syst_ana + syst_had;
+            dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
+            m_dataTable.push_back(data);
+        }
+    }
+}
 
 // void MyHeavyCALET::readfile(std::fstream& infile) {
 //     const int num_of_header_lines = 1;

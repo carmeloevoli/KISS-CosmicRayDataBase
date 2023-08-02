@@ -97,6 +97,17 @@ class MyAllTibet : public CrDataset {
     void readfile(std::string filename) override;
 };
 
+class MyLightDAMPE : public CrDataset {
+   public:
+    MyLightDAMPE(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
+        setSource(mytables);
+        setDOI("");
+        setADSbibcode("");
+    }
+
+    void readfile(std::string filename);
+};
+
 // TO BE DONE
 
 // class MyAllRunjob : public CrDataset {
@@ -159,17 +170,6 @@ class MyAllTibet : public CrDataset {
 //    public:
 //     MyLightARGO() { set_experimentName("ARGO"); }
 //     void readfile(std::fstream& infile) override;
-// };
-
-// class MyHeliumDAMPE : public CrDataset {
-//    public:
-//     MyHeliumDAMPE(EnergyModes mode) : CrDataset(dampe, totalEnergy, He, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevLett.126.201102");
-//         setADSbibcode("2021PhRvL.126t1102A");
-//     }
-
-//     void readfile(std::string filename);
 // };
 
 // class MyHeavyCALET : public CrDataset {
