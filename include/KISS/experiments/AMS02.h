@@ -208,6 +208,12 @@ void ratios() {
         data.run();
     }
     {
+        KISS::CRDB data(KISS::ams02, KISS::kEnergyPerNucleon, KISS::B_C, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.117.231102");
+        data.setADSbibcode("2016PhRvL.117w1102A");
+        data.run();
+    }
+    {
         KISS::CRDB data(KISS::ams02, KISS::rigidity, KISS::B_O, KISS::geometrical);
         data.setDOI("10.1016/j.physrep.2020.09.003");
         data.setADSbibcode("2021PhR...894....1A");
