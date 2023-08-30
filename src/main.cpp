@@ -20,9 +20,10 @@ int main() {
         // INDIRECT MEASUREMENTS
         ARGO::run();
         AUGER::run();
+        GAMMA::run();
         HAWC::run();
         HESS::run();
-        ICECUBE::run();
+        ICETOP::run();
         KASCADE_Grande::run();
         KASCADE::run();
         TALE::run();

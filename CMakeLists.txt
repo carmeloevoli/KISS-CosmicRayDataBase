@@ -3,7 +3,7 @@ project(KISS CXX)
 
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-12")
+set(CMAKE_CXX_COMPILER "/usr/local/Cellar/gcc/13.1.0/bin/g++-13")
 set(CMAKE_CXX_FLAGS "-O3 -ftree-vectorize -std=c++14")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(KISS_INCLUDES)
