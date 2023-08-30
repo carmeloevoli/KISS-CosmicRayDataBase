@@ -1,0 +1,16 @@
+#Source: CRDB
+#Ref: 10.1103/PhysRevD.102.122001 (2020PhRvD.102l2001A)
+#Experiment: IceTop (SIBYLL-2.1)
+#Y Quantity: allParticle
+#X Quantity: totalEnergy
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: 
+#Colums: x, y, y statistical errors, y systematic errors
+3.162e+05 6.672e-11 5.566e-14 5.566e-14 4.838e-12 4.364e-12 
+5.012e+05 1.953e-11 2.514e-14 2.514e-14 1.492e-12 1.445e-12 
+7.943e+05 6.055e-12 1.166e-14 1.166e-14 5.111e-13 2.241e-13 
+1.259e+06 1.795e-12 4.377e-15 4.377e-15 8.817e-14 8.102e-14 
+1.995e+06 5.007e-13 1.604e-15 1.604e-15 2.716e-14 2.676e-14 
+3.162e+06 1.388e-13 6.641e-16 6.641e-16 4.522e-15 6.767e-15 
+5.012e+06 3.671e-14 2.694e-16 2.694e-16 1.143e-15 2.354e-15 
+7.943e+06 9.001e-15 9.593e-17 9.593e-17 2.757e-16 6.156e-16 

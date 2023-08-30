@@ -1,6 +1,6 @@
 #Source: CRDB
 #Ref: 10.1103/PhysRevD.100.082002 (2019PhRvD.100h2002A)
-#Experiment: IceCube (SIBYLL-2.1)
+#Experiment: IceTop (IceCube_SIBYLL-2.1)
 #Y Quantity: He
 #X Quantity: totalEnergy
 #Url: https://lpsc.in2p3.fr/crdb
