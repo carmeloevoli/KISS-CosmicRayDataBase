@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: not available (none)
+#Ref: 10.22323/1.236.0263 (2015ICRC...34..263S)
 #Experiment: KASCADE-Grande (QGSJET-II-04)
 #Y Quantity: light
 #X Quantity: totalEnergy

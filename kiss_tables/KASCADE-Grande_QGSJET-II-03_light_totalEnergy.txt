@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: not available (none)
+#Ref: 10.1103/PhysRevLett.107.171104 (2011PhRvL.107q1104A)
 #Experiment: KASCADE-Grande (QGSJET-II-03)
 #Y Quantity: light
 #X Quantity: totalEnergy
