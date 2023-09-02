@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref: 10.1103/PhysRevLett.125.251102 (2020PhRvL.125y1102A)
+#Ref: 10.1103/PhysRevLett.129.251103 (2022PhRvL.129y1103A)
 #Experiment: CALET
 #Y Quantity: C
 #X Quantity: kineticEnergyPerNucleon
