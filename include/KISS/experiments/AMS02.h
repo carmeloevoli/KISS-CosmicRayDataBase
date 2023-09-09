@@ -51,6 +51,12 @@ void antiprotons() {
         data.setADSbibcode("2021PhR...894....1A");
         data.run();
     }
+    {
+        KISS::CRDB data(KISS::ams02, KISS::rigidity, KISS::antiproton_positron, KISS::Laff2_7);
+        data.setDOI("10.1103/PhysRevLett.117.091103");
+        data.setADSbibcode("2016PhRvL.117i1103A");
+        data.run();
+    }
 }
 
 void fluxes() {

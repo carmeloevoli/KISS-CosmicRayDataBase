@@ -170,6 +170,7 @@ enum YQuantities {
     Ni,
     H_electron,
     H_positron,
+    antiproton_positron,
     B_C,
     B_O,
     Be_B,
@@ -249,6 +250,8 @@ inline std::string ToString(YQuantities v) {
             return "H_e-";
         case H_positron:
             return "H_e+";
+        case antiproton_positron:
+            return "pbar_e+";
         case B_C:
             return "B_C";
         case B_O:

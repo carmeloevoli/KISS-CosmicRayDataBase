@@ -19,7 +19,7 @@ class SSDC : public CrDataset {
         setUrl("https://tools.ssdc.asi.it/CosmicRays/");
     }
 
-    void readfile(std::string filename);
+    void readfile(std::string filename) override;
 
    protected:
     std::string makeSourceFilename() const override;
