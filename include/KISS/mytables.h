@@ -108,6 +108,29 @@ class MyLightDAMPE : public CrDataset {
     void readfile(std::string filename);
 };
 
+class MyProtonGRAPES : public CrDataset {
+   public:
+    MyProtonGRAPES(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.132.051002");
+        setADSbibcode("2024PhRvL.132e1002V");
+    }
+
+    void readfile(std::string filename) override;
+};
+
+class MyProtonLHAASO : public CrDataset {
+   public:
+    MyProtonLHAASO(EnergyModes mode, std::string description) : CrDataset(lhaaso, totalEnergy, H, mode) {
+        setSource(mytables);
+        setDOI("unpublished");
+        setADSbibcode("2025arXiv250514447T");
+        setDescription(description);
+    }
+
+    void readfile(std::string filename) override;
+};
+
 // TO BE DONE
 
 // class MyAllRunjob : public CrDataset {

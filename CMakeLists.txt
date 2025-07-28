@@ -1,15 +1,14 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.6)
 project(KISS CXX)
 
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_FLAGS "-O3 -ftree-vectorize -std=c++14")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(KISS_INCLUDES)
 set(KISS_LIBRARIES)
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 14)
 cmake_policy(SET CMP0048 NEW)
 
 # include
@@ -31,19 +30,20 @@ list(APPEND KISS_INCLUDES libs/pugixml/include)
 # endif(GSL_FOUND)
 
 # copy data files in build
-#set(DATA_DIR "/Users/carmeloevoli/Work/codes/CosmicRayDataBaseSources")
+set(DATA_DIR "source/")
+file(COPY ${DATA_DIR} DESTINATION ${PROJECT_BINARY_DIR}/source)
 
-file(GLOB KISS_DATA "${DATA_DIR}/KCDC/*.txt")
-file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/KCDC/)
+# file(GLOB KISS_DATA "${DATA_DIR}/KCDC/*.txt")
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/KCDC/)
 
-file(GLOB KISS_DATA "${DATA_DIR}/CRDB/*.txt")
-file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/CRDB/)
+# file(GLOB KISS_DATA "${DATA_DIR}/CRDB/*.txt")
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/CRDB/)
 
-file(GLOB KISS_DATA "${DATA_DIR}/SSDC/*.xml")
-file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/SSDC/)
+# file(GLOB KISS_DATA "${DATA_DIR}/SSDC/*.xml")
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/SSDC/)
 
-file(GLOB KISS_DATA "${DATA_DIR}/mytables/*.txt")
-file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/mytables/)
+# file(GLOB KISS_DATA "${DATA_DIR}/mytables/*.txt")
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/mytables/)
 
 # create the output dir
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)

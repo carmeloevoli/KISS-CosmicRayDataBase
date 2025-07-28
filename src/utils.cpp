@@ -36,6 +36,10 @@ double computeMeanEnergyGeometrical(double Emin, double Emax) {
 }
 
 double computeMeanEnergy(double Emin, double Emax, KISS::EnergyModes mode) {
+    /*
+     * Compute the mean energy in the bin
+     * depending on the mode
+     */
     if (Emax <= Emin) return Emin;
     if (mode == KISS::geometrical) {
         return computeMeanEnergyGeometrical(Emin, Emax);
@@ -53,8 +57,11 @@ double computeMeanEnergy(double Emin, double Emax, KISS::EnergyModes mode) {
     }
 }
 
-std::vector<double> splitline(const std::string& line) {
-    const std::string delimiter = ";";
+std::vector<double> splitline(const std::string& line, const std::string& delimiter) {
+    /*
+     * Split a line into a vector of doubles
+     * using the specified delimiter
+     */
     std::string s = line;
     std::string token;
     size_t pos = 0;

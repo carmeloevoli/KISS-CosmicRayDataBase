@@ -171,6 +171,48 @@ void MyLightDAMPE::readfile(std::string filename) {
     }
 }
 
+void MyProtonGRAPES::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    std::string line;
+    while (std::getline(infile, line)) {
+        std::istringstream s(line);
+        double E, flux, errStat, errSystUp, errSystLo;
+        if (!(s >> E >> flux >> errStat >> errSystUp >> errSystLo)) {
+            std::cerr << "Invalid line, skipping.\n";
+            continue;
+        }
+        dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
+
+void MyProtonLHAASO::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    std::string line;
+    while (std::getline(infile, line)) {
+        std::istringstream s(line);
+        double log10Emin, log10Emax, numEvents, J, sigma_stat, sigma_sys;
+        if (!(s >> log10Emin >> log10Emax >> numEvents >> J >> sigma_stat >> sigma_sys)) {
+            std::cerr << "Invalid line, skipping.\n";
+            continue;
+        }
+        const double Elo = std::pow(10., log10Emin);
+        const double Eup = std::pow(10., log10Emax);
+        const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
+        const double flux = J / 1e6;                                              // [PeV-1 -> GeV-1]
+        const double errStat = sigma_stat / 1e6;                                  // [PeV-1 -> GeV-1]
+        const double errSyst = sigma_sys / 1e6;                                   // [PeV-1 -> GeV-1]
+        dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
+
 // void MyHeavyCALET::readfile(std::fstream& infile) {
 //     const int num_of_header_lines = 1;
 //     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');

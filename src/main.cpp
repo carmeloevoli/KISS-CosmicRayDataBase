@@ -6,30 +6,32 @@
 int main() {
     try {
         // DIRECT MEASUREMENTS
-        AMS02::run();
-        ATIC02::run();
-        BESS::run();
-        CALET::run();
-        CREAM::run();
-        DAMPE::run();
-        FERMI::run();
-        NUCLEON::run();
-        PAMELA::run();
-        TRACER::run();
+        // AMS02::run();
+        // ATIC02::run();
+        // BESS::run();
+        // CALET::run();
+        // CREAM::run();
+        // DAMPE::run();
+        // FERMI::run();
+        // NUCLEON::run();
+        // PAMELA::run();
+        // TRACER::run();
 
         // INDIRECT MEASUREMENTS
-        ARGO::run();
-        AUGER::run();
-        GAMMA::run();
-        HAWC::run();
-        HESS::run();
-        ICETOP::run();
-        KASCADE_Grande::run();
-        KASCADE::run();
-        TALE::run();
-        TIBET::run();
-        TUNKA::run();
-        VERITAS::run();
+        // ARGO::run();
+        // AUGER::run();
+        // GAMMA::run();
+        GRAPES::run();
+        // HAWC::run();
+        // HESS::run();
+        // ICETOP::run();
+        // KASCADE_Grande::run();
+        // KASCADE::run();
+        LHAASO::run();
+        // TALE::run();
+        // TIBET::run();
+        // TUNKA::run();
+        // VERITAS::run();
     } catch (std::exception& e) {
         std::cout << "!Fatal Error: " << e.what() << '\n';
     }

@@ -14,7 +14,7 @@ namespace Utils {
 
 double computeMeanEnergy(double x_min, double x_max, KISS::EnergyModes mode);
 
-std::vector<double> splitline(const std::string& line);
+std::vector<double> splitline(const std::string& line, const std::string& delimiter = ";");
 
 }  // namespace Utils
 
