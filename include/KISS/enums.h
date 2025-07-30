@@ -248,6 +248,26 @@ inline std::string ToString(YQuantities v) {
             return "Si";
         case S:
             return "S";
+        case P:
+            return "P";
+        case Cl:
+            return "Cl";
+        case Ar:
+            return "Ar";
+        case K:
+            return "K";
+        case Ca:
+            return "Ca";
+        case Sc:
+            return "Sc";
+        case Ti:
+            return "Ti";
+        case V:
+            return "V";
+        case Cr:
+            return "Cr";
+        case Mn:
+            return "Mn";
         case Fe:
             return "Fe";
         case Ni:

@@ -8,6 +8,28 @@
 
 namespace KISS {
 
+class MyLeptonCALET : public CrDataset {
+   public:
+    MyLeptonCALET(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.131.191001");
+        setADSbibcode("2023PhRvL.131s1001A");
+    }
+
+    void readfile(std::string filename) override;
+};
+
+class MyHeavyCALET : public CrDataset {
+   public:
+    MyHeavyCALET(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
+        setSource(mytables);
+        setDOI("10.1103/py17-74rk");
+        setADSbibcode("2025PhRvL.135b1002A");
+    }
+
+    void readfile(std::string filename) override;
+};
+
 class MyLeptonVeritas : public CrDataset {
    public:
     MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
@@ -193,15 +215,6 @@ class MyProtonLHAASO : public CrDataset {
 //    public:
 //     MyLightARGO() { set_experimentName("ARGO"); }
 //     void readfile(std::fstream& infile) override;
-// };
-
-// class MyHeavyCALET : public CrDataset {
-//    public:
-//     MyHeavyCALET(size_t A) : m_A(A) { set_experimentName("CALET"); }
-//     void readfile(std::fstream& infile) override;
-
-//    protected:
-//     size_t m_A;
 // };
 
 }  // namespace KISS

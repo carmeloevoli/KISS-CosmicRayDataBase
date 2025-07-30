@@ -11,6 +11,55 @@
 
 namespace KISS {
 
+// ARGO
+void MyLightARGO::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, E, flux, error;
+        infile >> E_min >> E_max >> E >> flux >> error;
+        if (!infile.eof()) {
+            dataPoint data = {{E, flux}, {0., 0.}, {error, error}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+// HAWC
+void MyLightHAWC::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, flux, errStat, errSystUp, errSystLo;
+        infile >> E >> flux >> errStat >> errSystUp >> errSystLo;
+        if (!infile.eof()) {
+            dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+// HESS
+void MyLeptonHess::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 0;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, flux, errStatLo, errStatUp, errSystLo, errSystUp;
+        infile >> E >> flux >> errStatLo >> errStatUp >> errSystLo >> errSystUp;
+        if (!infile.eof()) {
+            dataPoint data = {{E, flux}, {errStatLo, errStatLo}, {errSystLo, errSystUp}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+// VERITAS
 void MyLeptonVeritas::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
     const int num_of_header_lines = 1;
@@ -27,51 +76,6 @@ void MyLeptonVeritas::readfile(std::string filename) {
             const double syst_error_high = 0.64 * flux;
             const double xMean = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
             dataPoint data = {{xMean, flux}, {stat_error, stat_error}, {syst_error_low, syst_error_high}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
-void MyLeptonHess::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 0;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E, flux, errStatLo, errStatUp, errSystLo, errSystUp;
-        infile >> E >> flux >> errStatLo >> errStatUp >> errSystLo >> errSystUp;
-        if (!infile.eof()) {
-            dataPoint data = {{E, flux}, {errStatLo, errStatLo}, {errSystLo, errSystUp}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
-void MyLightARGO::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E_min, E_max, E, flux, error;
-        infile >> E_min >> E_max >> E >> flux >> error;
-        if (!infile.eof()) {
-            dataPoint data = {{E, flux}, {0., 0.}, {error, error}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
-void MyLightHAWC::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E, flux, errStat, errSystUp, errSystLo;
-        infile >> E >> flux >> errStat >> errSystUp >> errSystLo;
-        if (!infile.eof()) {
-            dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
             m_dataTable.push_back(data);
         }
     }
@@ -213,23 +217,39 @@ void MyProtonLHAASO::readfile(std::string filename) {
     infile.close();
 }
 
-// void MyHeavyCALET::readfile(std::fstream& infile) {
-//     const int num_of_header_lines = 1;
-//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-//     while (infile.good()) {
-//         double E_min, E_max, Flux, stat, syst_1_do, syst_1_up, syst_2_do, syst_2_up;
-//         infile >> E_min >> E_max >> Flux >> stat >> syst_1_do >> syst_1_up >> syst_2_do >> syst_2_up;
-//         if (!infile.eof()) {
-//             const double E = compute_x_mean_geometrical(E_min, E_max) * (double)m_A;
-//             const double syst_do = syst_1_do + syst_2_do;
-//             const double syst_up = syst_1_up + syst_2_up;
-//             const double err_tot_do = quadrature(stat, syst_do);
-//             const double err_tot_up = quadrature(stat, syst_up);
-//             dataPoint data = {E, Flux / m_A, stat / m_A, stat / m_A, err_tot_do / m_A, err_tot_up / m_A};
-//             m_dataTable.push_back(data);
-//         }
-//     }
-// }
+void MyLeptonCALET::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
+        infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyHeavyCALET::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
+        infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            const double syst_do = syst_1 + syst_2_do;
+            const double syst_up = syst_1 + syst_2_up;
+            dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
 
 // void MyAllARGO::readfile(std::fstream& infile) {
 //     const int num_of_header_lines = 1;

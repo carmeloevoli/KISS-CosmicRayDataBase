@@ -7,9 +7,7 @@ namespace CALET {
 
 void run() {
     {
-        KISS::CRDB data(KISS::calet, KISS::totalEnergy, KISS::lepton, KISS::Laff3_0);
-        data.setDOI("10.1103/PhysRevLett.120.261102");
-        data.setADSbibcode("2018PhRvL.120z1102A");
+        KISS::MyLeptonCALET data(KISS::geometrical);
         data.run();
     }
     {
@@ -43,9 +41,15 @@ void run() {
         data.run();
     }
     {
-        KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Fe, KISS::Laff2_7);
-        data.setDOI("10.1103/PhysRevLett.126.241101");
-        data.setADSbibcode("2021PhRvL.126x1101A");
+        KISS::MyHeavyCALET data(KISS::Cr, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::MyHeavyCALET data(KISS::Ti, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::MyHeavyCALET data(KISS::Fe, KISS::geometrical);
         data.run();
     }
     {

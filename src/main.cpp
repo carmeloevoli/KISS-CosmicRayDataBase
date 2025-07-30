@@ -9,7 +9,7 @@ int main() {
         // AMS02::run();
         // ATIC02::run();
         // BESS::run();
-        // CALET::run();
+        CALET::run();
         // CREAM::run();
         // DAMPE::run();
         // FERMI::run();
@@ -21,13 +21,13 @@ int main() {
         // ARGO::run();
         // AUGER::run();
         // GAMMA::run();
-        GRAPES::run();
+        // GRAPES::run();
         // HAWC::run();
         // HESS::run();
         // ICETOP::run();
         // KASCADE_Grande::run();
         // KASCADE::run();
-        LHAASO::run();
+        // LHAASO::run();
         // TALE::run();
         // TIBET::run();
         // TUNKA::run();
