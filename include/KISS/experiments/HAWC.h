@@ -7,13 +7,13 @@ namespace HAWC {
 
 void run() {
     {
-        KISS::MyLightHAWC data(KISS::geometrical);
+        KISS::HAWC::MyLight data(KISS::geometrical);
         data.run();
     }
     {
         KISS::CRDB data(KISS::hawc, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
-        data.setDOI("10.1103/PhysRevD.96.122001");
-        data.setADSbibcode("2017PhRvD..96l2001A");
+        data.setDOI("10.22323/1.395.0330");
+        data.setADSbibcode("2022icrc.confE.330M");
         data.run();
     }
 }
