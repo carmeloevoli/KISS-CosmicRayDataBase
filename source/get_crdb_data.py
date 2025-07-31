@@ -54,7 +54,6 @@ def AMS02():
 def BESS():
     dump_datafile("H", "EKN", "BESS-TeV", "BESS-TeV (2002/08)", "BESS-TeV_H_kineticEnergy.txt")
     dump_datafile("He", "EKN", "BESS-TeV", "BESS-TeV (2002/08)", "BESS-TeV_He_kineticEnergyPerNucleon.txt")
-    dump_datafile("1H-bar", "EKN", "BESS-PolarII", "BESS-PolarII (2007/12-2008/01)", "BESS-PolarII_pbar_kineticEnergy.txt")
 
 def CALET():
     # Fluxes
@@ -100,9 +99,10 @@ def DAMPE():
     dump_datafile("B/O", "EKN", "DAMPE", "DAMPE (2016/01-2021/12)", "DAMPE_B_O_kineticEnergyPerNucleon.txt")
 
 def FERMI():
+    dump_datafile("e-", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_e-_kineticEnergy.txt")
     dump_datafile("e+", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_e+_kineticEnergy.txt")
-    dump_datafile("e-+e+", "ETOT", "FERMI", "Fermi-LAT-HE (2008/08-2015/06)", "FERMI_e+e-_totalEnergy.txt")
     dump_datafile("e+/e-+e+", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_posfraction_totalEnergy.txt")
+    dump_datafile("e-+e+", "ETOT", "FERMI", "Fermi-LAT-HE (2008/08-2015/06)", "FERMI_e+e-_totalEnergy.txt")
 
 def GAMMA():
     dump_datafile("AllParticles", "ETOT", "GAMMA", "GAMMA (2003/01-2007/12) SIBYLL", "GAMMA_allParticle_totalEnergy.txt")
@@ -154,6 +154,7 @@ def NUCLEON():
     dump_datafile("Si", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Si_totalEnergy.txt")
     dump_datafile("Fe", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Fe_totalEnergy.txt")
     dump_datafile("AllParticles", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_allParticle_totalEnergy.txt")
+    dump_datafile("H/He", "R", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_H_He_rigidity.txt")
 
 def PAMELA():
     dump_datafile("e-", "EK", "PAMELA", "PAMELA (2006/07-2010/01)", "PAMELA_e-_kineticEnergy.txt")
@@ -190,11 +191,11 @@ def TUNKA():
 if __name__== "__main__":
     print("KISS Cosmic Ray Data Base - Data Extraction")
     # AMS02()
-    # BESS()
+    BESS()
     CALET()
     CREAM()
     DAMPE()
-    # FERMI()
+    FERMI()
     # GAMMA()
     HAWC()
     # HESS()
@@ -202,7 +203,7 @@ if __name__== "__main__":
     ISS_CREAM()
     # KASCADE()
     # KASCADE_Grande()
-    # NUCLEON()
+    NUCLEON()
     PAMELA()
     # TA()
     # TIBET()

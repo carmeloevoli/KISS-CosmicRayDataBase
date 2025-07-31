@@ -18,12 +18,6 @@ void run() {
         data.setADSbibcode("2007APh....28..154S");
         data.run();
     }
-    {
-        KISS::CRDB data(KISS::besspolar, KISS::kEnergy, KISS::antiproton, KISS::Laff2_7);
-        data.setDOI("10.1103/PhysRevLett.108.051102");
-        data.setADSbibcode("2012PhRvL.108e1102A");
-        data.run();
-    }
 }
 
 }  // namespace BESS

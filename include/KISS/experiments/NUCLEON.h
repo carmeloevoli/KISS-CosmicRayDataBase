@@ -68,6 +68,12 @@ void run() {
         data.setComments("From Table 2");
         data.run();
     }
+    {
+        KISS::CRDB data(KISS::nucleon, KISS::rigidity, KISS::H_He, KISS::geometrical);
+        data.setDOI("10.1134/S002136402007005X");
+        data.setADSbibcode("2020JETPL.111..363K");
+        data.run();
+    }
 }
 
 }  // namespace NUCLEON

@@ -5,20 +5,18 @@
 
 int main() {
     try {
+        BESS::run();
         CALET::run();
         CREAM::run();
         DAMPE::run();
+        FERMI::run();
         HAWC::run();
         ISSCREAM::run();
+        NUCLEON::run();
         PAMELA::run();
 
-        // DIRECT MEASUREMENTS
         // AMS02::run();
-        // BESS::run();
-        // FERMI::run();
-        // NUCLEON::run();
         // TRACER::run();
-        // INDIRECT MEASUREMENTS
         // ARGO::run();
         // AUGER::run();
         // GAMMA::run();
