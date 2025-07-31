@@ -6,14 +6,14 @@
 namespace AUGER {
 
 void run() {
-    {
-        KISS::MyAllAuger2021 data(KISS::geometrical);
-        data.run();
-    }
-    {
-        KISS::MyAllAuger2019 data(KISS::geometrical);
-        data.run();
-    }
+    // {
+    //     KISS::MyAllAuger2021 data(KISS::geometrical);
+    //     data.run();
+    // }
+    // {
+    //     KISS::MyAllAuger2019 data(KISS::geometrical);
+    //     data.run();
+    // }
 }
 
 }  // namespace AUGER

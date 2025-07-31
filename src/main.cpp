@@ -5,24 +5,23 @@
 
 int main() {
     try {
+        CALET::run();
+        DAMPE::run();
+        HAWC::run();
+        PAMELA::run();
+
         // DIRECT MEASUREMENTS
         // AMS02::run();
-        // ATIC02::run();
         // BESS::run();
-        CALET::run();
         // CREAM::run();
-        DAMPE::run();
         // FERMI::run();
         // NUCLEON::run();
-        // PAMELA::run();
         // TRACER::run();
-
         // INDIRECT MEASUREMENTS
         // ARGO::run();
         // AUGER::run();
         // GAMMA::run();
         // GRAPES::run();
-        // HAWC::run();
         // HESS::run();
         // ICETOP::run();
         // KASCADE_Grande::run();

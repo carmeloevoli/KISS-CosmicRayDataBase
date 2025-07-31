@@ -44,6 +44,13 @@ void run() {
         data.run();
     }
     {
+        KISS::CRDB data(KISS::pamela, KISS::kEnergy, KISS::electron, KISS::Laff3_0);
+        data.setDOI("10.1103/PhysRevLett.111.081102");
+        data.setADSbibcode("2013PhRvL.111h1102A");
+        data.setComments("");
+        data.run();
+    }
+    {
         KISS::CRDB data(KISS::pamela, KISS::kEnergy, KISS::positron, KISS::Laff3_0);
         data.setDOI("10.1103/PhysRevLett.111.081102");
         data.setADSbibcode("2013PhRvL.111h1102A");

@@ -56,6 +56,21 @@ class MyLight : public CrDataset {
 };
 }  // namespace DAMPE
 
+namespace HAWC {
+class MyLight : public CrDataset {
+   public:
+    MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
+        setSource(mytables);
+        setDOI("doi.org/10.1103/PhysRevD.105.063021");
+        setADSbibcode("2022PhRvD.105f3021A");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace HAWC
+
+// OLD DATASETS
+
 class MyLeptonVeritas : public CrDataset {
    public:
     MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
@@ -89,38 +104,16 @@ class MyLightARGO : public CrDataset {
     void readfile(std::string filename) override;
 };
 
-class MyLightHAWC : public CrDataset {
-   public:
-    MyLightHAWC(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("doi.org/10.1103/PhysRevD.105.063021");
-        setADSbibcode("2022PhRvD.105f3021A");
-    }
+// class MyAllAuger2019 : public CrDataset {
+//    public:
+//     MyAllAuger2019(EnergyModes mode) : CrDataset(auger2019, totalEnergy, allParticle, mode) {
+//         setSource(mytables);
+//         setDOI("10.22323/1.358.0450");
+//         setADSbibcode("2019ICRC...36..450V");
+//     }
 
-    void readfile(std::string filename) override;
-};
-
-class MyAllAuger2021 : public CrDataset {
-   public:
-    MyAllAuger2021(EnergyModes mode) : CrDataset(auger2021, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.1140/epjc/s10052-021-09700-w");
-        setADSbibcode("2021EPJC...81..966A");
-    }
-
-    void readfile(std::string filename) override;
-};
-
-class MyAllAuger2019 : public CrDataset {
-   public:
-    MyAllAuger2019(EnergyModes mode) : CrDataset(auger2019, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.22323/1.358.0450");
-        setADSbibcode("2019ICRC...36..450V");
-    }
-
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
 class MyAllTale : public CrDataset {
    public:

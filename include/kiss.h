@@ -3,7 +3,6 @@
 
 #include "KISS/experiments/AMS02.h"
 #include "KISS/experiments/ARGO.h"
-#include "KISS/experiments/ATIC02.h"
 #include "KISS/experiments/AUGER.h"
 #include "KISS/experiments/BESS.h"
 #include "KISS/experiments/CALET.h"

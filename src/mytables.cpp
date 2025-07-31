@@ -45,7 +45,6 @@ void MyHeavy::readfile(std::string filename) {
     }
     infile.close();
 }
-
 }  // namespace CALET
 
 namespace DAMPE {
@@ -85,6 +84,23 @@ void MyLight::readfile(std::string filename) {
 }
 }  // namespace DAMPE
 
+namespace HAWC {
+void MyLight::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E, flux, errStat, errSystUp, errSystLo;
+        infile >> E >> flux >> errStat >> errSystUp >> errSystLo;
+        if (!infile.eof()) {
+            dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+}  // namespace HAWC
+
 // ARGO
 void MyLightARGO::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
@@ -95,22 +111,6 @@ void MyLightARGO::readfile(std::string filename) {
         infile >> E_min >> E_max >> E >> flux >> error;
         if (!infile.eof()) {
             dataPoint data = {{E, flux}, {0., 0.}, {error, error}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
-// HAWC
-void MyLightHAWC::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E, flux, errStat, errSystUp, errSystLo;
-        infile >> E >> flux >> errStat >> errSystUp >> errSystLo;
-        if (!infile.eof()) {
-            dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
             m_dataTable.push_back(data);
         }
     }
@@ -156,45 +156,45 @@ void MyLeptonVeritas::readfile(std::string filename) {
     infile.close();
 }
 
-void MyAllAuger2021::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double log10E, errLog10E, J, sigma_stat_lo, sigma_stat_up, sigma_sys_lo, sigma_sys_up;
-        infile >> log10E >> errLog10E >> J >> sigma_stat_lo >> sigma_stat_up >> sigma_sys_lo >> sigma_sys_up;
-        if (!infile.eof()) {
-            const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
-            const double y = J / 3.1e4;                    // [km-2 sr-1 yr-1 eV-1 -> m-2 sr-1 s-1 GeV-1]
-            const double yerr_stat_lo = sigma_stat_lo / 3.1e4;
-            const double yerr_stat_up = sigma_stat_up / 3.1e4;
-            const double yerr_sys_lo = sigma_sys_lo / 3.1e4;
-            const double yerr_sys_up = sigma_sys_up / 3.1e4;
-            dataPoint data = {{E, y}, {yerr_stat_lo, yerr_stat_up}, {yerr_sys_lo, yerr_sys_up}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
+// void MyAllAuger2021::readfile(std::string filename) {
+//     std::fstream infile(filename.c_str());
+//     const int num_of_header_lines = 1;
+//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+//     while (infile.good()) {
+//         double log10E, errLog10E, J, sigma_stat_lo, sigma_stat_up, sigma_sys_lo, sigma_sys_up;
+//         infile >> log10E >> errLog10E >> J >> sigma_stat_lo >> sigma_stat_up >> sigma_sys_lo >> sigma_sys_up;
+//         if (!infile.eof()) {
+//             const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
+//             const double y = J / 3.1e4;                    // [km-2 sr-1 yr-1 eV-1 -> m-2 sr-1 s-1 GeV-1]
+//             const double yerr_stat_lo = sigma_stat_lo / 3.1e4;
+//             const double yerr_stat_up = sigma_stat_up / 3.1e4;
+//             const double yerr_sys_lo = sigma_sys_lo / 3.1e4;
+//             const double yerr_sys_up = sigma_sys_up / 3.1e4;
+//             dataPoint data = {{E, y}, {yerr_stat_lo, yerr_stat_up}, {yerr_sys_lo, yerr_sys_up}};
+//             m_dataTable.push_back(data);
+//         }
+//     }
+//     infile.close();
+// }
 
-void MyAllAuger2019::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 4;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double log10E, EJ, Err_up, Err_low;
-        infile >> log10E >> EJ >> Err_up >> Err_low;
-        if (!infile.eof()) {
-            const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
-            const double y = EJ / E;
-            const double err_tot_lo = Err_low / E;
-            const double err_tot_up = Err_up / E;
-            dataPoint data = {{E, y}, {0., 0.}, {err_tot_lo, err_tot_up}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
+// void MyAllAuger2019::readfile(std::string filename) {
+//     std::fstream infile(filename.c_str());
+//     const int num_of_header_lines = 4;
+//     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+//     while (infile.good()) {
+//         double log10E, EJ, Err_up, Err_low;
+//         infile >> log10E >> EJ >> Err_up >> Err_low;
+//         if (!infile.eof()) {
+//             const double E = std::pow(10., log10E) / 1e9;  // [eV -> GeV]
+//             const double y = EJ / E;
+//             const double err_tot_lo = Err_low / E;
+//             const double err_tot_up = Err_up / E;
+//             dataPoint data = {{E, y}, {0., 0.}, {err_tot_lo, err_tot_up}};
+//             m_dataTable.push_back(data);
+//         }
+//     }
+//     infile.close();
+// }
 
 void MyAllTale::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
