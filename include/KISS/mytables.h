@@ -8,9 +8,10 @@
 
 namespace KISS {
 
-class MyLeptonCALET : public CrDataset {
+namespace CALET {
+class MyLepton : public CrDataset {
    public:
-    MyLeptonCALET(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
+    MyLepton(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
         setSource(mytables);
         setDOI("10.1103/PhysRevLett.131.191001");
         setADSbibcode("2023PhRvL.131s1001A");
@@ -19,9 +20,9 @@ class MyLeptonCALET : public CrDataset {
     void readfile(std::string filename) override;
 };
 
-class MyHeavyCALET : public CrDataset {
+class MyHeavy : public CrDataset {
    public:
-    MyHeavyCALET(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
+    MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
         setSource(mytables);
         setDOI("10.1103/py17-74rk");
         setADSbibcode("2025PhRvL.135b1002A");
@@ -29,6 +30,31 @@ class MyHeavyCALET : public CrDataset {
 
     void readfile(std::string filename) override;
 };
+}  // namespace CALET
+
+namespace DAMPE {
+class MyBoron : public CrDataset {
+   public:
+    MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.134.191001");
+        setADSbibcode("2025PhRvL.134s1001A");
+    }
+
+    void readfile(std::string filename);
+};
+
+class MyLight : public CrDataset {
+   public:
+    MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevD.109.L121101");
+        setADSbibcode("2024PhRvD.109l1101A");
+    }
+
+    void readfile(std::string filename);
+};
+}  // namespace DAMPE
 
 class MyLeptonVeritas : public CrDataset {
    public:
@@ -117,17 +143,6 @@ class MyAllTibet : public CrDataset {
     }
 
     void readfile(std::string filename) override;
-};
-
-class MyLightDAMPE : public CrDataset {
-   public:
-    MyLightDAMPE(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("");
-        setADSbibcode("");
-    }
-
-    void readfile(std::string filename);
 };
 
 class MyProtonGRAPES : public CrDataset {

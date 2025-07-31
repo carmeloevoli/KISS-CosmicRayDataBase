@@ -1,5 +1,5 @@
 #Source: mytables
-#Ref:  ()
+#Ref: 10.1103/PhysRevD.109.L121101 (2024PhRvD.109l1101A)
 #Experiment: DAMPE
 #Y Quantity: light
 #X Quantity: totalEnergy

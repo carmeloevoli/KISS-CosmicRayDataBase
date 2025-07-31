@@ -7,7 +7,7 @@ namespace CALET {
 
 void run() {
     {
-        KISS::MyLeptonCALET data(KISS::geometrical);
+        KISS::CALET::MyLepton data(KISS::geometrical);
         data.run();
     }
     {
@@ -41,15 +41,15 @@ void run() {
         data.run();
     }
     {
-        KISS::MyHeavyCALET data(KISS::Cr, KISS::geometrical);
+        KISS::CALET::MyHeavy data(KISS::Cr, KISS::geometrical);
         data.run();
     }
     {
-        KISS::MyHeavyCALET data(KISS::Ti, KISS::geometrical);
+        KISS::CALET::MyHeavy data(KISS::Ti, KISS::geometrical);
         data.run();
     }
     {
-        KISS::MyHeavyCALET data(KISS::Fe, KISS::geometrical);
+        KISS::CALET::MyHeavy data(KISS::Fe, KISS::geometrical);
         data.run();
     }
     {

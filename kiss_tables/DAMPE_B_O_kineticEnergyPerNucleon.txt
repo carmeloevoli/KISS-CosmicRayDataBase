@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref:   ( )
+#Ref: 10.1016/j.scib.2022.10.002 (2022SciBu..67.2162D)
 #Experiment: DAMPE
 #Y Quantity: B_O
 #X Quantity: kineticEnergyPerNucleon

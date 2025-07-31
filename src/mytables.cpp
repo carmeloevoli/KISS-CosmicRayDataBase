@@ -11,6 +11,80 @@
 
 namespace KISS {
 
+namespace CALET {
+void MyLepton::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
+        infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyHeavy::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
+        infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            const double syst_do = syst_1 + syst_2_do;
+            const double syst_up = syst_1 + syst_2_up;
+            dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+}  // namespace CALET
+
+namespace DAMPE {
+void MyBoron::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
+        infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            const double syst_do = syst_1 + syst_2_do;
+            const double syst_up = syst_1 + syst_2_up;
+            dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+
+void MyLight::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    const int num_of_header_lines = 1;
+    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
+    while (infile.good()) {
+        double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
+        infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had;
+        if (!infile.eof()) {
+            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+            const double syst = syst_ana + syst_had;
+            dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
+            m_dataTable.push_back(data);
+        }
+    }
+    infile.close();
+}
+}  // namespace DAMPE
+
 // ARGO
 void MyLightARGO::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
@@ -159,22 +233,6 @@ void MyAllTibet::readfile(std::string filename) {
     infile.close();
 }
 
-void MyLightDAMPE::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
-        infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had;
-        if (!infile.eof()) {
-            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-            const double syst = syst_ana + syst_had;
-            dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
-            m_dataTable.push_back(data);
-        }
-    }
-}
-
 void MyProtonGRAPES::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
     const int num_of_header_lines = 1;
@@ -213,40 +271,6 @@ void MyProtonLHAASO::readfile(std::string filename) {
         const double errSyst = sigma_sys / 1e6;                                   // [PeV-1 -> GeV-1]
         dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
         m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-
-void MyLeptonCALET::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
-        infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp;
-        if (!infile.eof()) {
-            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-            dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
-            m_dataTable.push_back(data);
-        }
-    }
-    infile.close();
-}
-
-void MyHeavyCALET::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    const int num_of_header_lines = 1;
-    for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
-        infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up;
-        if (!infile.eof()) {
-            const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-            const double syst_do = syst_1 + syst_2_do;
-            const double syst_up = syst_1 + syst_2_up;
-            dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
-            m_dataTable.push_back(data);
-        }
     }
     infile.close();
 }

@@ -2,7 +2,7 @@
 #Ref: 10.1126/sciadv.aax3793 (2019SciA....5.3793A)
 #Experiment: DAMPE
 #Y Quantity: H
-#X Quantity: totalEnergy
+#X Quantity: kineticEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors

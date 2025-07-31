@@ -2,7 +2,7 @@
 #Ref: 10.1103/PhysRevLett.126.201102 (2021PhRvL.126t1102A)
 #Experiment: DAMPE
 #Y Quantity: He
-#X Quantity: totalEnergy
+#X Quantity: kineticEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Colums: x, y, y statistical errors, y systematic errors

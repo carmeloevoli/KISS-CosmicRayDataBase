@@ -11,7 +11,7 @@ int main() {
         // BESS::run();
         CALET::run();
         // CREAM::run();
-        // DAMPE::run();
+        DAMPE::run();
         // FERMI::run();
         // NUCLEON::run();
         // PAMELA::run();
