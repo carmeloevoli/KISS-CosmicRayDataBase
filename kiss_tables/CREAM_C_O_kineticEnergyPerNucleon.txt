@@ -1,0 +1,14 @@
+#Source: CRDB
+#Ref: 10.1016/j.astropartphys.2008.07.010  (2008APh....30..133A)
+#Experiment: CREAM
+#Y Quantity: C_O
+#X Quantity: kineticEnergyPerNucleon
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: 
+#Colums: x, y, y statistical errors, y systematic errors
+2.000e+00 1.100e+00 1.000e-02 1.000e-02 1.000e-01 1.000e-01 
+8.000e+00 1.110e+00 1.000e-02 1.000e-02 1.000e-01 1.000e-01 
+3.175e+01 1.160e+00 3.000e-02 3.000e-02 1.000e-01 1.000e-01 
+1.257e+02 1.250e+00 1.000e-01 1.000e-01 1.000e-01 1.000e-01 
+5.010e+02 1.250e+00 3.200e-01 3.200e-01 1.000e-01 1.000e-01 
+2.000e+03 6.600e-01 4.100e-01 4.100e-01 1.000e-01 1.000e-01 

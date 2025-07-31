@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref:   ( )
+#Ref: 10.3847/1538-4357/ac9d2c (2022ApJ...940..107C)
 #Experiment: ISS-CREAM
 #Y Quantity: H
 #X Quantity: kineticEnergy

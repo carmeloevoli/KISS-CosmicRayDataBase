@@ -85,6 +85,8 @@ def CREAM():
     dump_datafile("Si", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Si_kineticEnergyPerNucleon.txt")
     dump_datafile("Fe", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Fe_kineticEnergyPerNucleon.txt")
     dump_datafile("B/C", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_B_C_kineticEnergyPerNucleon.txt")
+    dump_datafile("N/O", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_N_O_kineticEnergyPerNucleon.txt")
+    dump_datafile("C/O", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_C_O_kineticEnergyPerNucleon.txt")
 
 def DAMPE():
     # Fluxes
@@ -190,14 +192,14 @@ if __name__== "__main__":
     # AMS02()
     # BESS()
     CALET()
-    # CREAM()
+    CREAM()
     DAMPE()
     # FERMI()
     # GAMMA()
     HAWC()
     # HESS()
     # ICETOP()
-    # ISS_CREAM()
+    ISS_CREAM()
     # KASCADE()
     # KASCADE_Grande()
     # NUCLEON()

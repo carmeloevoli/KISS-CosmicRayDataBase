@@ -2,6 +2,7 @@
 #define KISS_EXPERIMENTS_CALET_H_
 
 #include "KISS/CRDB.h"
+#include "KISS/mytables.h"
 
 namespace CALET {
 

@@ -6,14 +6,15 @@
 int main() {
     try {
         CALET::run();
+        CREAM::run();
         DAMPE::run();
         HAWC::run();
+        ISSCREAM::run();
         PAMELA::run();
 
         // DIRECT MEASUREMENTS
         // AMS02::run();
         // BESS::run();
-        // CREAM::run();
         // FERMI::run();
         // NUCLEON::run();
         // TRACER::run();

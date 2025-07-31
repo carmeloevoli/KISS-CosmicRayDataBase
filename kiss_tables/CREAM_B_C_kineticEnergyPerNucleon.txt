@@ -1,5 +1,5 @@
 #Source: CRDB
-#Ref:   ( )
+#Ref: 10.1016/j.astropartphys.2008.07.010  (2008APh....30..133A)
 #Experiment: CREAM
 #Y Quantity: B_C
 #X Quantity: kineticEnergyPerNucleon

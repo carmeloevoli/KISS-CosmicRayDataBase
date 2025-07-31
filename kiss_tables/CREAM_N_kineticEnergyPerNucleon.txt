@@ -1,0 +1,11 @@
+#Source: CRDB
+#Ref: 10.1088/0004-637X/707/1/593 (2009ApJ...707..593A)
+#Experiment: CREAM
+#Y Quantity: N
+#X Quantity: kineticEnergyPerNucleon
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: 
+#Colums: x, y, y statistical errors, y systematic errors
+9.546e+01 7.280e-06 7.900e-07 7.900e-07 1.310e-06 1.310e-06 
+2.940e+02 5.390e-07 6.800e-08 6.800e-08 9.702e-08 9.702e-08 
+8.079e+02 3.800e-08 9.000e-09 1.100e-08 6.840e-09 6.840e-09 
