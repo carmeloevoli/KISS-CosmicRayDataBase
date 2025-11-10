@@ -9,7 +9,6 @@
 #include "KISS/experiments/CREAM.h"
 #include "KISS/experiments/DAMPE.h"
 #include "KISS/experiments/FERMI.h"
-// #include "KISS/experiments/GAMMA.h"
 // #include "KISS/experiments/GRAPES.h"
 #include "KISS/experiments/HAWC.h"
 // #include "KISS/experiments/HESS.h"
