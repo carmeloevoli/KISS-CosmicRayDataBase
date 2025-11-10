@@ -118,7 +118,7 @@ void MyLightARGO::readfile(std::string filename) {
 }
 
 // HESS
-void MyLeptonHess::readfile(std::string filename) {
+void MyLeptonHESS::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
     const int num_of_header_lines = 0;
     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');

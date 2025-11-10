@@ -104,18 +104,13 @@ def FERMI():
     dump_datafile("e+/e-+e+", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_posfraction_totalEnergy.txt")
     dump_datafile("e-+e+", "ETOT", "FERMI", "Fermi-LAT-HE (2008/08-2015/06)", "FERMI_e+e-_totalEnergy.txt")
 
-def GAMMA():
-    dump_datafile("AllParticles", "ETOT", "GAMMA", "GAMMA (2003/01-2007/12) SIBYLL", "GAMMA_allParticle_totalEnergy.txt")
-    dump_datafile("H", "ETOT", "GAMMA", "GAMMA (2003/01-2007/12) SIBYLL", "GAMMA_H_totalEnergy.txt")
-    dump_datafile("He", "ETOT", "GAMMA", "GAMMA (2003/01-2007/12) SIBYLL", "GAMMA_He_totalEnergy.txt")
-
 def HAWC():
     # light -> https://inspirehep.net/literature/2058342
     dump_datafile("AllParticles", "ETOT", "HAWC", "HAWC (2018-2019) QGSJet-II-04", "HAWC_allParticle_totalEnergy.txt")
 
 def HESS():
-    dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S.-LE (2004/10-2005/12)", "HESS-LE_e+e-_kineticEnergy.txt")
-    dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S. (2004/10-2007/08)", "HESS-HE_e+e-_kineticEnergy.txt")
+    #dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S.-LE (2004/10-2005/12)", "HESS-LE_e+e-_kineticEnergy.txt")
+    #dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S. (2004/10-2007/08)", "HESS-HE_e+e-_kineticEnergy.txt")
     dump_datafile("Fe", "ETOT", "HESS", "H.E.S.S. (2004/01-2006/12) QGSJet01+SIBYLL2.1", "HESS_Fe_totalEnergy.txt")
 
 def ICETOP():
@@ -196,7 +191,6 @@ if __name__== "__main__":
     CREAM()
     DAMPE()
     FERMI()
-    # GAMMA()
     HAWC()
     # HESS()
     # ICETOP()

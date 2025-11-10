@@ -71,23 +71,23 @@ class MyLight : public CrDataset {
 
 // OLD DATASETS
 
+class MyLeptonHESS : public CrDataset {
+   public:
+    MyLeptonHESS(EnergyModes mode) : CrDataset(hess, totalEnergy, lepton, mode) {
+        setSource(mytables);
+        setDOI("");
+        setADSbibcode("");
+    }
+
+    void readfile(std::string filename) override;
+};
+
 class MyLeptonVeritas : public CrDataset {
    public:
     MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
         setSource(mytables);
         setDOI("10.1103/PhysRevD.98.062004");
         setADSbibcode("2018PhRvD..98f2004A");
-    }
-
-    void readfile(std::string filename) override;
-};
-
-class MyLeptonHess : public CrDataset {
-   public:
-    MyLeptonHess(EnergyModes mode) : CrDataset(hess, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("");
-        setADSbibcode("");
     }
 
     void readfile(std::string filename) override;
