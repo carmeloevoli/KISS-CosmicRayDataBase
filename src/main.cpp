@@ -5,17 +5,18 @@
 
 int main() {
     try {
-        BESS::run();
-        CALET::run();
-        CREAM::run();
+        AMS02::run();
+        // BESS::run();
+        // CALET::run();
+        // CREAM::run();
         DAMPE::run();
-        FERMI::run();
-        HAWC::run();
-        ISSCREAM::run();
-        NUCLEON::run();
-        PAMELA::run();
+        // FERMI::run();
+        // HAWC::run();
+        // ISSCREAM::run();
+        // NUCLEON::run();
+        // PAMELA::run();
+        LHAASO::run();
 
-        // AMS02::run();
         // TRACER::run();
         // ARGO::run();
         // AUGER::run();
@@ -25,7 +26,6 @@ int main() {
         // ICETOP::run();
         // KASCADE_Grande::run();
         // KASCADE::run();
-        // LHAASO::run();
         // TALE::run();
         // TIBET::run();
         // TUNKA::run();

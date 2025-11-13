@@ -54,6 +54,18 @@ class MyLight : public CrDataset {
 
     void readfile(std::string filename);
 };
+
+class MyPrimary : public CrDataset {
+   public:
+    MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
+        setDescription("2025");
+        setSource(mytables);
+        setDOI(" ");
+        setADSbibcode(" ");
+    }
+
+    void readfile(std::string filename);
+};
 }  // namespace DAMPE
 
 namespace HAWC {
@@ -68,6 +80,20 @@ class MyLight : public CrDataset {
     void readfile(std::string filename) override;
 };
 }  // namespace HAWC
+
+namespace LHAASO {
+class MyNuclei : public CrDataset {
+   public:
+    MyNuclei(YQuantities primary, std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, primary, mode) {
+        setSource(mytables);
+        setDOI("unpublished");
+        setADSbibcode("2025arXiv250514447T");
+        setDescription(HIM);
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace LHAASO
 
 // OLD DATASETS
 
@@ -144,18 +170,6 @@ class MyProtonGRAPES : public CrDataset {
         setSource(mytables);
         setDOI("10.1103/PhysRevLett.132.051002");
         setADSbibcode("2024PhRvL.132e1002V");
-    }
-
-    void readfile(std::string filename) override;
-};
-
-class MyProtonLHAASO : public CrDataset {
-   public:
-    MyProtonLHAASO(EnergyModes mode, std::string description) : CrDataset(lhaaso, totalEnergy, H, mode) {
-        setSource(mytables);
-        setDOI("unpublished");
-        setADSbibcode("2025arXiv250514447T");
-        setDescription(description);
     }
 
     void readfile(std::string filename) override;

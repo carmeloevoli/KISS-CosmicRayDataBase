@@ -14,18 +14,6 @@ void run() {
         data.run();
     }
     {
-        KISS::CRDB data(KISS::dampe, KISS::kEnergy, KISS::H, KISS::Laff2_7);
-        data.setDOI("10.1126/sciadv.aax3793");
-        data.setADSbibcode("2019SciA....5.3793A");
-        data.run();
-    }
-    {
-        KISS::CRDB data(KISS::dampe, KISS::kEnergy, KISS::He, KISS::Laff2_7);
-        data.setDOI("10.1103/PhysRevLett.126.201102");
-        data.setADSbibcode("2021PhRvL.126t1102A");
-        data.run();
-    }
-    {
         KISS::DAMPE::MyBoron data(KISS::Laff2_7);
         data.run();
     }
@@ -43,6 +31,27 @@ void run() {
         KISS::CRDB data(KISS::dampe, KISS::kEnergyPerNucleon, KISS::B_O, KISS::geometrical);
         data.setDOI("10.1016/j.scib.2022.10.002");
         data.setADSbibcode("2022SciBu..67.2162D");
+        data.run();
+    }
+    // 2025
+    {
+        KISS::DAMPE::MyPrimary data(KISS::H, KISS::Laff2_7);
+        data.run();
+    }
+    {
+        KISS::DAMPE::MyPrimary data(KISS::He, KISS::Laff2_7);
+        data.run();
+    }
+    {
+        KISS::DAMPE::MyPrimary data(KISS::C, KISS::Laff2_7);
+        data.run();
+    }
+    {
+        KISS::DAMPE::MyPrimary data(KISS::O, KISS::Laff2_7);
+        data.run();
+    }
+    {
+        KISS::DAMPE::MyPrimary data(KISS::Fe, KISS::Laff2_7);
         data.run();
     }
 }
