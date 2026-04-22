@@ -1,0 +1,934 @@
+{
+  "default_experiments": [
+    "AMS02",
+    "AUGER",
+    "BESS",
+    "CALET",
+    "CREAM",
+    "DAMPE",
+    "FERMI",
+    "HAWC",
+    "HESS",
+    "ICETOP",
+    "ISS_CREAM",
+    "NUCLEON",
+    "PAMELA",
+    "TA",
+    "TIBET",
+    "TRACER",
+    "TUNKA"
+  ],
+  "experiments": {
+    "AMS02": [
+      {
+        "quantity": "e-",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_e-_rigidity.txt"
+      },
+      {
+        "quantity": "e+",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_e+_rigidity.txt"
+      },
+      {
+        "quantity": "e-+e+",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_e+e-_rigidity.txt"
+      },
+      {
+        "quantity": "e+/e-+e+",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_posfraction_rigidity.txt"
+      },
+      {
+        "quantity": "1H-bar",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_pbar_rigidity.txt"
+      },
+      {
+        "quantity": "1H-bar/e+",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2015/05)",
+        "filename": "AMS-02_pbar_e+_rigidity.txt"
+      },
+      {
+        "quantity": "1H/e+",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2015/05)",
+        "filename": "AMS-02_H_e+_rigidity.txt"
+      },
+      {
+        "quantity": "1H/e-",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2015/05)",
+        "filename": "AMS-02_H_e-_rigidity.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_H_rigidity.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_He_rigidity.txt"
+      },
+      {
+        "quantity": "Li",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Li_rigidity.txt"
+      },
+      {
+        "quantity": "Be",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Be_rigidity.txt"
+      },
+      {
+        "quantity": "B",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_B_rigidity.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_C_rigidity.txt"
+      },
+      {
+        "quantity": "N",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_N_rigidity.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_O_rigidity.txt"
+      },
+      {
+        "quantity": "F",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_F_rigidity.txt"
+      },
+      {
+        "quantity": "Ne",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_Ne_rigidity.txt"
+      },
+      {
+        "quantity": "Na",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Na_rigidity.txt"
+      },
+      {
+        "quantity": "Mg",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_Mg_rigidity.txt"
+      },
+      {
+        "quantity": "Al",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Al_rigidity.txt"
+      },
+      {
+        "quantity": "Si",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_Si_rigidity.txt"
+      },
+      {
+        "quantity": "S",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2021/05)",
+        "filename": "AMS-02_S_rigidity.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Fe_rigidity.txt"
+      },
+      {
+        "quantity": "H/He",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_H_He_rigidity.txt"
+      },
+      {
+        "quantity": "He/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_He_O_rigidity.txt"
+      },
+      {
+        "quantity": "Li/B",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2016/05)",
+        "filename": "AMS-02_Li_B_rigidity.txt"
+      },
+      {
+        "quantity": "Li/C",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Li_C_rigidity.txt"
+      },
+      {
+        "quantity": "Li/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Li_O_rigidity.txt"
+      },
+      {
+        "quantity": "Be/B",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2016/05)",
+        "filename": "AMS-02_Be_B_rigidity.txt"
+      },
+      {
+        "quantity": "Be/C",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Be_C_rigidity.txt"
+      },
+      {
+        "quantity": "Be/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Be_O_rigidity.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_B_C_rigidity.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2016/05)",
+        "filename": "AMS-02_B_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_B_O_rigidity.txt"
+      },
+      {
+        "quantity": "C/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_C_O_rigidity.txt"
+      },
+      {
+        "quantity": "N/B",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_N_B_rigidity.txt"
+      },
+      {
+        "quantity": "N/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_N_O_rigidity.txt"
+      },
+      {
+        "quantity": "F/B",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_F_B_rigidity.txt"
+      },
+      {
+        "quantity": "F/Si",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_F_Si_rigidity.txt"
+      },
+      {
+        "quantity": "Ne/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Ne_O_rigidity.txt"
+      },
+      {
+        "quantity": "Ne/Mg",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Ne_Mg_rigidity.txt"
+      },
+      {
+        "quantity": "Mg/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Mg_O_rigidity.txt"
+      },
+      {
+        "quantity": "Si/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Si_O_rigidity.txt"
+      },
+      {
+        "quantity": "Si/Mg",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2018/05)",
+        "filename": "AMS-02_Si_Mg_rigidity.txt"
+      },
+      {
+        "quantity": "Fe/He",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Fe_He_rigidity.txt"
+      },
+      {
+        "quantity": "Fe/O",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Fe_O_rigidity.txt"
+      },
+      {
+        "quantity": "Fe/Si",
+        "energy_type": "R",
+        "experiment": "AMS02",
+        "sub_experiment": "AMS02 (2011/05-2019/10)",
+        "filename": "AMS-02_Fe_Si_rigidity.txt"
+      }
+    ],
+    "AUGER": [
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "Auger",
+        "sub_experiment": "Auger Hybrid (2004/01-2016/12) QGSJet-II-04+EPOS-LHC+SIBYLL2.3",
+        "filename": "Auger_hybrid_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "Auger",
+        "sub_experiment": "Auger SD750+SD1500 (2014/01-2018/08)",
+        "filename": "Auger_SD_allParticle_totalEnergy.txt"
+      }
+    ],
+    "BESS": [
+      {
+        "quantity": "H",
+        "energy_type": "EKN",
+        "experiment": "BESS-TeV",
+        "sub_experiment": "BESS-TeV (2002/08)",
+        "filename": "BESS-TeV_H_kineticEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "EKN",
+        "experiment": "BESS-TeV",
+        "sub_experiment": "BESS-TeV (2002/08)",
+        "filename": "BESS-TeV_He_kineticEnergyPerNucleon.txt"
+      }
+    ],
+    "CALET": [
+      {
+        "quantity": "H",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2021/12)",
+        "filename": "CALET_H_kineticEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "EK",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/04)",
+        "filename": "CALET_He_kineticEnergy.txt"
+      },
+      {
+        "quantity": "B",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/02)",
+        "filename": "CALET_B_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/02)",
+        "filename": "CALET_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2019/10)",
+        "filename": "CALET_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ni",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/11-2021/05)",
+        "filename": "CALET_Ni_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "H/He",
+        "energy_type": "R",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/04)",
+        "filename": "CALET_H_He_rigidity.txt"
+      },
+      {
+        "quantity": "H/He",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/04)",
+        "filename": "CALET_H_He_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/02)",
+        "filename": "CALET_B_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C/O",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2019/10)",
+        "filename": "CALET_C_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2016/01-2020/05)",
+        "filename": "CALET_Fe_kineticEnergyPerNucleon.txt"
+      }
+    ],
+    "CREAM": [
+      {
+        "quantity": "H",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-I+III (2004+2007)",
+        "filename": "CREAM_H_kineticEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-I+III (2004+2007)",
+        "filename": "CREAM_He_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "N",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_N_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ne",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_Ne_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Mg",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_Mg_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Si",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_Si_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-II (2005/12-2006/01)",
+        "filename": "CREAM_Fe_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-I (2004/12-2005/01)",
+        "filename": "CREAM_B_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "N/O",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-I (2004/12-2005/01)",
+        "filename": "CREAM_N_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C/O",
+        "energy_type": "EKN",
+        "experiment": "CREAM",
+        "sub_experiment": "CREAM-I (2004/12-2005/01)",
+        "filename": "CREAM_C_O_kineticEnergyPerNucleon.txt"
+      }
+    ],
+    "DAMPE": [
+      {
+        "quantity": "e-+e+",
+        "energy_type": "ETOT",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2015/12-2017/06)",
+        "filename": "DAMPE_e+e-_totalEnergy.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2018/06)",
+        "filename": "DAMPE_H_kineticEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2020/06)",
+        "filename": "DAMPE_He_kineticEnergy.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2021/12)",
+        "filename": "DAMPE_B_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/O",
+        "energy_type": "EKN",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2021/12)",
+        "filename": "DAMPE_B_O_kineticEnergyPerNucleon.txt"
+      }
+    ],
+    "FERMI": [
+      {
+        "quantity": "e-",
+        "energy_type": "EK",
+        "experiment": "FERMI",
+        "sub_experiment": "Fermi-LAT  (2008/06-2011/04)",
+        "filename": "FERMI_e-_kineticEnergy.txt"
+      },
+      {
+        "quantity": "e+",
+        "energy_type": "EK",
+        "experiment": "FERMI",
+        "sub_experiment": "Fermi-LAT  (2008/06-2011/04)",
+        "filename": "FERMI_e+_kineticEnergy.txt"
+      },
+      {
+        "quantity": "e+/e-+e+",
+        "energy_type": "EK",
+        "experiment": "FERMI",
+        "sub_experiment": "Fermi-LAT  (2008/06-2011/04)",
+        "filename": "FERMI_posfraction_totalEnergy.txt"
+      },
+      {
+        "quantity": "e-+e+",
+        "energy_type": "ETOT",
+        "experiment": "FERMI",
+        "sub_experiment": "Fermi-LAT-HE (2008/08-2015/06)",
+        "filename": "FERMI_e+e-_totalEnergy.txt"
+      }
+    ],
+    "HAWC": [
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "HAWC",
+        "sub_experiment": "HAWC (2018-2019) QGSJet-II-04",
+        "filename": "HAWC_allParticle_totalEnergy.txt"
+      }
+    ],
+    "HESS": [
+      {
+        "quantity": "Fe",
+        "energy_type": "ETOT",
+        "experiment": "HESS",
+        "sub_experiment": "H.E.S.S. (2004/01-2006/12) QGSJet01+SIBYLL2.1",
+        "filename": "HESS_Fe_totalEnergy.txt"
+      }
+    ],
+    "ICETOP": [
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "IceTop",
+        "sub_experiment": "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1",
+        "filename": "IceTop_IceCube_SIBYLL-2.1_H_totalEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "ETOT",
+        "experiment": "IceTop",
+        "sub_experiment": "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1",
+        "filename": "IceTop_IceCube_SIBYLL-2.1_He_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "IceTop",
+        "sub_experiment": "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1",
+        "filename": "IceTop_IceCube_SIBYLL-2.1_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "IceTop",
+        "sub_experiment": "IceTop (2016/05-2017/04) SIBYLL2.1",
+        "filename": "IceTop_SIBYLL-2.1_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "IceTop",
+        "sub_experiment": "IceTop (2016/05-2017/04) QGSJet-II-04",
+        "filename": "IceTop_QGSJet-II-04_allParticle_totalEnergy.txt"
+      }
+    ],
+    "ISS_CREAM": [
+      {
+        "quantity": "H",
+        "energy_type": "EKN",
+        "experiment": "ISS-CREAM",
+        "sub_experiment": "ISS-CREAM (2017/08-2019/02)",
+        "filename": "ISS-CREAM_H_kineticEnergy.txt"
+      }
+    ],
+    "NUCLEON": [
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_H_totalEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_He_totalEnergy.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_C_totalEnergy.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_O_totalEnergy.txt"
+      },
+      {
+        "quantity": "Ne",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_Ne_totalEnergy.txt"
+      },
+      {
+        "quantity": "Mg",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_Mg_totalEnergy.txt"
+      },
+      {
+        "quantity": "Si",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_Si_totalEnergy.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_Fe_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "H/He",
+        "energy_type": "R",
+        "experiment": "NUCLEON",
+        "sub_experiment": "NUCLEON-KLEM (2015/07-2017/06)",
+        "filename": "NUCLEON_H_He_rigidity.txt"
+      }
+    ],
+    "PAMELA": [
+      {
+        "quantity": "e-",
+        "energy_type": "EK",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2010/01)",
+        "filename": "PAMELA_e-_kineticEnergy.txt"
+      },
+      {
+        "quantity": "e+",
+        "energy_type": "EK",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2009/12)",
+        "filename": "PAMELA_e+_kineticEnergy.txt"
+      },
+      {
+        "quantity": "e+/e-+e+",
+        "energy_type": "EK",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2009/12)",
+        "filename": "PAMELA_posfraction_kineticEnergy.txt"
+      },
+      {
+        "quantity": "1H-bar",
+        "energy_type": "EKN",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2009/12)",
+        "filename": "PAMELA_pbar_kineticEnergy.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "R",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2008/12)",
+        "filename": "PAMELA_H_rigidity.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "R",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2008/12)",
+        "filename": "PAMELA_He_rigidity.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "R",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2008/03)",
+        "filename": "PAMELA_C_rigidity.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2008/03)",
+        "filename": "PAMELA_B_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "R",
+        "experiment": "PAMELA",
+        "sub_experiment": "PAMELA (2006/07-2008/03)",
+        "filename": "PAMELA_B_C_rigidity.txt"
+      }
+    ],
+    "TA": [
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "Telescope",
+        "sub_experiment": "TALE (2014/06-2016/03) QGSJet II 03",
+        "filename": "TALE_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "Telescope",
+        "sub_experiment": "Telescope Array Hybrid (2008/01-2015/05)",
+        "filename": "TA_allParticle_totalEnergy.txt"
+      }
+    ],
+    "TIBET": [
+      {
+        "quantity": "H-He-group",
+        "energy_type": "ETOT",
+        "experiment": "Tibet",
+        "sub_experiment": "Tibet III (2000/11-2004/10) QGSJet01",
+        "filename": "Tibet_light_totalEnergy.txt"
+      }
+    ],
+    "TRACER": [
+      {
+        "quantity": "B",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2006/07)",
+        "filename": "TRACER_B_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2006/07)",
+        "filename": "TRACER_C_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2006/07)",
+        "filename": "TRACER_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ne",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2003/12)",
+        "filename": "TRACER_Ne_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Mg",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2003/12)",
+        "filename": "TRACER_Mg_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Si",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2003/12)",
+        "filename": "TRACER_Si_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2006/07)",
+        "filename": "TRACER_Fe_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "B/C",
+        "energy_type": "EKN",
+        "experiment": "TRACER",
+        "sub_experiment": "TRACER (2006/07)",
+        "filename": "TRACER_B_C_kineticEnergyPerNucleon.txt"
+      }
+    ],
+    "TUNKA": [
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "TUNKA",
+        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
+        "filename": "TUNKA-133_H_totalEnergy.txt",
+        "combo_level": 1
+      },
+      {
+        "quantity": "He",
+        "energy_type": "ETOT",
+        "experiment": "TUNKA",
+        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
+        "filename": "TUNKA-133_He_totalEnergy.txt",
+        "combo_level": 1
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "TUNKA",
+        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
+        "filename": "TUNKA-133_allParticle_totalEnergy.txt"
+      }
+    ]
+  }
+}

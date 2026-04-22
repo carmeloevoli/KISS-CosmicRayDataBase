@@ -1,205 +1,332 @@
-from utils import dump_datafile
-    
-def AMS02():
-    dump_datafile("e-", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_e-_rigidity.txt")
-    dump_datafile("e+", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_e+_rigidity.txt")
-    dump_datafile("e-+e+", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_e+e-_rigidity.txt")
-    dump_datafile("e+/e-+e+", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_posfraction_rigidity.txt")
-    dump_datafile("1H-bar", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_pbar_rigidity.txt")
-    dump_datafile("1H-bar/e+", "R", "AMS02", "AMS02 (2011/05-2015/05)", "AMS-02_pbar_e+_rigidity.txt")
-    dump_datafile("1H-bar/e+", "R", "AMS02", "AMS02 (2011/05-2015/05)", "AMS-02_pbar_e+_rigidity.txt")
-    dump_datafile("1H/e+", "R", "AMS02", "AMS02 (2011/05-2015/05)", "AMS-02_H_e+_rigidity.txt")
-    dump_datafile("1H/e-", "R", "AMS02", "AMS02 (2011/05-2015/05)", "AMS-02_H_e-_rigidity.txt")
-    dump_datafile("H", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_H_rigidity.txt")
-    dump_datafile("He", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_He_rigidity.txt")
-    dump_datafile("Li", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Li_rigidity.txt")
-    dump_datafile("Be", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Be_rigidity.txt")
-    dump_datafile("B", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_B_rigidity.txt")
-    dump_datafile("C", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_C_rigidity.txt")
-    dump_datafile("N", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_N_rigidity.txt")
-    dump_datafile("O", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_O_rigidity.txt")
-    dump_datafile("F", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_F_rigidity.txt")
-    dump_datafile("Ne", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_Ne_rigidity.txt")
-    dump_datafile("Na", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Na_rigidity.txt")
-    dump_datafile("Mg", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_Mg_rigidity.txt")
-    dump_datafile("Al", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Al_rigidity.txt")
-    dump_datafile("Si", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_Si_rigidity.txt")
-    dump_datafile("S", "R", "AMS02", "AMS02 (2011/05-2021/05)", "AMS-02_S_rigidity.txt")
-    dump_datafile("Fe", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Fe_rigidity.txt")
-    dump_datafile("H/He", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_H_He_rigidity.txt")
-    dump_datafile("He/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_He_O_rigidity.txt")
-    dump_datafile("Li/B", "R", "AMS02", "AMS02 (2011/05-2016/05)", "AMS-02_Li_B_rigidity.txt")
-    dump_datafile("Li/C", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Li_C_rigidity.txt")
-    dump_datafile("Li/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Li_O_rigidity.txt")
-    dump_datafile("Be/B", "R", "AMS02", "AMS02 (2011/05-2016/05)", "AMS-02_Be_B_rigidity.txt")
-    dump_datafile("Be/C", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Be_C_rigidity.txt")
-    dump_datafile("Be/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Be_O_rigidity.txt")
-    dump_datafile("B/C", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_B_C_rigidity.txt")
-    dump_datafile("B/C", "EKN", "AMS02", "AMS02 (2011/05-2016/05)", "AMS-02_B_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_B_O_rigidity.txt")
-    dump_datafile("C/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_C_O_rigidity.txt")
-    dump_datafile("N/B", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_N_B_rigidity.txt")
-    dump_datafile("N/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_N_O_rigidity.txt")
-    dump_datafile("F/B", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_F_B_rigidity.txt")
-    dump_datafile("F/Si", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_F_Si_rigidity.txt")
-    dump_datafile("Ne/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Ne_O_rigidity.txt")
-    dump_datafile("Ne/Mg", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Ne_Mg_rigidity.txt")
-    dump_datafile("Mg/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Mg_O_rigidity.txt")
-    dump_datafile("Si/O", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Si_O_rigidity.txt")
-    dump_datafile("Si/Mg", "R", "AMS02", "AMS02 (2011/05-2018/05)", "AMS-02_Si_Mg_rigidity.txt")
-    dump_datafile("Fe/He", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Fe_He_rigidity.txt")
-    dump_datafile("Fe/O", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Fe_O_rigidity.txt")
-    dump_datafile("Fe/Si", "R", "AMS02", "AMS02 (2011/05-2019/10)", "AMS-02_Fe_Si_rigidity.txt")
+#!/usr/bin/env python
 
-def BESS():
-    dump_datafile("H", "EKN", "BESS-TeV", "BESS-TeV (2002/08)", "BESS-TeV_H_kineticEnergy.txt")
-    dump_datafile("He", "EKN", "BESS-TeV", "BESS-TeV (2002/08)", "BESS-TeV_He_kineticEnergyPerNucleon.txt")
+from __future__ import print_function
 
-def CALET():
-    # Fluxes
-    #dump_datafile("e-+e+", "ETOT", "CALET", "CALET (2015/10-2017/11)", "CALET_e+e-_totalEnergy.txt") outdated -> MyTables:https://inspirehep.net/literature/2720923
-    dump_datafile("H", "EKN", "CALET", "CALET (2015/10-2021/12)", "CALET_H_kineticEnergy.txt")
-    dump_datafile("He", "EK", "CALET", "CALET (2015/10-2022/04)", "CALET_He_kineticEnergy.txt")
-    dump_datafile("B", "EKN", "CALET", "CALET (2015/10-2022/02)", "CALET_B_kineticEnergyPerNucleon.txt")
-    dump_datafile("C", "EKN", "CALET", "CALET (2015/10-2022/02)", "CALET_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("O", "EKN", "CALET", "CALET (2015/10-2019/10)", "CALET_O_kineticEnergyPerNucleon.txt")
-    dump_datafile("Ni", "EKN", "CALET", "CALET (2015/11-2021/05)", "CALET_Ni_kineticEnergyPerNucleon.txt")
-    # Ti -> MyTables:https://inspirehep.net/literature/2944459
-    # Cr -> MyTables:https://inspirehep.net/literature/2944459
-    #dump_datafile("Fe", "EKN", "CALET", "CALET (2016/01-2020/05)", "CALET_Fe_kineticEnergyPerNucleon.txt") outdated -> MyTables:https://inspirehep.net/literature/2944459
-    # Ratios
-    dump_datafile("H/He", "R", "CALET", "CALET (2015/10-2022/04)", "CALET_H_He_rigidity.txt")
-    dump_datafile("H/He", "EKN", "CALET", "CALET (2015/10-2022/04)", "CALET_H_He_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/C", "EKN", "CALET", "CALET (2015/10-2022/02)", "CALET_B_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("C/O", "EKN", "CALET", "CALET (2015/10-2019/10)", "CALET_C_O_kineticEnergyPerNucleon.txt")
+import argparse
+import json
+import os
+from collections import OrderedDict
 
-def CREAM():
-    dump_datafile("H", "EKN", "CREAM", "CREAM-I+III (2004+2007)", "CREAM_H_kineticEnergy.txt")
-    dump_datafile("He", "EKN", "CREAM", "CREAM-I+III (2004+2007)", "CREAM_He_kineticEnergyPerNucleon.txt")
-    dump_datafile("C", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("N", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_N_kineticEnergyPerNucleon.txt")
-    dump_datafile("O", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_O_kineticEnergyPerNucleon.txt")
-    dump_datafile("Ne", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Ne_kineticEnergyPerNucleon.txt")
-    dump_datafile("Mg", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Mg_kineticEnergyPerNucleon.txt")
-    dump_datafile("Si", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Si_kineticEnergyPerNucleon.txt")
-    dump_datafile("Fe", "EKN", "CREAM", "CREAM-II (2005/12-2006/01)", "CREAM_Fe_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/C", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_B_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("N/O", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_N_O_kineticEnergyPerNucleon.txt")
-    dump_datafile("C/O", "EKN", "CREAM", "CREAM-I (2004/12-2005/01)", "CREAM_C_O_kineticEnergyPerNucleon.txt")
+from utils import DEFAULT_OUTPUT_DIR, CrdbDependencyError, CrdbExportError, DatasetRequest, export_dataset
 
-def DAMPE():
-    # Fluxes
-    dump_datafile("e-+e+", "ETOT", "DAMPE", "DAMPE (2015/12-2017/06)", "DAMPE_e+e-_totalEnergy.txt")
-    dump_datafile("H", "EK", "DAMPE", "DAMPE (2016/01-2018/06)", "DAMPE_H_kineticEnergy.txt")
-    dump_datafile("He", "EK", "DAMPE", "DAMPE (2016/01-2020/06)", "DAMPE_He_kineticEnergy.txt")
-    # p+He -> MyTables:https://inspirehep.net/literature/2648198
-    # Boron -> MyTables:https://inspirehep.net/literature/2859908
-    # Ratios
-    dump_datafile("B/C", "EKN", "DAMPE", "DAMPE (2016/01-2021/12)", "DAMPE_B_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/O", "EKN", "DAMPE", "DAMPE (2016/01-2021/12)", "DAMPE_B_O_kineticEnergyPerNucleon.txt")
+try:
+    basestring
+except NameError:  # pragma: no cover - Python 3
+    basestring = str
 
-def FERMI():
-    dump_datafile("e-", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_e-_kineticEnergy.txt")
-    dump_datafile("e+", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_e+_kineticEnergy.txt")
-    dump_datafile("e+/e-+e+", "EK", "FERMI", "Fermi-LAT  (2008/06-2011/04)", "FERMI_posfraction_totalEnergy.txt")
-    dump_datafile("e-+e+", "ETOT", "FERMI", "Fermi-LAT-HE (2008/08-2015/06)", "FERMI_e+e-_totalEnergy.txt")
 
-def HAWC():
-    # light -> https://inspirehep.net/literature/2058342
-    dump_datafile("AllParticles", "ETOT", "HAWC", "HAWC (2018-2019) QGSJet-II-04", "HAWC_allParticle_totalEnergy.txt")
+DATASETS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "crdb_datasets.json")
+REQUIRED_DATASET_KEYS = frozenset(("quantity", "energy_type", "experiment", "sub_experiment", "filename"))
+OPTIONAL_DATASET_KEYS = frozenset(("combo_level",))
+_REGISTRY_CACHE = None
 
-def HESS():
-    #dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S.-LE (2004/10-2005/12)", "HESS-LE_e+e-_kineticEnergy.txt")
-    #dump_datafile("e-+e+", "EK", "HESS", "H.E.S.S. (2004/10-2007/08)", "HESS-HE_e+e-_kineticEnergy.txt")
-    dump_datafile("Fe", "ETOT", "HESS", "H.E.S.S. (2004/01-2006/12) QGSJet01+SIBYLL2.1", "HESS_Fe_totalEnergy.txt")
 
-def ICETOP():
-    dump_datafile("H", "ETOT", "IceTop", "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1", "IceTop_IceCube_SIBYLL-2.1_H_totalEnergy.txt")
-    dump_datafile("He", "ETOT", "IceTop", "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1", "IceTop_IceCube_SIBYLL-2.1_He_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "IceTop", "IceCube+IceTop (2010/06-2013/05) SIBYLL2.1", "IceTop_IceCube_SIBYLL-2.1_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "IceTop", "IceTop (2010/06-2013/05)", "IceTop_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "IceTop", "IceTop (2016/05-2017/04) SIBYLL2.1", "IceTop_SIBYLL-2.1_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "IceTop", "IceTop (2016/05-2017/04) QGSJet-II-04", "IceTop_QGSJet-II-04_allParticle_totalEnergy.txt")
+class DatasetRegistryError(ValueError):
+    """Raised when the dataset registry file is missing or malformed."""
 
-def ISS_CREAM():
-    dump_datafile("H", "EKN", "ISS-CREAM", "ISS-CREAM (2017/08-2019/02)", "ISS-CREAM_H_kineticEnergy.txt")
 
-def KASCADE():
-    dump_datafile("H", "ETOT", "KASCADE", "KASCADE (1996/10-2002/01) SIBYLL 2.1", "KASCADE_SIBYLL-2.1_H_totalEnergy.txt")
-    dump_datafile("H", "ETOT", "KASCADE", "KASCADE (1996/10-2002/01) QGSJet01", "KASCADE_QGSJet-01_H_totalEnergy.txt")
-    dump_datafile("He", "ETOT", "KASCADE", "KASCADE (1996/10-2002/01) SIBYLL 2.1", "KASCADE_SIBYLL-2.1_He_totalEnergy.txt")
-    dump_datafile("He", "ETOT", "KASCADE", "KASCADE (1996/10-2002/01) QGSJet01", "KASCADE_QGSJet-01_He_totalEnergy.txt")
+def _coerce_str(value, field_name, context):
+    if not isinstance(value, basestring) or not value.strip():
+        raise DatasetRegistryError("{0}: field {1!r} must be a non-empty string.".format(context, field_name))
+    return value
 
-def KASCADE_Grande():
-    dump_datafile("H-He-group", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2003/01-2009/03) QGSJet-II-04", "KASCADE-Grande_QGSJet-II-04_light_totalEnergy.txt")
-    dump_datafile("H-He-group", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2004/03-2012/05) QGSJet-II-2", "KASCADE-Grande_QGSJet-II-02_light_totalEnergy.txt")
-    dump_datafile("H-He-group", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2004/03-2010/12) QGSJet-II-3", "KASCADE-Grande_QGSJet-II-03_light_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2003/12-2011/10) SIBYLL2.3", "KASCADE-Grande_SIBYLL-2.3_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2004/03-2012/05) QGSJet-II-2", "KASCADE-Grande_QGSJet-II-2_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2004/03-2010/12) QGSJet-II-3", "KASCADE-Grande_QGSJet-II-3_allParticle_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "KASCADE-Grande", "KASCADE-Grande (2003/01-2009/03) QGSJet-II-04", "KASCADE-Grande_QGSJet-II-04_allParticle_totalEnergy.txt")
 
-def NUCLEON():
-    dump_datafile("H", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_H_totalEnergy.txt")
-    dump_datafile("He", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_He_totalEnergy.txt")
-    dump_datafile("C", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_C_totalEnergy.txt")
-    dump_datafile("O", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_O_totalEnergy.txt")
-    dump_datafile("Ne", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Ne_totalEnergy.txt")
-    dump_datafile("Mg", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Mg_totalEnergy.txt")
-    dump_datafile("Si", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Si_totalEnergy.txt")
-    dump_datafile("Fe", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_Fe_totalEnergy.txt")
-    dump_datafile("AllParticles", "ETOT", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_allParticle_totalEnergy.txt")
-    dump_datafile("H/He", "R", "NUCLEON", "NUCLEON-KLEM (2015/07-2017/06)", "NUCLEON_H_He_rigidity.txt")
+def _parse_dataset_entry(experiment_name, index, entry):
+    context = "experiment {0!r} dataset #{1}".format(experiment_name, index + 1)
+    if not isinstance(entry, dict):
+        raise DatasetRegistryError("{0}: each dataset entry must be an object.".format(context))
 
-def PAMELA():
-    dump_datafile("e-", "EK", "PAMELA", "PAMELA (2006/07-2010/01)", "PAMELA_e-_kineticEnergy.txt")
-    dump_datafile("e+", "EK", "PAMELA", "PAMELA (2006/07-2009/12)", "PAMELA_e+_kineticEnergy.txt")
-    dump_datafile("e+/e-+e+", "EK", "PAMELA", "PAMELA (2006/07-2009/12)", "PAMELA_posfraction_kineticEnergy.txt")
-    dump_datafile("1H-bar", "EKN", "PAMELA", "PAMELA (2006/07-2009/12)", "PAMELA_pbar_kineticEnergy.txt")
-    dump_datafile("H", "R", "PAMELA", "PAMELA (2006/07-2008/12)", "PAMELA_H_rigidity.txt")
-    dump_datafile("He", "R", "PAMELA", "PAMELA (2006/07-2008/12)", "PAMELA_He_rigidity.txt")
-    dump_datafile("C", "R", "PAMELA", "PAMELA (2006/07-2008/03)", "PAMELA_C_rigidity.txt")
-    dump_datafile("B/C", "EKN", "PAMELA", "PAMELA (2006/07-2008/03)", "PAMELA_B_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/C", "R", "PAMELA", "PAMELA (2006/07-2008/03)", "PAMELA_B_C_rigidity.txt")
+    keys = set(entry)
+    missing = REQUIRED_DATASET_KEYS - keys
+    if missing:
+        raise DatasetRegistryError("{0}: missing required fields: {1}.".format(context, ", ".join(sorted(missing))))
 
-def TA():
-    dump_datafile("AllParticles", "ETOT", "Telescope", "Telescope Array Hybrid (2008/01-2015/05)", "TA_allParticle_totalEnergy.txt")
+    unknown = keys - REQUIRED_DATASET_KEYS - OPTIONAL_DATASET_KEYS
+    if unknown:
+        raise DatasetRegistryError("{0}: unknown fields: {1}.".format(context, ", ".join(sorted(unknown))))
 
-def TIBET():
-    dump_datafile("H-He-group", "ETOT", "Tibet", "Tibet III (2000/11-2004/10) QGSJet01", "Tibet_light_totalEnergy.txt")
+    filename = _coerce_str(entry["filename"], "filename", context)
+    if os.path.basename(filename) != filename:
+        raise DatasetRegistryError("{0}: filename must not contain directory components.".format(context))
 
-def TRACER():
-    dump_datafile("B", "EKN", "TRACER", "TRACER (2006/07)", "TRACER_B_kineticEnergyPerNucleon.txt")
-    dump_datafile("C", "EKN", "TRACER", "TRACER (2006/07)", "TRACER_C_kineticEnergyPerNucleon.txt")
-    dump_datafile("O", "EKN", "TRACER", "TRACER (2006/07)", "TRACER_O_kineticEnergyPerNucleon.txt")
-    dump_datafile("Ne", "EKN", "TRACER", "TRACER (2003/12)", "TRACER_Ne_kineticEnergyPerNucleon.txt")
-    dump_datafile("Mg", "EKN", "TRACER", "TRACER (2003/12)", "TRACER_Mg_kineticEnergyPerNucleon.txt")
-    dump_datafile("Si", "EKN", "TRACER", "TRACER (2003/12)", "TRACER_Si_kineticEnergyPerNucleon.txt")
-    dump_datafile("Fe", "EKN", "TRACER", "TRACER (2006/07)", "TRACER_Fe_kineticEnergyPerNucleon.txt")
-    dump_datafile("B/C", "EKN", "TRACER", "TRACER (2006/07)", "TRACER_B_C_kineticEnergyPerNucleon.txt")
+    combo_level = entry.get("combo_level", 0)
+    if not isinstance(combo_level, int) or combo_level < 0:
+        raise DatasetRegistryError("{0}: combo_level must be a non-negative integer.".format(context))
 
-def TUNKA():
-    dump_datafile("H", "ETOT", "TUNKA", "TUNKA-133 Array (2009/10-2012/04) QGSJet01", "TUNKA-133_H_totalEnergy.txt", 1)
-    dump_datafile("He", "ETOT", "TUNKA", "TUNKA-133 Array (2009/10-2012/04) QGSJet01", "TUNKA-133_He_totalEnergy.txt", 1)
-    dump_datafile("AllParticles", "ETOT", "TUNKA", "TUNKA-133 Array (2009/10-2012/04) QGSJet01", "TUNKA-133_allParticle_totalEnergy.txt")
+    return DatasetRequest(
+        quantity=_coerce_str(entry["quantity"], "quantity", context),
+        energy_type=_coerce_str(entry["energy_type"], "energy_type", context),
+        experiment=_coerce_str(entry["experiment"], "experiment", context),
+        sub_experiment=_coerce_str(entry["sub_experiment"], "sub_experiment", context),
+        filename=filename,
+        combo_level=combo_level,
+    )
 
-if __name__== "__main__":
+
+def load_registry():
+    global _REGISTRY_CACHE
+    if _REGISTRY_CACHE is not None:
+        return _REGISTRY_CACHE
+
+    if not os.path.isfile(DATASETS_FILE):
+        raise DatasetRegistryError("dataset registry file not found: {0}".format(DATASETS_FILE))
+
+    try:
+        with open(DATASETS_FILE, "r") as handle:
+            raw_registry = json.load(handle, object_pairs_hook=OrderedDict)
+    except ValueError as exc:
+        raise DatasetRegistryError("invalid JSON in {0}: {1}".format(DATASETS_FILE, exc))
+
+    if not isinstance(raw_registry, dict):
+        raise DatasetRegistryError("dataset registry root must be a JSON object.")
+
+    experiments_raw = raw_registry.get("experiments")
+    if not isinstance(experiments_raw, dict) or not experiments_raw:
+        raise DatasetRegistryError("dataset registry must define a non-empty 'experiments' object.")
+
+    registry = OrderedDict()
+    seen_filenames = {}
+    for experiment_name, entries in experiments_raw.items():
+        if not isinstance(experiment_name, basestring) or not experiment_name.strip():
+            raise DatasetRegistryError("experiment names must be non-empty strings.")
+        if not isinstance(entries, list) or not entries:
+            raise DatasetRegistryError(
+                "experiment {0!r} must contain a non-empty dataset list.".format(experiment_name)
+            )
+
+        requests = [_parse_dataset_entry(experiment_name, index, entry) for index, entry in enumerate(entries)]
+        for request in requests:
+            owner = seen_filenames.get(request.filename)
+            if owner is not None:
+                raise DatasetRegistryError(
+                    "duplicate output filename {0!r} in experiments {1!r} and {2!r}.".format(
+                        request.filename,
+                        owner,
+                        experiment_name,
+                    )
+                )
+            seen_filenames[request.filename] = experiment_name
+
+        registry[experiment_name] = requests
+
+    default_experiments_raw = raw_registry.get("default_experiments", [])
+    if not isinstance(default_experiments_raw, list):
+        raise DatasetRegistryError("'default_experiments' must be a list if provided.")
+
+    default_experiments = tuple(default_experiments_raw)
+    for name in default_experiments:
+        if name not in registry:
+            raise DatasetRegistryError(
+                "default experiment {0!r} is not defined in the 'experiments' section.".format(name)
+            )
+
+    _REGISTRY_CACHE = (registry, default_experiments)
+    return _REGISTRY_CACHE
+
+
+def get_requests(experiment_name):
+    registry, _ = load_registry()
+    try:
+        return registry[experiment_name]
+    except KeyError:
+        available = ", ".join(registry)
+        raise ValueError("unknown experiment {0!r}. Available: {1}".format(experiment_name, available))
+
+
+def run_experiment(experiment_name, output_dir=None, fail_fast=False):
+    requests = get_requests(experiment_name)
+    print("== {0}: {1} dataset(s) ==".format(experiment_name, len(requests)))
+
+    exported = 0
+    failed = 0
+    for request in requests:
+        try:
+            export_dataset(request, output_dir=output_dir)
+            exported += 1
+        except CrdbDependencyError as exc:
+            print("error: {0}\n".format(exc))
+            raise
+        except CrdbExportError as exc:
+            failed += 1
+            print("error: {0}\n".format(exc))
+            if fail_fast:
+                raise
+
+    return exported, failed
+
+
+def run_many(experiment_names, output_dir=None, fail_fast=False):
+    total_exported = 0
+    total_failed = 0
+
+    for experiment_name in experiment_names:
+        exported, failed = run_experiment(experiment_name, output_dir=output_dir, fail_fast=fail_fast)
+        total_exported += exported
+        total_failed += failed
+
+    return total_exported, total_failed
+
+
+def AUGER(**kwargs):
+    return run_experiment("AUGER", **kwargs)
+
+
+def AMS02(**kwargs):
+    return run_experiment("AMS02", **kwargs)
+
+
+def BESS(**kwargs):
+    return run_experiment("BESS", **kwargs)
+
+
+def CALET(**kwargs):
+    return run_experiment("CALET", **kwargs)
+
+
+def CREAM(**kwargs):
+    return run_experiment("CREAM", **kwargs)
+
+
+def DAMPE(**kwargs):
+    return run_experiment("DAMPE", **kwargs)
+
+
+def FERMI(**kwargs):
+    return run_experiment("FERMI", **kwargs)
+
+
+def HAWC(**kwargs):
+    return run_experiment("HAWC", **kwargs)
+
+
+def HESS(**kwargs):
+    return run_experiment("HESS", **kwargs)
+
+
+def ICETOP(**kwargs):
+    return run_experiment("ICETOP", **kwargs)
+
+
+def ISS_CREAM(**kwargs):
+    return run_experiment("ISS_CREAM", **kwargs)
+
+
+def NUCLEON(**kwargs):
+    return run_experiment("NUCLEON", **kwargs)
+
+
+def PAMELA(**kwargs):
+    return run_experiment("PAMELA", **kwargs)
+
+
+def TA(**kwargs):
+    return run_experiment("TA", **kwargs)
+
+
+def TIBET(**kwargs):
+    return run_experiment("TIBET", **kwargs)
+
+
+def TRACER(**kwargs):
+    return run_experiment("TRACER", **kwargs)
+
+
+def TUNKA(**kwargs):
+    return run_experiment("TUNKA", **kwargs)
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Query CRDB and export selected datasets into source/CRDB.",
+    )
+    parser.add_argument(
+        "experiments",
+        nargs="*",
+        help="Optional experiment names to export. Defaults to the historical batch.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Run every configured experiment, including ones outside the default batch.",
+    )
+    parser.add_argument(
+        "--list",
+        action="store_true",
+        help="List available experiments and exit.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=DEFAULT_OUTPUT_DIR,
+        help="Directory where CRDB text tables are written (default: {0}).".format(DEFAULT_OUTPUT_DIR),
+    )
+    parser.add_argument(
+        "--fail-fast",
+        action="store_true",
+        help="Stop immediately on the first export error.",
+    )
+    return parser.parse_args(argv)
+
+
+def resolve_experiments(args):
+    registry, default_experiments = load_registry()
+
+    if args.all and args.experiments:
+        raise SystemExit("Use either --all or an explicit experiment list, not both.")
+
+    if args.all:
+        selected = tuple(registry.keys())
+    elif args.experiments:
+        selected = tuple(args.experiments)
+    else:
+        selected = default_experiments
+
+    unknown = [name for name in selected if name not in registry]
+    if unknown:
+        available = ", ".join(registry.keys())
+        raise SystemExit("Unknown experiments: {0}. Available: {1}".format(", ".join(unknown), available))
+
+    return selected
+
+
+def print_available_experiments():
+    registry, default_experiments = load_registry()
+    print("Available experiments:")
+    for name, requests in registry.items():
+        default_mark = " [default]" if name in default_experiments else ""
+        print("  {0:10s} {1:3d} dataset(s){2}".format(name, len(requests), default_mark))
+
+
+def main(argv=None):
+    args = parse_args(argv)
+
+    try:
+        if args.list:
+            print_available_experiments()
+            return 0
+
+        experiment_names = resolve_experiments(args)
+    except DatasetRegistryError as exc:
+        print("configuration error: {0}".format(exc))
+        return 1
+
     print("KISS Cosmic Ray Data Base - Data Extraction")
-    # AMS02()
-    BESS()
-    CALET()
-    CREAM()
-    DAMPE()
-    FERMI()
-    HAWC()
-    # HESS()
-    # ICETOP()
-    ISS_CREAM()
-    # KASCADE()
-    # KASCADE_Grande()
-    NUCLEON()
-    PAMELA()
-    # TA()
-    # TIBET()
-    # TRACER()
-    # TUNKA()
+    print("registry file: {0}".format(DATASETS_FILE))
+    print("output directory: {0}".format(args.output_dir))
+    print("experiments: {0}\n".format(", ".join(experiment_names)))
+
+    try:
+        exported, failed = run_many(
+            experiment_names,
+            output_dir=args.output_dir,
+            fail_fast=args.fail_fast,
+        )
+    except CrdbExportError:
+        print("Summary: export aborted after the first failure.")
+        return 1
+
+    print("Summary: exported {0} dataset(s), failed {1} dataset(s).".format(exported, failed))
+    return 0 if failed == 0 else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
