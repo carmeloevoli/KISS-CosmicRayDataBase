@@ -6,10 +6,10 @@
 namespace GRAPES {
 
 void run() {
-    // {
-    //     KISS::MyProtonGRAPES data(KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::GRAPES::MyProtons data(KISS::geometrical);
+        data.run();
+    }
 }
 
 }  // namespace GRAPES

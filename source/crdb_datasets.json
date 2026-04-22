@@ -685,6 +685,59 @@
         "filename": "ISS-CREAM_H_kineticEnergy.txt"
       }
     ],
+    "KASCADE": [
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE",
+        "sub_experiment": "KASCADE (1996/10-2002/01) QGSJet01",
+        "filename": "KASCADE_QGSJET-01_H_totalEnergy.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE",
+        "sub_experiment": "KASCADE (1996/10-2002/01) SIBYLL 2.1",
+        "filename": "KASCADE_SIBYLL-2.1_H_totalEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE",
+        "sub_experiment": "KASCADE (1996/10-2002/01) QGSJet01",
+        "filename": "KASCADE_QGSJET-01_He_totalEnergy.txt"
+      },
+      {
+        "quantity": "He",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE",
+        "sub_experiment": "KASCADE (1996/10-2002/01) SIBYLL 2.1",
+        "filename": "KASCADE_SIBYLL-2.1_He_totalEnergy.txt"
+      }
+    ],
+    "KASCADE-GRANDE": [
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE-Grande",
+        "sub_experiment": "KASCADE-Grande (2003/01-2009/03) QGSJet-II-04",
+        "filename": "KASCADE-Grande_QGSJet-II-04_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE-Grande",
+        "sub_experiment": "KASCADE-Grande (2003/12-2011/10) SIBYLL2.3",
+        "filename": "KASCADE-Grande_SIBYLL-2.3_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "H-He-group",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE-Grande",
+        "sub_experiment": "KASCADE-Grande (2003/01-2009/03) QGSJet-II-04",
+        "filename": "KASCADE-Grande_QGSJET-II-04_light_totalEnergy.txt"
+      }
+    ],
     "NUCLEON": [
       {
         "quantity": "H",

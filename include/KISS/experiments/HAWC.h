@@ -6,10 +6,10 @@
 namespace HAWC {
 
 void run() {
-    // {
-    //     KISS::HAWC::MyLight data(KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::HAWC::MyLight data(KISS::geometrical);
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::hawc, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
         data.setDOI("10.22323/1.395.0330");

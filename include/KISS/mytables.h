@@ -33,53 +33,65 @@ namespace CALET {
 }  // namespace CALET
 
 namespace DAMPE {
-// class MyBoron : public CrDataset {
-//    public:
-//     MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevLett.134.191001");
-//         setADSbibcode("2025PhRvL.134s1001A");
-//     }
+class MyBoron : public CrDataset {
+   public:
+    MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.134.191001");
+        setADSbibcode("2025PhRvL.134s1001A");
+    }
 
-//     void readfile(std::string filename);
-// };
+    void readfile(std::string filename);
+};
 
-// class MyLight : public CrDataset {
-//    public:
-//     MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevD.109.L121101");
-//         setADSbibcode("2024PhRvD.109l1101A");
-//     }
+class MyLight : public CrDataset {
+   public:
+    MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevD.109.L121101");
+        setADSbibcode("2024PhRvD.109l1101A");
+    }
 
-//     void readfile(std::string filename);
-// };
+    void readfile(std::string filename);
+};
 
-// class MyPrimary : public CrDataset {
-//    public:
-//     MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
-//         setDescription("2025");
-//         setSource(mytables);
-//         setDOI(" ");
-//         setADSbibcode(" ");
-//     }
+class MyPrimary : public CrDataset {
+   public:
+    MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
+        setSource(mytables);
+        setDOI("10.48550/arXiv.2511.05409");
+        setADSbibcode("2025arXiv251105409D");
+    }
 
-//     void readfile(std::string filename);
-// };
+    void readfile(std::string filename);
+};
 }  // namespace DAMPE
 
 namespace HAWC {
-// class MyLight : public CrDataset {
-//    public:
-//     MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
-//         setSource(mytables);
-//         setDOI("doi.org/10.1103/PhysRevD.105.063021");
-//         setADSbibcode("2022PhRvD.105f3021A");
-//     }
+class MyLight : public CrDataset {
+   public:
+    MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
+        setSource(mytables);
+        setDOI("doi.org/10.1103/PhysRevD.105.063021");
+        setADSbibcode("2022PhRvD.105f3021A");
+    }
 
-//     void readfile(std::string filename) override;
-// };
+    void readfile(std::string filename) override;
+};
 }  // namespace HAWC
+
+namespace GRAPES {
+class MyProtons : public CrDataset {
+   public:
+    MyProtons(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.132.051002");
+        setADSbibcode("2024PhRvL.132e1002V");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace GRAPES
 
 namespace LHAASO {
 // class MyNuclei : public CrDataset {
@@ -135,17 +147,6 @@ namespace LHAASO {
 //     void readfile(std::string filename) override;
 // };
 
-// class MyAllAuger2019 : public CrDataset {
-//    public:
-//     MyAllAuger2019(EnergyModes mode) : CrDataset(auger2019, totalEnergy, allParticle, mode) {
-//         setSource(mytables);
-//         setDOI("10.22323/1.358.0450");
-//         setADSbibcode("2019ICRC...36..450V");
-//     }
-
-//     void readfile(std::string filename) override;
-// };
-
 // class MyAllTale : public CrDataset {
 //    public:
 //     MyAllTale(EnergyModes mode) : CrDataset(tale, totalEnergy, allParticle, mode) {
@@ -164,17 +165,6 @@ namespace LHAASO {
 //         setDOI("10.1086/529514");
 //         setADSbibcode("2008ApJ...678.1165A");
 //         setDescription(description);
-//     }
-
-//     void readfile(std::string filename) override;
-// };
-
-// class MyProtonGRAPES : public CrDataset {
-//    public:
-//     MyProtonGRAPES(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevLett.132.051002");
-//         setADSbibcode("2024PhRvL.132e1002V");
 //     }
 
 //     void readfile(std::string filename) override;

@@ -52,63 +52,82 @@ namespace CALET {
 }  // namespace CALET
 
 namespace DAMPE {
-// void MyBoron::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyBoron::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
-//     while (infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up) {
-//         const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         const double syst_do = Utils::quadrature(syst_1, syst_2_do);
-//         const double syst_up = Utils::quadrature(syst_1, syst_2_up);
-//         dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
+    while (infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up) {
+        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        const double syst_do = Utils::quadrature(syst_1, syst_2_do);
+        const double syst_up = Utils::quadrature(syst_1, syst_2_up);
+        dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 
-// void MyLight::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyLight::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
-//     while (infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had) {
-//         const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         const double syst = Utils::quadrature(syst_ana, syst_had);
-//         dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
+    while (infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had) {
+        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        const double syst = Utils::quadrature(syst_ana, syst_had);
+        dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 
-// void MyPrimary::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyPrimary::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E_min, E_max, flux, stat, syst_ana, syst_had;
-//     while (infile >> E_min >> E_max >> flux >> stat >> syst_ana >> syst_had) {
-//         const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         const double syst = Utils::quadrature(syst_ana, syst_had);
-//         dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E_min, E_max, flux, stat, syst_ana, syst_had;
+    while (infile >> E_min >> E_max >> flux >> stat >> syst_ana >> syst_had) {
+        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        const double syst = Utils::quadrature(syst_ana, syst_had);
+        dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 }  // namespace DAMPE
 
 namespace HAWC {
-// void MyLight::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyLight::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E, flux, errStat, errSystUp, errSystLo;
-//     while (infile >> E >> flux >> errStat >> errSystUp >> errSystLo) {
-//         dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E, flux, errStat, errSystUp, errSystLo;
+    while (infile >> E >> flux >> errStat >> errSystUp >> errSystLo) {
+        dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 }  // namespace HAWC
+
+namespace GRAPES {
+void MyProtons::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
+    std::string line;
+    while (std::getline(infile, line)) {
+        std::istringstream s(line);
+        double E, flux, errStat, errSystUp, errSystLo;
+        if (!(s >> E >> flux >> errStat >> errSystUp >> errSystLo)) {
+            std::cerr << "Invalid line, skipping.\n";
+            continue;
+        }
+        dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
+}  // namespace GRAPES
 
 namespace LHAASO {
 // std::string MyNuclei::makeSourceFilename() const {
@@ -286,23 +305,6 @@ namespace LHAASO {
 //     double E, dJdE, dJdE_err;
 //     while (infile >> E >> dJdE >> dJdE_err) {
 //         dataPoint data = {{E, dJdE}, {0, 0}, {dJdE_err, dJdE_err}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
-
-// void MyProtonGRAPES::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
-//     std::string line;
-//     while (std::getline(infile, line)) {
-//         std::istringstream s(line);
-//         double E, flux, errStat, errSystUp, errSystLo;
-//         if (!(s >> E >> flux >> errStat >> errSystUp >> errSystLo)) {
-//             std::cerr << "Invalid line, skipping.\n";
-//             continue;
-//         }
-//         dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
 //         m_dataTable.push_back(data);
 //     }
 //     infile.close();
