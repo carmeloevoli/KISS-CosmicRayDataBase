@@ -13,14 +13,14 @@ void run() {
         data.setADSbibcode("2007PhRvD..75d2004A");
         data.run();
     }
-    {
-        KISS::MyLeptonHess data(KISS::geometrical);
-        data.setDOI("10.1051/0004-6361/200913323");
-        data.setADSbibcode("2009A&A...508..561A");
-        data.setUrl("https://www.mpi-hd.mpg.de/hfm/HESS/pages/publications/auxiliary/auxinfo_electrons2.html");
-        data.setComments("systematic errors not official, derived from URL");
-        data.run();
-    }
+    // {
+    //     KISS::MyLeptonHess data(KISS::geometrical);
+    //     data.setDOI("10.1051/0004-6361/200913323");
+    //     data.setADSbibcode("2009A&A...508..561A");
+    //     data.setUrl("https://www.mpi-hd.mpg.de/hfm/HESS/pages/publications/auxiliary/auxinfo_electrons2.html");
+    //     data.setComments("systematic errors not official, derived from URL");
+    //     data.run();
+    // }
 }
 
 }  // namespace HESS

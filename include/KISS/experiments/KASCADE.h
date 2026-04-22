@@ -45,14 +45,14 @@ void run() {
         data.run();
     }
     {
-        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
+        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::geometrical);
         data.setDescription("QGSJET-01");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
         data.run();
     }
     {
-        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::unknown);
+        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::H, KISS::geometrical);
         data.setDescription("SIBYLL-2.1");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
@@ -77,14 +77,14 @@ void run() {
         data.run();
     }
     {
-        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::unknown);
+        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::geometrical);
         data.setDescription("QGSJET-01");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
         data.run();
     }
     {
-        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::unknown);
+        KISS::CRDB data(KISS::kascade, KISS::totalEnergy, KISS::He, KISS::geometrical);
         data.setDescription("SIBYLL-2.1");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");

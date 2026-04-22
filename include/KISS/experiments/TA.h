@@ -3,13 +3,13 @@
 
 #include "KISS/KCDC.h"
 
-namespace TALE {
+namespace TA {
 
 void run() {
-    {
-        KISS::MyAllTale data(KISS::geometrical);
-        data.run();
-    }
+    // {
+    //     KISS::MyAllTale data(KISS::geometrical);
+    //     data.run();
+    // }
     {
         KISS::CRDB data(KISS::ta, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
         data.setDOI("10.22323/1.236.0349");
@@ -18,6 +18,6 @@ void run() {
     }
 }
 
-}  // namespace TALE
+}  // namespace TA
 
 #endif

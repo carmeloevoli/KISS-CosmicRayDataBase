@@ -2,25 +2,31 @@
 #include "KISS/CRDB.h"
 
 #include <fstream>
+#include <limits>
 
 #include "KISS/utils.h"
 
-#define MAX_NUM_OF_CHAIR_IN_A_LINE 512
-#define NUM_OF_HEADER_LINES 2
-
 namespace KISS {
+
+namespace {
+
+void skipHeaderLines(std::istream& infile, int count) {
+    for (int i = 0; i < count; ++i) {
+        infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+}
+
+}  // namespace
 
 void CRDB::readfile(std::string filename) {
     std::fstream infile(filename.c_str());
-    for (int i = 0; i < NUM_OF_HEADER_LINES; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
-    while (infile.good()) {
-        double Elo, Eup, y, statLo, statUp, systLo, systUp;
-        infile >> Elo >> Eup >> y >> statLo >> statUp >> systLo >> systUp;
-        if (!infile.eof()) {
-            const double xMean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
-            dataPoint data = {{xMean, y}, {statLo, statUp}, {systLo, systUp}};
-            m_dataTable.push_back(data);
-        }
+    skipHeaderLines(infile, 2);
+
+    double Elo, Eup, y, statLo, statUp, systLo, systUp;
+    while (infile >> Elo >> Eup >> y >> statLo >> statUp >> systLo >> systUp) {
+        const double xMean = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+        dataPoint data = {{xMean, y}, {statLo, statUp}, {systLo, systUp}};
+        m_dataTable.push_back(data);
     }
     infile.close();
 }

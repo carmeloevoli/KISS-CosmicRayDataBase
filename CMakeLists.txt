@@ -3,12 +3,22 @@ project(KISS CXX)
 
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-set(CMAKE_CXX_FLAGS "-O3 -ftree-vectorize -std=c++14")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(KISS_INCLUDES)
 set(KISS_LIBRARIES)
 
-set (CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(-ftree-vectorize)
+endif()
+
 cmake_policy(SET CMP0048 NEW)
 
 # include

@@ -47,14 +47,15 @@ bool CrDataset::load() {
     const auto filename = makeSourceFilename();
     std::cout << "\033[1;31m> loading data from file " << filename << "\033[0m\n";
     std::fstream infile(filename.c_str());
-    bool success = false;
-    if (infile) {
-        readfile(filename);
-        success = true;
-        infile.close();
-    } else
-        throw std::runtime_error("file not found!");
-    return success;
+    if (!infile) {
+        std::cerr << "\033[1;33m> missing input file " << filename << ", skipping dataset\033[0m\n";
+        return false;
+    }
+
+    m_dataTable.clear();
+    infile.close();
+    readfile(filename);
+    return true;
 }
 
 void CrDataset::save() const {
@@ -72,7 +73,7 @@ void CrDataset::save() const {
     asciiFile << "#X Quantity: " << ToString(m_xQuantity) << "\n";
     asciiFile << "#Url: " << m_url << "\n";
     asciiFile << "#Comments: " << m_comments << "\n";
-    asciiFile << "#Colums: x, y, y statistical errors, y systematic errors\n";
+    asciiFile << "#Columns: x, y, y statistical errors, y systematic errors\n";
     for (auto data : m_dataTable) {
         asciiFile << data << "\n";
     }

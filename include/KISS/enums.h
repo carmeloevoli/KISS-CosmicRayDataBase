@@ -22,8 +22,7 @@ inline std::string ToString(Sources v) {
 enum CrExperiments {
     ams02,
     argo,
-    auger2019,
-    auger2021,
+    auger,
     bess,
     besspolar,
     calet,
@@ -58,10 +57,8 @@ inline std::string ToString(CrExperiments v) {
             return "AMS-02";
         case argo:
             return "ARGO-YBJ";
-        case auger2019:
-            return "Auger2019";
-        case auger2021:
-            return "Auger2021";
+        case auger:
+            return "Auger";
         case bess:
             return "BESS-TeV";
         case besspolar:

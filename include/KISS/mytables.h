@@ -9,126 +9,131 @@
 namespace KISS {
 
 namespace CALET {
-class MyLepton : public CrDataset {
-   public:
-    MyLepton(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.131.191001");
-        setADSbibcode("2023PhRvL.131s1001A");
-    }
+// class MyLepton : public CrDataset {
+//    public:
+//     MyLepton(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/PhysRevLett.131.191001");
+//         setADSbibcode("2023PhRvL.131s1001A");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
-class MyHeavy : public CrDataset {
-   public:
-    MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
-        setSource(mytables);
-        setDOI("10.1103/py17-74rk");
-        setADSbibcode("2025PhRvL.135b1002A");
-    }
+// class MyHeavy : public CrDataset {
+//    public:
+//     MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/py17-74rk");
+//         setADSbibcode("2025PhRvL.135b1002A");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 }  // namespace CALET
 
 namespace DAMPE {
-class MyBoron : public CrDataset {
-   public:
-    MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.134.191001");
-        setADSbibcode("2025PhRvL.134s1001A");
-    }
+// class MyBoron : public CrDataset {
+//    public:
+//     MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/PhysRevLett.134.191001");
+//         setADSbibcode("2025PhRvL.134s1001A");
+//     }
 
-    void readfile(std::string filename);
-};
+//     void readfile(std::string filename);
+// };
 
-class MyLight : public CrDataset {
-   public:
-    MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevD.109.L121101");
-        setADSbibcode("2024PhRvD.109l1101A");
-    }
+// class MyLight : public CrDataset {
+//    public:
+//     MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/PhysRevD.109.L121101");
+//         setADSbibcode("2024PhRvD.109l1101A");
+//     }
 
-    void readfile(std::string filename);
-};
+//     void readfile(std::string filename);
+// };
 
-class MyPrimary : public CrDataset {
-   public:
-    MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
-        setDescription("2025");
-        setSource(mytables);
-        setDOI(" ");
-        setADSbibcode(" ");
-    }
+// class MyPrimary : public CrDataset {
+//    public:
+//     MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
+//         setDescription("2025");
+//         setSource(mytables);
+//         setDOI(" ");
+//         setADSbibcode(" ");
+//     }
 
-    void readfile(std::string filename);
-};
+//     void readfile(std::string filename);
+// };
 }  // namespace DAMPE
 
 namespace HAWC {
-class MyLight : public CrDataset {
-   public:
-    MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("doi.org/10.1103/PhysRevD.105.063021");
-        setADSbibcode("2022PhRvD.105f3021A");
-    }
+// class MyLight : public CrDataset {
+//    public:
+//     MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
+//         setSource(mytables);
+//         setDOI("doi.org/10.1103/PhysRevD.105.063021");
+//         setADSbibcode("2022PhRvD.105f3021A");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 }  // namespace HAWC
 
 namespace LHAASO {
-class MyNuclei : public CrDataset {
-   public:
-    MyNuclei(YQuantities primary, std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, primary, mode) {
-        setSource(mytables);
-        setDOI("unpublished");
-        setADSbibcode("2025arXiv250514447T");
-        setDescription(HIM);
-    }
+// class MyNuclei : public CrDataset {
+//    public:
+//     MyNuclei(YQuantities primary, std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, primary, mode)
+//     {
+//         setSource(mytables);
+//         setDOI("arXiv:2511.05013");
+//         setADSbibcode("none");
+//         setDescription(HIM);
+//         setUrl("https://arxiv.org/pdf/2511.05013");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+
+//    protected:
+//     std::string makeSourceFilename() const override;
+// };
 }  // namespace LHAASO
 
 // OLD DATASETS
 
-class MyLeptonHESS : public CrDataset {
-   public:
-    MyLeptonHESS(EnergyModes mode) : CrDataset(hess, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("");
-        setADSbibcode("");
-    }
+// class MyLeptonHESS : public CrDataset {
+//    public:
+//     MyLeptonHESS(EnergyModes mode) : CrDataset(hess, totalEnergy, lepton, mode) {
+//         setSource(mytables);
+//         setDOI("");
+//         setADSbibcode("");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
-class MyLeptonVeritas : public CrDataset {
-   public:
-    MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevD.98.062004");
-        setADSbibcode("2018PhRvD..98f2004A");
-    }
+// class MyLeptonVeritas : public CrDataset {
+//    public:
+//     MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/PhysRevD.98.062004");
+//         setADSbibcode("2018PhRvD..98f2004A");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
-class MyLightARGO : public CrDataset {
-   public:
-    MyLightARGO(EnergyModes mode) : CrDataset(argo, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("doi.org/10.1103/PhysRevD.91.112017");
-        setADSbibcode("2015PhRvD..91k2017B");
-    }
+// class MyLightARGO : public CrDataset {
+//    public:
+//     MyLightARGO(EnergyModes mode) : CrDataset(argo, totalEnergy, light, mode) {
+//         setSource(mytables);
+//         setDOI("doi.org/10.1103/PhysRevD.91.112017");
+//         setADSbibcode("2015PhRvD..91k2017B");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
 // class MyAllAuger2019 : public CrDataset {
 //    public:
@@ -141,39 +146,39 @@ class MyLightARGO : public CrDataset {
 //     void readfile(std::string filename) override;
 // };
 
-class MyAllTale : public CrDataset {
-   public:
-    MyAllTale(EnergyModes mode) : CrDataset(tale, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.3847/1538-4357/aada05");
-        setADSbibcode("2018ApJ...865...74A");
-    }
+// class MyAllTale : public CrDataset {
+//    public:
+//     MyAllTale(EnergyModes mode) : CrDataset(tale, totalEnergy, allParticle, mode) {
+//         setSource(mytables);
+//         setDOI("10.3847/1538-4357/aada05");
+//         setADSbibcode("2018ApJ...865...74A");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
-class MyAllTibet : public CrDataset {
-   public:
-    MyAllTibet(EnergyModes mode, std::string description) : CrDataset(tibet, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.1086/529514");
-        setADSbibcode("2008ApJ...678.1165A");
-        setDescription(description);
-    }
+// class MyAllTibet : public CrDataset {
+//    public:
+//     MyAllTibet(EnergyModes mode, std::string description) : CrDataset(tibet, totalEnergy, allParticle, mode) {
+//         setSource(mytables);
+//         setDOI("10.1086/529514");
+//         setADSbibcode("2008ApJ...678.1165A");
+//         setDescription(description);
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
-class MyProtonGRAPES : public CrDataset {
-   public:
-    MyProtonGRAPES(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.132.051002");
-        setADSbibcode("2024PhRvL.132e1002V");
-    }
+// class MyProtonGRAPES : public CrDataset {
+//    public:
+//     MyProtonGRAPES(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
+//         setSource(mytables);
+//         setDOI("10.1103/PhysRevLett.132.051002");
+//         setADSbibcode("2024PhRvL.132e1002V");
+//     }
 
-    void readfile(std::string filename) override;
-};
+//     void readfile(std::string filename) override;
+// };
 
 // TO BE DONE
 
