@@ -6,8 +6,8 @@
 namespace VERITAS {
 
 void run() {
-    //     KISS::MyLeptonVeritas data(KISS::geometrical);
-    //     data.run();
+    KISS::VERITAS::MyLeptons data(KISS::geometrical);
+    data.run();
 }
 
 }  // namespace VERITAS

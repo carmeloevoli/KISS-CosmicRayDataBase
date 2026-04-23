@@ -22,33 +22,33 @@ void skipHeaderLines(std::istream& infile, int count) {
 }  // namespace
 
 namespace CALET {
-// void MyLepton::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyLeptons::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
-//     while (infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp) {
-//         const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
+    while (infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp) {
+        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 
-// void MyHeavy::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+void MyHeavy::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
-//     while (infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up) {
-//         const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         const double syst_do = syst_1 + syst_2_do;
-//         const double syst_up = syst_1 + syst_2_up;
-//         dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E_min, E_max, flux, errStat, syst_norm, syst_dep_lo, syst_dep_up;
+    while (infile >> E_min >> E_max >> flux >> errStat >> syst_norm >> syst_dep_lo >> syst_dep_up) {
+        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        const double syst_do = Utils::quadrature(syst_norm, syst_dep_lo);
+        const double syst_up = Utils::quadrature(syst_norm, syst_dep_up);
+        dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 }  // namespace CALET
 
 namespace DAMPE {
@@ -246,25 +246,26 @@ void MyNuclei::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// VERITAS
-// void MyLeptonVeritas::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 1);
+namespace VERITAS {
+void MyLeptons::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 1);
 
-//     double E, E_min, E_max, N_events, fraction, fraction_error, flux, stat_error;
-//     while (infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >> stat_error) {
-//         E_min *= 1e3;       // TeV -> GeV
-//         E_max *= 1e3;       // TeV -> GeV
-//         flux *= 1e4;        // cm-2 s-1 GeV-1 -> m-2 s-1 GeV-1
-//         stat_error *= 1e4;  // cm-2 s-1 GeV-1 -> m-2 s-1 GeV-1
-//         const double syst_error_low = 0.33 * flux;
-//         const double syst_error_high = 0.64 * flux;
-//         const double xMean = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-//         dataPoint data = {{xMean, flux}, {stat_error, stat_error}, {syst_error_low, syst_error_high}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+    double E, E_min, E_max, N_events, fraction, fraction_error, flux, stat_error;
+    while (infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >> stat_error) {
+        E_min *= 1e3;       // TeV -> GeV
+        E_max *= 1e3;       // TeV -> GeV
+        flux *= 1e4;        // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
+        stat_error *= 1e4;  // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
+        const double syst_error_low = 0.33 * flux;
+        const double syst_error_high = 0.64 * flux;
+        const double xMean = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
+        dataPoint data = {{xMean, flux}, {stat_error, stat_error}, {syst_error_low, syst_error_high}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
+}  // namespace VERITAS
 
 // void MyAllAuger2021::readfile(std::string filename) {
 //     std::fstream infile(filename.c_str());

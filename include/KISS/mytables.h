@@ -9,27 +9,27 @@
 namespace KISS {
 
 namespace CALET {
-// class MyLepton : public CrDataset {
-//    public:
-//     MyLepton(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevLett.131.191001");
-//         setADSbibcode("2023PhRvL.131s1001A");
-//     }
+class MyLeptons : public CrDataset {
+   public:
+    MyLeptons(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.131.191001");
+        setADSbibcode("2023PhRvL.131s1001A");
+    }
 
-//     void readfile(std::string filename) override;
-// };
+    void readfile(std::string filename) override;
+};
 
-// class MyHeavy : public CrDataset {
-//    public:
-//     MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/py17-74rk");
-//         setADSbibcode("2025PhRvL.135b1002A");
-//     }
+class MyHeavy : public CrDataset {
+   public:
+    MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
+        setSource(mytables);
+        setDOI("10.1103/py17-74rk");
+        setADSbibcode("2025PhRvL.135b1002A");
+    }
 
-//     void readfile(std::string filename) override;
-// };
+    void readfile(std::string filename) override;
+};
 }  // namespace CALET
 
 namespace DAMPE {
@@ -137,16 +137,19 @@ class MyNuclei : public CrDataset {
 //     void readfile(std::string filename) override;
 // };
 
-// class MyLeptonVeritas : public CrDataset {
-//    public:
-//     MyLeptonVeritas(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
-//         setSource(mytables);
-//         setDOI("10.1103/PhysRevD.98.062004");
-//         setADSbibcode("2018PhRvD..98f2004A");
-//     }
+namespace VERITAS {
+class MyLeptons : public CrDataset {
+   public:
+    MyLeptons(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevD.98.062004");
+        setADSbibcode("2018PhRvD..98f2004A");
+        setComments("Possible unit-label issue in Table 1: flux may already be quoted in GeV^-1.");
+    }
 
-//     void readfile(std::string filename) override;
-// };
+    void readfile(std::string filename) override;
+};
+}  // namespace VERITAS
 
 // class MyLightARGO : public CrDataset {
 //    public:

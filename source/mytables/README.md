@@ -117,6 +117,20 @@ Files:
 
 - `TUNKA-133_allParticle_totalEnergy.txt`
 
+### CALET 2023 all-electron spectrum
+
+- Source paper: CALET Collaboration, "Extended Measurement of the Cosmic-Ray Electron and Positron Spectrum from 11 GeV to 4.8 TeV with the Calorimetric Electron Telescope on the International Space Station"
+- DOI: `10.1103/PhysRevLett.131.191001`
+- Added on: April 23, 2026
+- Provenance: manually transcribed from Table `I`; promoted from `source/mytables/old/` to the active directory so it can be loaded directly by KISS
+- Quantities: differential all-electron (`e+ + e-`) flux as a function of total energy
+- Units: energy in `GeV`; flux in `GeV^-1 m^-2 s^-1 sr^-1`
+- Stored columns: `E_min E_max E_mean flux stat_lo stat_up syst_lo syst_up`
+
+Files:
+
+- `CALET_e+e-_totalEnergy.txt` from Table `I`
+
 ### CALET 2025 chromium, titanium, and sub-iron to iron ratios
 
 - Source paper: CALET Collaboration, "Precision spectral measurements of Chromium and Titanium from 10 to 250 GeV/n and sub-Iron to Iron ratio with the Calorimetric Electron Telescope on the ISS", arXiv:2507.08643

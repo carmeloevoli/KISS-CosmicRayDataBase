@@ -6,18 +6,27 @@
 namespace TIBET {
 
 void run() {
-    // {
-    //     KISS::MyAllTibet data(KISS::geometrical, "QGSJET+HD");
-    //     data.run();
-    // }
-    // {
-    //     KISS::MyAllTibet data(KISS::geometrical, "QGSJET+PD");
-    //     data.run();
-    // }
-    // {
-    //     KISS::MyAllTibet data(KISS::geometrical, "SIBYLL+HD");
-    //     data.run();
-    // }
+    {
+        KISS::KCDC data(KISS::tibet, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDescription("QGSJET+HD");
+        data.setADSbibcode("");
+        data.setDOI("");
+        data.run();
+    }
+    {
+        KISS::KCDC data(KISS::tibet, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDescription("QGSJET+PD");
+        data.setADSbibcode("");
+        data.setDOI("");
+        data.run();
+    }
+    {
+        KISS::KCDC data(KISS::tibet, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDescription("SIBYLL+HD");
+        data.setADSbibcode("");
+        data.setDOI("");
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::tibet, KISS::totalEnergy, KISS::light, KISS::geometrical);
         data.setDOI("10.1126/science.1199172");
