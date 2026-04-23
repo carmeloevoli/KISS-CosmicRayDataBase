@@ -7,10 +7,10 @@
 namespace CALET {
 
 void run() {
-    // {
-    //     KISS::CALET::MyLepton data(KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::CALET::MyLeptons data(KISS::geometrical);
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::calet, KISS::kEnergy, KISS::H, KISS::Laff2_7);
         data.setDOI("10.1103/PhysRevLett.129.101102");
@@ -41,14 +41,14 @@ void run() {
         data.setADSbibcode("2020PhRvL.125y1102A");
         data.run();
     }
-    // {
-    //     KISS::CALET::MyHeavy data(KISS::Cr, KISS::geometrical);
-    //     data.run();
-    // }
-    // {
-    //     KISS::CALET::MyHeavy data(KISS::Ti, KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::CALET::MyHeavy data(KISS::Cr, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::CALET::MyHeavy data(KISS::Ti, KISS::geometrical);
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Fe, KISS::Laff2_7);
         data.setDOI("10.1103/PhysRevLett.126.241101");
