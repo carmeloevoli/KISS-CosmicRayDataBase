@@ -73,6 +73,21 @@ Files:
 - `LHAASO_helium_totalEnergy.txt` from Table `S3`
 - `LHAASO_proton_totalEnergy.txt` from Table `S5`
 
+### Tibet-III 2008 all-particle spectrum
+
+- Source paper: Tibet AS-gamma Collaboration, "The all-particle spectrum of primary cosmic rays in the wide energy range from 10^14 eV to 10^17 eV observed with the Tibet-III air-shower array", arXiv:0801.1803
+- PDF: `https://arxiv.org/pdf/0801.1803`
+- Added on: April 23, 2026
+- Provenance: manually transcribed from Table `5`
+- Quantities: differential all-particle flux as a function of total energy
+- Units: energy in `GeV`; flux in `m^-2 s^-1 sr^-1 GeV^-1`
+- Stored columns: `E`, then `flux stat` triplets for `QGSJET+HD`, `QGSJET+PD`, and `SIBYLL+HD`
+- Note: the archived per-model drafts in `source/mytables/old/` were checked against Table `5` and match the published values
+
+Files:
+
+- `Tibet-III_allParticle_totalEnergy.txt` from Table `5`
+
 ### HAWC 2022 light spectrum
 
 - Source paper: HAWC Collaboration, "Measurement of the light component spectrum of cosmic rays with HAWC", arXiv:2204.06662
@@ -86,6 +101,57 @@ Files:
 Files:
 
 - `HAWC_light_totalEnergy.txt` from Table `2`
+
+### TUNKA-133 2020 all-particle spectrum
+
+- Source paper: Tunka-133 Collaboration, "Cosmic ray energy spectrum and mass composition from \(2\cdot10^{15}\) to \(3\cdot10^{18}\) eV by data of the Tunka-133 array"
+- DOI: `10.1016/j.astropartphys.2019.102406`
+- Added on: April 23, 2026
+- Provenance: local text export previously stored under `source/KCDC/`; moved to `mytables` because the file stores separate statistical and systematic uncertainties and needs a dedicated reader
+- Quantities: differential all-particle flux as a function of total energy
+- Units: energy in `GeV`; flux in `m^-2 s^-1 sr^-1 GeV^-1`
+- Stored columns: `E Flux UncertLow UncertHigh SysUncertLow SysUncertHigh`
+- Note: the file keeps the original six-column semicolon-separated structure rather than collapsing the uncertainties
+
+Files:
+
+- `TUNKA-133_allParticle_totalEnergy.txt`
+
+### CALET 2025 chromium, titanium, and sub-iron to iron ratios
+
+- Source paper: CALET Collaboration, "Precision spectral measurements of Chromium and Titanium from 10 to 250 GeV/n and sub-Iron to Iron ratio with the Calorimetric Electron Telescope on the ISS", arXiv:2507.08643
+- PDF: `https://arxiv.org/pdf/2507.08643`
+- Added on: April 23, 2026
+- Provenance: manually transcribed from Tables `1`, `2`, `4`, and `5`
+- Quantities: differential chromium and titanium fluxes, plus `Ti/Fe` and `Cr/Fe` ratios, as functions of kinetic energy per nucleon
+- Flux-table units: energy in `GeV/n`; flux in `(GeV/n)^-1 m^-2 s^-1 sr^-1`
+- Flux-table stored columns: `E_min E_max flux stat syst_norm syst_dep_lo syst_dep_up`
+- Ratio-table units: energy in `GeV/n`; ratio is dimensionless
+- Ratio-table stored columns: `E_min E_max ratio stat syst_lo syst_up`
+- Note: the flux tables quote statistical, normalization-systematic, and energy-dependent systematic components; the ratio tables quote statistical and total systematic uncertainties
+
+Files:
+
+- `CALET_Ti_kineticEnergyPerNucleon.txt` from Table `1`
+- `CALET_Cr_kineticEnergyPerNucleon.txt` from Table `2`
+- `CALET_Ti_Fe_kineticEnergyPerNucleon.txt` from Table `4`
+- `CALET_Cr_Fe_kineticEnergyPerNucleon.txt` from Table `5`
+
+### VERITAS 2018 CRE spectrum
+
+- Source paper: VERITAS Collaboration, "Measurement of cosmic-ray electrons at TeV energies by VERITAS", arXiv:1808.10028
+- PDF: `https://arxiv.org/pdf/1808.10028`
+- DOI: `10.1103/PhysRevD.98.062004`
+- Added on: April 23, 2026
+- Provenance: manually transcribed from Table `1`
+- Quantities: differential CRE (`e+ + e-`) flux as a function of total energy
+- Units: energy columns in `TeV`; flux in `cm^-2 s^-1 TeV^-1`
+- Stored columns: `E E_min E_max N_events electron_fraction electron_fraction_err flux stat`
+- Note: Table `1` reports statistical uncertainties for the flux; broader systematic uncertainties are discussed in the paper text
+
+Files:
+
+- `VERITAS_e+e-_totalEnergy.txt` from Table `1`
 
 ### GRAPES-3 2024 proton spectrum
 

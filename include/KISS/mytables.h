@@ -93,23 +93,35 @@ class MyProtons : public CrDataset {
 };
 }  // namespace GRAPES
 
+namespace TUNKA {
+class MyAllParticle : public CrDataset {
+   public:
+    MyAllParticle(EnergyModes mode) : CrDataset(tunka133, totalEnergy, allParticle, mode) {
+        setSource(mytables);
+        setDOI("10.1016/j.astropartphys.2019.102406");
+        setADSbibcode("2020APh...11702406B");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace TUNKA
+
 namespace LHAASO {
-// class MyNuclei : public CrDataset {
-//    public:
-//     MyNuclei(YQuantities primary, std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, primary, mode)
-//     {
-//         setSource(mytables);
-//         setDOI("arXiv:2511.05013");
-//         setADSbibcode("none");
-//         setDescription(HIM);
-//         setUrl("https://arxiv.org/pdf/2511.05013");
-//     }
+class MyNuclei : public CrDataset {
+   public:
+    MyNuclei(YQuantities primary, std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, primary, mode) {
+        setSource(mytables);
+        setDOI("arXiv:2511.05013");
+        setADSbibcode("none");
+        setDescription(HIM);
+        setUrl("https://arxiv.org/pdf/2511.05013");
+    }
 
-//     void readfile(std::string filename) override;
+    void readfile(std::string filename) override;
 
-//    protected:
-//     std::string makeSourceFilename() const override;
-// };
+   protected:
+    std::string makeSourceFilename() const override;
+};
 }  // namespace LHAASO
 
 // OLD DATASETS

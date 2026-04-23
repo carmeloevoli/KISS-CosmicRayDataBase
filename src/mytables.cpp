@@ -129,70 +129,97 @@ void MyProtons::readfile(std::string filename) {
 }
 }  // namespace GRAPES
 
+namespace TUNKA {
+void MyAllParticle::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 6);
+
+    std::string line;
+    while (std::getline(infile, line)) {
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            auto values = Utils::splitline(line);
+            if (values.size() != 6) {
+                throw std::runtime_error("unexpected number of columns");
+            }
+
+            dataPoint data = {{values[0], values[1]}, {values[2], values[3]}, {values[4], values[5]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception&) {
+            std::cerr << "Invalid TUNKA row in " << filename << ", skipping.\n";
+        }
+    }
+    infile.close();
+}
+}  // namespace TUNKA
+
 namespace LHAASO {
-// std::string MyNuclei::makeSourceFilename() const {
-//     std::string quantity;
-//     if (m_yQuantity == light) {
-//         quantity = "light";
-//     } else if (m_yQuantity == He) {
-//         quantity = "helium";
-//     } else if (m_yQuantity == H) {
-//         quantity = "proton";
-//     } else {
-//         quantity = ToString(m_yQuantity);
-//     }
+std::string MyNuclei::makeSourceFilename() const {
+    std::string quantity;
+    if (m_yQuantity == light) {
+        quantity = "light";
+    } else if (m_yQuantity == He) {
+        quantity = "helium";
+    } else if (m_yQuantity == H) {
+        quantity = "proton";
+    } else {
+        quantity = ToString(m_yQuantity);
+    }
 
-//     return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + quantity + "_" +
-//            ToString(m_xQuantity) + ".txt";
-//}
+    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + quantity + "_" +
+           ToString(m_xQuantity) + ".txt";
+}
 
-// void MyNuclei::readfile(std::string filename) {
-//     std::fstream infile(filename.c_str());
-//     skipHeaderLines(infile, 4);
+void MyNuclei::readfile(std::string filename) {
+    std::fstream infile(filename.c_str());
+    skipHeaderLines(infile, 4);
 
-//     int offset = -1;
-//     if (m_description == "QGSJET-II-04") {
-//         offset = 2;
-//     } else if (m_description == "EPOS-LHC") {
-//         offset = 5;
-//     } else if (m_description == "SIBYLL-2.3d") {
-//         offset = 8;
-//     } else {
-//         throw std::invalid_argument("unsupported LHAASO hadronic interaction model");
-//     }
+    int offset = -1;
+    if (m_description == "QGSJET-II-04") {
+        offset = 2;
+    } else if (m_description == "EPOS-LHC") {
+        offset = 5;
+    } else if (m_description == "SIBYLL-2.3d") {
+        offset = 8;
+    } else {
+        throw std::invalid_argument("unsupported LHAASO hadronic interaction model");
+    }
 
-//     std::string line;
-//     while (std::getline(infile, line)) {
-//         if (line.empty() || line[0] == '#') {
-//             continue;
-//         }
+    std::string line;
+    while (std::getline(infile, line)) {
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
 
-//         std::istringstream s(line);
-//         double log10Emin, log10Emax;
-//         double fluxQGS, statQGS, systQGS;
-//         double fluxEPOS, statEPOS, systEPOS;
-//         double fluxSIBYLL, statSIBYLL, systSIBYLL;
-//         if (!(s >> log10Emin >> log10Emax >> fluxQGS >> statQGS >> systQGS >> fluxEPOS >> statEPOS >> systEPOS >>
-//               fluxSIBYLL >> statSIBYLL >> systSIBYLL)) {
-//             std::cerr << "Invalid line, skipping.\n";
-//             continue;
-//         }
+        std::istringstream s(line);
+        double log10Emin, log10Emax;
+        double fluxQGS, statQGS, systQGS;
+        double fluxEPOS, statEPOS, systEPOS;
+        double fluxSIBYLL, statSIBYLL, systSIBYLL;
+        if (!(s >> log10Emin >> log10Emax >> fluxQGS >> statQGS >> systQGS >> fluxEPOS >> statEPOS >> systEPOS >>
+              fluxSIBYLL >> statSIBYLL >> systSIBYLL)) {
+            std::cerr << "Invalid line, skipping.\n";
+            continue;
+        }
 
-//         const double values[] = {log10Emin, log10Emax, fluxQGS,    statQGS,    systQGS,   fluxEPOS,
-//                                  statEPOS,  systEPOS,  fluxSIBYLL, statSIBYLL, systSIBYLL};
+        const double values[] = {log10Emin, log10Emax, fluxQGS,    statQGS,    systQGS,   fluxEPOS,
+                                 statEPOS,  systEPOS,  fluxSIBYLL, statSIBYLL, systSIBYLL};
 
-//         const double Elo = std::pow(10., values[0]);
-//         const double Eup = std::pow(10., values[1]);
-//         const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
-//         const double flux = values[offset] / 1e6;                                 // [PeV-1 -> GeV-1]
-//         const double errStat = values[offset + 1] / 1e6;                          // [PeV-1 -> GeV-1]
-//         const double errSyst = values[offset + 2] / 1e6;                          // [PeV-1 -> GeV-1]
+        const double Elo = std::pow(10., values[0]);
+        const double Eup = std::pow(10., values[1]);
+        const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
+        const double flux = values[offset] / 1e6;                                 // [PeV^-1 -> GeV^-1]
+        const double errStat = values[offset + 1] / 1e6;                          // [PeV^-1 -> GeV^-1]
+        const double errSyst = values[offset + 2] / 1e6;                          // [PeV^-1 -> GeV^-1]
 
-//         dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
-//         m_dataTable.push_back(data);
-//     }
-//     infile.close();
-// }
+        dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
+        m_dataTable.push_back(data);
+    }
+    infile.close();
+}
 }  // namespace LHAASO
 
 // ARGO
