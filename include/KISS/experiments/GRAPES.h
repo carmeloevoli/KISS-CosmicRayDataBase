@@ -6,10 +6,12 @@
 namespace GRAPES {
 
 void run() {
-    {
-        KISS::GRAPES::MyProtons data(KISS::geometrical);
-        data.run();
-    }
+    // {
+    //     KISS::KCDC data(KISS::grapes, KISS::totalEnergy, KISS::H, KISS::unknown);
+    //     data.setDOI("10.1103/PhysRevLett.132.051002");
+    //     data.setADSbibcode("2024PhRvL.132e1002V");
+    //     data.run();
+    // }
 }
 
 }  // namespace GRAPES

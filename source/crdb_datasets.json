@@ -879,8 +879,8 @@
       {
         "quantity": "AllParticles",
         "energy_type": "ETOT",
-        "experiment": "Telescope",
-        "sub_experiment": "TALE (2014/06-2016/03) QGSJet II 03",
+        "experiment": "TALE",
+        "sub_experiment": "TALE (2014/06/-2016/03) QGSJet-II-03",
         "filename": "TALE_allParticle_totalEnergy.txt"
       },
       {
@@ -974,13 +974,6 @@
         "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
         "filename": "TUNKA-133_He_totalEnergy.txt",
         "combo_level": 1
-      },
-      {
-        "quantity": "AllParticles",
-        "energy_type": "ETOT",
-        "experiment": "TUNKA",
-        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
-        "filename": "TUNKA-133_allParticle_totalEnergy.txt"
       }
     ]
   }

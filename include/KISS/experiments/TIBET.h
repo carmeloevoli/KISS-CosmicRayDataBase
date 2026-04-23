@@ -18,10 +18,12 @@ void run() {
     //     KISS::MyAllTibet data(KISS::geometrical, "SIBYLL+HD");
     //     data.run();
     // }
-    // {
-    //     KISS::CRDB data(KISS::tibet, KISS::totalEnergy, KISS::light, KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::CRDB data(KISS::tibet, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.setDOI("10.1126/science.1199172");
+        data.setADSbibcode("2011Sci...332...69A");
+        data.run();
+    }
 }
 
 }  // namespace TIBET

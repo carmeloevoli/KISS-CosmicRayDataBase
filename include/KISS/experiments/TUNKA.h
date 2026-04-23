@@ -2,16 +2,13 @@
 #define KISS_EXPERIMENTS_TUNKA_H_
 
 #include "KISS/CRDB.h"
-#include "KISS/KCDC.h"
+#include "KISS/mytables.h"
 
 namespace TUNKA {
 
 void run() {
     {
-        KISS::CRDB data(KISS::tunka133, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
-        data.setDOI("10.1016/j.nima.2013.09.018");
-        data.setADSbibcode("2014NIMPA.756...94P");
-        data.setComments("Model: QGSJet01");
+        KISS::TUNKA::MyAllParticle data(KISS::geometrical);
         data.run();
     }
     {

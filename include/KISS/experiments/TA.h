@@ -6,10 +6,12 @@
 namespace TA {
 
 void run() {
-    // {
-    //     KISS::MyAllTale data(KISS::geometrical);
-    //     data.run();
-    // }
+    {
+        KISS::CRDB data(KISS::tale, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
+        data.setDOI("10.3847/1538-4357/aada05");
+        data.setADSbibcode("2018ApJ...865...74A");
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::ta, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
         data.setDOI("10.22323/1.236.0349");

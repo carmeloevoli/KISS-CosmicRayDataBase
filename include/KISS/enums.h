@@ -74,7 +74,7 @@ inline std::string ToString(CrExperiments v) {
         case gamma:
             return "GAMMA";
         case grapes:
-            return "GRAPES";
+            return "GRAPES-3";
         case hawc:
             return "HAWC";
         case hess:
