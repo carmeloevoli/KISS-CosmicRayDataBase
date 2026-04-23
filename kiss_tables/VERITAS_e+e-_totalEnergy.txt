@@ -4,8 +4,8 @@
 #Y Quantity: e+e-
 #X Quantity: totalEnergy
 #Url: 
-#Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Comments: Possible unit-label issue in Table 1: flux may already be quoted in GeV^-1.
+#Columns: x, y, y statistical errors, y systematic errors
 3.349e+02 3.140e-06 9.790e-08 9.790e-08 1.036e-06 2.010e-06 
 3.759e+02 2.104e-06 8.469e-08 8.469e-08 6.943e-07 1.347e-06 
 4.218e+02 1.491e-06 5.681e-08 5.681e-08 4.920e-07 9.542e-07 
@@ -20,3 +20,4 @@
 1.679e+03 8.620e-09 1.058e-09 1.058e-09 2.845e-09 5.517e-09 
 2.371e+03 2.233e-09 3.015e-10 3.015e-10 7.369e-10 1.429e-09 
 3.349e+03 4.645e-10 1.216e-10 1.216e-10 1.533e-10 2.973e-10 
+4.731e+03 3.621e-10 1.780e-10 1.780e-10 1.195e-10 2.317e-10 

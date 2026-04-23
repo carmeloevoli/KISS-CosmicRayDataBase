@@ -5,7 +5,7 @@
 #X Quantity: totalEnergy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: From Marcel Finger PhD Thesis
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 1.413e+06 1.114e-12 0.000e+00 0.000e+00 1.073e-14 1.073e-14 
 1.778e+06 5.844e-13 0.000e+00 0.000e+00 6.126e-15 6.126e-15 
 2.239e+06 3.117e-13 0.000e+00 0.000e+00 3.862e-15 3.862e-15 

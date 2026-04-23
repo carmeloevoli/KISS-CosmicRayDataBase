@@ -5,7 +5,7 @@
 #X Quantity: totalEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 2.567e+01 1.160e-02 0.000e+00 0.000e+00 3.000e-04 3.000e-04 
 2.946e+01 7.380e-03 2.000e-05 2.000e-05 1.900e-04 1.900e-04 
 3.384e+01 4.760e-03 2.000e-05 2.000e-05 1.300e-04 1.300e-04 

@@ -5,7 +5,7 @@
 #X Quantity: kineticEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 5.614e+01 2.180e-01 1.000e-03 1.000e-03 1.350e-02 1.350e-02 
 7.067e+01 1.160e-01 1.000e-03 1.000e-03 7.810e-03 7.810e-03 
 8.897e+01 6.060e-02 5.000e-04 5.000e-04 4.140e-03 4.380e-03 

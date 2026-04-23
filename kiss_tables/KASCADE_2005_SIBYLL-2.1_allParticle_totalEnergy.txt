@@ -5,7 +5,7 @@
 #X Quantity: totalEnergy
 #Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 1.778e+06 6.334e-13 0.000e+00 0.000e+00 2.113e-14 2.113e-14 
 2.239e+06 3.449e-13 0.000e+00 0.000e+00 1.364e-14 1.364e-14 
 2.818e+06 1.798e-13 0.000e+00 0.000e+00 8.860e-15 8.860e-15 

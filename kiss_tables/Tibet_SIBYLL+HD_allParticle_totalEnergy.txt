@@ -1,11 +1,11 @@
-#Source: mytables
-#Ref: 10.1086/529514 (2008ApJ...678.1165A)
+#Source: KCDC
+#Ref:  ()
 #Experiment: Tibet (SIBYLL+HD)
 #Y Quantity: allParticle
 #X Quantity: totalEnergy
-#Url: 
+#Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 1.120e+05 8.639e-10 0.000e+00 0.000e+00 2.000e-13 2.000e-13 
 1.410e+05 4.684e-10 0.000e+00 0.000e+00 1.000e-13 1.000e-13 
 1.780e+05 2.529e-10 0.000e+00 0.000e+00 1.000e-13 1.000e-13 
@@ -38,3 +38,4 @@
 8.910e+07 4.086e-18 0.000e+00 0.000e+00 5.240e-19 5.240e-19 
 1.120e+08 2.636e-18 0.000e+00 0.000e+00 3.750e-19 3.750e-19 
 1.410e+08 1.115e-18 0.000e+00 0.000e+00 2.174e-19 2.174e-19 
+1.780e+08 4.922e-19 0.000e+00 0.000e+00 1.287e-19 1.287e-19 

@@ -5,7 +5,7 @@
 #X Quantity: rigidity
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 2.804e+00 9.354e-02 8.700e-04 8.700e-04 5.700e-03 5.700e-03 
 3.125e+00 8.392e-02 6.600e-04 6.600e-04 4.360e-03 4.360e-03 
 3.460e+00 7.459e-02 5.300e-04 5.300e-04 3.560e-03 3.560e-03 

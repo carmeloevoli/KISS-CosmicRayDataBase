@@ -1,11 +1,11 @@
-#Source: mytables
-#Ref: 10.1086/529514 (2008ApJ...678.1165A)
+#Source: KCDC
+#Ref:  ()
 #Experiment: Tibet (QGSJET+PD)
 #Y Quantity: allParticle
 #X Quantity: totalEnergy
-#Url: 
+#Url: https://kcdc.ikp.kit.edu/spectra/
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 1.120e+05 7.454e-10 0.000e+00 0.000e+00 2.000e-13 2.000e-13 
 1.410e+05 4.013e-10 0.000e+00 0.000e+00 1.000e-13 1.000e-13 
 1.780e+05 2.155e-10 0.000e+00 0.000e+00 1.000e-13 1.000e-13 
@@ -25,7 +25,7 @@
 4.470e+06 3.902e-14 0.000e+00 0.000e+00 2.300e-16 2.300e-16 
 5.620e+06 1.965e-14 0.000e+00 0.000e+00 1.400e-16 1.400e-16 
 7.080e+06 9.510e-15 0.000e+00 0.000e+00 9.000e-17 9.000e-17 
-8.910e+06 4.529e-15 0.000e+00 0.000e+00 5.500e-17 5.500e-17 
+8.910e+06 4.529e-15 0.000e+00 0.000e+00 6.500e-17 6.500e-17 
 1.120e+07 2.202e-15 0.000e+00 0.000e+00 3.400e-17 3.400e-17 
 1.410e+07 1.103e-15 0.000e+00 0.000e+00 2.200e-17 2.200e-17 
 1.780e+07 5.818e-16 0.000e+00 0.000e+00 1.400e-17 1.400e-17 

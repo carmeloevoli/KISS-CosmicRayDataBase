@@ -5,7 +5,7 @@
 #X Quantity: totalEnergy
 #Url: 
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 7.940e+03 8.440e-07 7.000e-09 7.000e-09 1.060e-07 4.500e-08 
 1.260e+04 2.660e-07 3.000e-09 3.000e-09 3.800e-08 1.400e-08 
 2.000e+04 8.340e-08 1.200e-09 1.200e-09 1.360e-08 4.600e-09 

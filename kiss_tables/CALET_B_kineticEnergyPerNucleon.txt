@@ -5,7 +5,7 @@
 #X Quantity: kineticEnergyPerNucleon
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 9.157e+00 8.313e-03 4.500e-05 4.500e-05 5.082e-04 4.614e-04 
 1.121e+01 4.811e-03 2.900e-05 2.900e-05 2.940e-04 2.514e-04 
 1.409e+01 2.535e-03 1.800e-05 1.800e-05 1.548e-04 1.332e-04 

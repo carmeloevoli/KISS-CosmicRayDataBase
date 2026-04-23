@@ -5,7 +5,7 @@
 #X Quantity: totalEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: Model: QGSJet01
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 8.912e+06 1.677e-15 3.566e-16 3.868e-16 5.898e-16 5.898e-16 
 1.122e+07 7.638e-16 1.416e-16 1.591e-16 2.759e-16 2.759e-16 
 1.413e+07 3.255e-16 7.460e-17 8.256e-17 1.294e-16 1.294e-16 

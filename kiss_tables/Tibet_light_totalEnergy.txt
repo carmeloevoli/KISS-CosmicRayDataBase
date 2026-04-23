@@ -1,11 +1,11 @@
 #Source: CRDB
-#Ref: not available (none)
+#Ref: 10.1126/science.1199172 (2011Sci...332...69A)
 #Experiment: Tibet
 #Y Quantity: light
 #X Quantity: totalEnergy
 #Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
-#Colums: x, y, y statistical errors, y systematic errors
+#Columns: x, y, y statistical errors, y systematic errors
 1.120e+05 7.454e-10 2.000e-13 2.000e-13 0.000e+00 0.000e+00 
 1.410e+05 4.013e-10 1.000e-13 1.000e-13 0.000e+00 0.000e+00 
 1.780e+05 2.155e-10 1.000e-13 1.000e-13 0.000e+00 0.000e+00 
