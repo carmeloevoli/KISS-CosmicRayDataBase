@@ -2,3 +2,5 @@
 build/
 *.code-workspace
 BIN/
+*/__pycache__/
+*.pyc
