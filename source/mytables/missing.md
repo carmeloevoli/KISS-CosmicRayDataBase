@@ -1,2 +1,2 @@
-- LHAASO allparticle + lnA: https://arxiv.org/abs/2403.10010
-- GRAPES-3 protons:
+- Pierre Auger lnA: https://www.auger.org/science/public-data/data-and-tables
+- TA lnA: https://iopscience.iop.org/article/10.3847/1538-4357/aabad7/pdf
