@@ -23,5 +23,6 @@
 #include "KISS/experiments/TRACER.h"
 #include "KISS/experiments/TUNKA.h"
 #include "KISS/experiments/VERITAS.h"
+#include "KISS/experiments/Yakutsk.h"
 
 #endif  //  KISS_KISS_H_

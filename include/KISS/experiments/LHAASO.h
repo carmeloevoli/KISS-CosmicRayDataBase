@@ -7,6 +7,30 @@ namespace LHAASO {
 
 void run() {
     {
+        KISS::LHAASO::MyAllParticle data("QGSJET-II-04", KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::LHAASO::MyAllParticle data("EPOS-LHC", KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::LHAASO::MyAllParticle data("SIBYLL-2.3d", KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::LHAASO::MyLnA data("QGSJET-II-04", KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::LHAASO::MyLnA data("EPOS-LHC", KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::LHAASO::MyLnA data("SIBYLL-2.3d", KISS::geometrical);
+        data.run();
+    }
+    {
         KISS::LHAASO::MyNuclei data(KISS::light, "QGSJET-II-04", KISS::geometrical);
         data.run();
     }

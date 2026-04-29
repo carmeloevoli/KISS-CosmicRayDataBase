@@ -106,6 +106,36 @@ class MyAllParticle : public CrDataset {
 };
 }  // namespace TUNKA
 
+namespace TALE {
+class MyLnA : public CrDataset {
+   public:
+    MyLnA(EnergyModes mode) : CrDataset(tale, totalEnergy, lnA, mode) {
+        setSource(mytables);
+        setDOI("10.48550/arXiv.2603.14804");
+        setADSbibcode("2026arXiv260314804A");
+        setUrl("https://arxiv.org/pdf/2603.14804");
+        setComments("Source file preserves Xmax and sigma(Xmax) columns; reader uses the final lnA block.");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace TALE
+
+namespace YAKUTSK {
+class MyLnA : public CrDataset {
+   public:
+    MyLnA(EnergyModes mode) : CrDataset(yakutsk, totalEnergy, lnA, mode) {
+        setSource(mytables);
+        setDOI("10.1016/j.asr.2019.07.019");
+        setADSbibcode("2019AdSpR..64.2570K");
+        setUrl("https://arxiv.org/pdf/1908.01508.pdf");
+        setComments("Source file preserves Xmax and sigma(Xmax) columns; tables report only statistical uncertainties for lnA.");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace YAKUTSK
+
 namespace LHAASO {
 class MyNuclei : public CrDataset {
    public:
@@ -115,6 +145,40 @@ class MyNuclei : public CrDataset {
         setADSbibcode("none");
         setDescription(HIM);
         setUrl("https://arxiv.org/pdf/2511.05013");
+    }
+
+    void readfile(std::string filename) override;
+
+   protected:
+    std::string makeSourceFilename() const override;
+};
+
+class MyAllParticle : public CrDataset {
+   public:
+    MyAllParticle(std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, allParticle, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.132.131002");
+        setADSbibcode("none");
+        setDescription(HIM);
+        setUrl("https://arxiv.org/pdf/2403.10010");
+        setComments("Systematic uncertainties exclude hadronic interaction model uncertainty.");
+    }
+
+    void readfile(std::string filename) override;
+
+   protected:
+    std::string makeSourceFilename() const override;
+};
+
+class MyLnA : public CrDataset {
+   public:
+    MyLnA(std::string HIM, EnergyModes mode) : CrDataset(lhaaso, totalEnergy, lnA, mode) {
+        setSource(mytables);
+        setDOI("10.1103/PhysRevLett.132.131002");
+        setADSbibcode("none");
+        setDescription(HIM);
+        setUrl("https://arxiv.org/pdf/2403.10010");
+        setComments("Systematic uncertainties exclude hadronic interaction model uncertainty.");
     }
 
     void readfile(std::string filename) override;

@@ -34,6 +34,8 @@ class CrDataset {
     void setUrl(std::string str);
     void setComments(std::string str);
     void setDescription(std::string str);
+    static int missingInputCount();
+    static void printMissingInputSummary();
 
    protected:
     CrExperiments m_experiment;

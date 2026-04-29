@@ -7,6 +7,12 @@
 
 namespace KISS {
 
+namespace {
+
+int g_missingInputCount = 0;
+
+}  // namespace
+
 void CrDataset::setDOI(std::string str) { m_doi = str; }  // TODO use regex
 
 void CrDataset::setADSbibcode(std::string str) { m_ads = str; }  // TODO use regex
@@ -24,6 +30,12 @@ void CrDataset::setUrl(std::string url) {
 void CrDataset::setComments(std::string str) { m_comments = str; }
 
 void CrDataset::setDescription(std::string str) { m_description = str; }
+
+int CrDataset::missingInputCount() { return g_missingInputCount; }
+
+void CrDataset::printMissingInputSummary() {
+    std::cout << "\033[1;33m> missing input files: " << missingInputCount() << "\033[0m\n";
+}
 
 std::string CrDataset::makeSourceFilename() const {
     std::string s = "source/";
@@ -48,6 +60,7 @@ bool CrDataset::load() {
     std::cout << "\033[1;31m> loading data from file " << filename << "\033[0m\n";
     std::fstream infile(filename.c_str());
     if (!infile) {
+        ++g_missingInputCount;
         std::cerr << "\033[1;33m> missing input file " << filename << ", skipping dataset\033[0m\n";
         return false;
     }

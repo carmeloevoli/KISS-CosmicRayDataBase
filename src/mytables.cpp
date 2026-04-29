@@ -5,7 +5,9 @@
 #include <fstream>
 #include <limits>
 #include <sstream>
+#include <stdexcept>
 #include <string>
+#include <vector>
 
 #include "KISS/utils.h"
 
@@ -13,148 +15,286 @@ namespace KISS {
 
 namespace {
 
-void skipHeaderLines(std::istream& infile, int count) {
-    for (int i = 0; i < count; ++i) {
-        infile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+std::fstream openInputFile(const std::string& filename) {
+    std::fstream infile(filename.c_str());
+    if (!infile) {
+        throw std::runtime_error("could not open input file " + filename);
     }
+    return infile;
+}
+
+void skipHeaderLines(std::istream& infile, int count, const std::string& filename) {
+    std::string header;
+    for (int i = 0; i < count; ++i) {
+        if (!std::getline(infile, header)) {
+            throw std::runtime_error("missing expected header lines in " + filename);
+        }
+    }
+}
+
+std::vector<double> parseWhitespaceRow(const std::string& line, std::size_t expectedColumns) {
+    std::istringstream s(line);
+    std::vector<double> values;
+    double value = 0.;
+
+    while (s >> value) {
+        values.push_back(value);
+    }
+
+    if (!s.eof()) {
+        throw std::runtime_error("encountered a non-numeric token");
+    }
+    if (values.size() != expectedColumns) {
+        throw std::runtime_error("unexpected number of columns");
+    }
+
+    return values;
+}
+
+std::vector<double> parseDelimitedRow(const std::string& line, const std::string& delimiter, std::size_t expectedColumns) {
+    auto values = Utils::splitline(line, delimiter);
+    if (values.size() != expectedColumns) {
+        throw std::runtime_error("unexpected number of columns");
+    }
+    return values;
+}
+
+std::vector<std::string> parseWhitespaceTokens(const std::string& line, std::size_t expectedColumns) {
+    std::istringstream s(line);
+    std::vector<std::string> values;
+    std::string value;
+
+    while (s >> value) {
+        values.push_back(value);
+    }
+
+    if (values.size() != expectedColumns) {
+        throw std::runtime_error("unexpected number of columns");
+    }
+
+    return values;
+}
+
+void reportInvalidRow(const std::string& datasetName, const std::string& filename, int lineNumber, const std::string& reason) {
+    std::cerr << "Invalid " << datasetName << " row in " << filename << ":" << lineNumber << " (" << reason
+              << "), skipping.\n";
+}
+
+int lhaasoModelOffset(const std::string& him) {
+    if (him == "QGSJET-II-04") {
+        return 2;
+    }
+    if (him == "EPOS-LHC") {
+        return 5;
+    }
+    if (him == "SIBYLL-2.3d") {
+        return 8;
+    }
+    throw std::invalid_argument("unsupported LHAASO hadronic interaction model");
 }
 
 }  // namespace
 
 namespace CALET {
 void MyLeptons::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E_min, E_max, E_mean, flux, errStatLo, errStatUp, errSysLo, errSysUp;
-    while (infile >> E_min >> E_max >> E_mean >> flux >> errStatLo >> errStatUp >> errSysLo >> errSysUp) {
-        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        dataPoint data = {{E, flux}, {errStatLo, errStatUp}, {errSysLo, errSysUp}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-
-void MyHeavy::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E_min, E_max, flux, errStat, syst_norm, syst_dep_lo, syst_dep_up;
-    while (infile >> E_min >> E_max >> flux >> errStat >> syst_norm >> syst_dep_lo >> syst_dep_up) {
-        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        const double syst_do = Utils::quadrature(syst_norm, syst_dep_lo);
-        const double syst_up = Utils::quadrature(syst_norm, syst_dep_up);
-        dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-}  // namespace CALET
-
-namespace DAMPE {
-void MyBoron::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E_min, E_max, flux, errStat, syst_1, syst_2_do, syst_2_up;
-    while (infile >> E_min >> E_max >> flux >> errStat >> syst_1 >> syst_2_do >> syst_2_up) {
-        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        const double syst_do = Utils::quadrature(syst_1, syst_2_do);
-        const double syst_up = Utils::quadrature(syst_1, syst_2_up);
-        dataPoint data = {{E, flux}, {errStat, errStat}, {syst_do, syst_up}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-
-void MyLight::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E_min, E_max, E_mean, flux, stat, syst_ana, syst_had;
-    while (infile >> E_min >> E_max >> E_mean >> flux >> stat >> syst_ana >> syst_had) {
-        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        const double syst = Utils::quadrature(syst_ana, syst_had);
-        dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-
-void MyPrimary::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E_min, E_max, flux, stat, syst_ana, syst_had;
-    while (infile >> E_min >> E_max >> flux >> stat >> syst_ana >> syst_had) {
-        const double E = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        const double syst = Utils::quadrature(syst_ana, syst_had);
-        dataPoint data = {{E, flux}, {stat, stat}, {syst, syst}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-}  // namespace DAMPE
-
-namespace HAWC {
-void MyLight::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E, flux, errStat, errSystUp, errSystLo;
-    while (infile >> E >> flux >> errStat >> errSystUp >> errSystLo) {
-        dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-}  // namespace HAWC
-
-namespace GRAPES {
-void MyProtons::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-    std::string line;
-    while (std::getline(infile, line)) {
-        std::istringstream s(line);
-        double E, flux, errStat, errSystUp, errSystLo;
-        if (!(s >> E >> flux >> errStat >> errSystUp >> errSystLo)) {
-            std::cerr << "Invalid line, skipping.\n";
-            continue;
-        }
-        dataPoint data = {{E, flux}, {errStat, errStat}, {errSystLo, errSystUp}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-}  // namespace GRAPES
-
-namespace TUNKA {
-void MyAllParticle::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 6);
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
 
     std::string line;
+    int lineNumber = 1;
     while (std::getline(infile, line)) {
+        ++lineNumber;
         if (line.empty()) {
             continue;
         }
 
         try {
-            auto values = Utils::splitline(line);
-            if (values.size() != 6) {
-                throw std::runtime_error("unexpected number of columns");
-            }
-
-            dataPoint data = {{values[0], values[1]}, {values[2], values[3]}, {values[4], values[5]}};
+            const auto values = parseWhitespaceRow(line, 8);
+            const double E = Utils::computeMeanEnergy(values[0], values[1], m_energyMode);
+            dataPoint data = {{E, values[3]}, {values[4], values[5]}, {values[6], values[7]}};
             m_dataTable.push_back(data);
-        } catch (const std::exception&) {
-            std::cerr << "Invalid TUNKA row in " << filename << ", skipping.\n";
+        } catch (const std::exception& e) {
+            reportInvalidRow("CALET leptons", filename, lineNumber, e.what());
         }
     }
-    infile.close();
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
 }
-}  // namespace TUNKA
+
+void MyHeavy::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 7);
+            const double E = Utils::computeMeanEnergy(values[0], values[1], m_energyMode);
+            const double syst_do = Utils::quadrature(values[4], values[5]);
+            const double syst_up = Utils::quadrature(values[4], values[6]);
+            dataPoint data = {{E, values[2]}, {values[3], values[3]}, {syst_do, syst_up}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("CALET heavy nuclei", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace CALET
+
+namespace DAMPE {
+void MyBoron::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 7);
+            const double E = Utils::computeMeanEnergy(values[0], values[1], m_energyMode);
+            const double syst_do = Utils::quadrature(values[4], values[5]);
+            const double syst_up = Utils::quadrature(values[4], values[6]);
+            dataPoint data = {{E, values[2]}, {values[3], values[3]}, {syst_do, syst_up}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("DAMPE boron", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+
+void MyLight::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 7);
+            const double E = Utils::computeMeanEnergy(values[0], values[1], m_energyMode);
+            const double syst = Utils::quadrature(values[5], values[6]);
+            dataPoint data = {{E, values[3]}, {values[4], values[4]}, {syst, syst}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("DAMPE light", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+
+void MyPrimary::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 6);
+            const double E = Utils::computeMeanEnergy(values[0], values[1], m_energyMode);
+            const double syst = Utils::quadrature(values[4], values[5]);
+            dataPoint data = {{E, values[2]}, {values[3], values[3]}, {syst, syst}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("DAMPE primary nuclei", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace DAMPE
+
+namespace GRAPES {
+void MyProtons::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 5);
+            dataPoint data = {{values[0], values[1]}, {values[2], values[2]}, {values[4], values[3]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("GRAPES proton", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace GRAPES
+
+namespace HAWC {
+void MyLight::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 5);
+            dataPoint data = {{values[0], values[1]}, {values[2], values[2]}, {values[4], values[3]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("HAWC light", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace HAWC
 
 namespace LHAASO {
 std::string MyNuclei::makeSourceFilename() const {
@@ -174,53 +314,239 @@ std::string MyNuclei::makeSourceFilename() const {
 }
 
 void MyNuclei::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 4);
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 4, filename);
 
-    int offset = -1;
-    if (m_description == "QGSJET-II-04") {
-        offset = 2;
-    } else if (m_description == "EPOS-LHC") {
-        offset = 5;
-    } else if (m_description == "SIBYLL-2.3d") {
-        offset = 8;
-    } else {
-        throw std::invalid_argument("unsupported LHAASO hadronic interaction model");
-    }
+    const int offset = lhaasoModelOffset(m_description);
 
     std::string line;
+    int lineNumber = 4;
     while (std::getline(infile, line)) {
+        ++lineNumber;
         if (line.empty() || line[0] == '#') {
             continue;
         }
 
-        std::istringstream s(line);
-        double log10Emin, log10Emax;
-        double fluxQGS, statQGS, systQGS;
-        double fluxEPOS, statEPOS, systEPOS;
-        double fluxSIBYLL, statSIBYLL, systSIBYLL;
-        if (!(s >> log10Emin >> log10Emax >> fluxQGS >> statQGS >> systQGS >> fluxEPOS >> statEPOS >> systEPOS >>
-              fluxSIBYLL >> statSIBYLL >> systSIBYLL)) {
-            std::cerr << "Invalid line, skipping.\n";
+        try {
+            const auto values = parseWhitespaceRow(line, 11);
+
+            const double Elo = std::pow(10., values[0]);
+            const double Eup = std::pow(10., values[1]);
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
+            const double flux = values[offset] / 1e6;                                 // [PeV^-1 -> GeV^-1]
+            const double errStat = values[offset + 1] / 1e6;                          // [PeV^-1 -> GeV^-1]
+            const double errSyst = values[offset + 2] / 1e6;                          // [PeV^-1 -> GeV^-1]
+
+            dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("LHAASO nuclei", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+
+std::string MyAllParticle::makeSourceFilename() const {
+    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
+           ToString(m_xQuantity) + ".txt";
+}
+
+void MyAllParticle::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 4, filename);
+
+    const int offset = lhaasoModelOffset(m_description);
+
+    std::string line;
+    int lineNumber = 4;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty() || line[0] == '#') {
             continue;
         }
 
-        const double values[] = {log10Emin, log10Emax, fluxQGS,    statQGS,    systQGS,   fluxEPOS,
-                                 statEPOS,  systEPOS,  fluxSIBYLL, statSIBYLL, systSIBYLL};
-
-        const double Elo = std::pow(10., values[0]);
-        const double Eup = std::pow(10., values[1]);
-        const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
-        const double flux = values[offset] / 1e6;                                 // [PeV^-1 -> GeV^-1]
-        const double errStat = values[offset + 1] / 1e6;                          // [PeV^-1 -> GeV^-1]
-        const double errSyst = values[offset + 2] / 1e6;                          // [PeV^-1 -> GeV^-1]
-
-        dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
-        m_dataTable.push_back(data);
+        try {
+            const auto values = parseWhitespaceRow(line, 11);
+            const double Elo = std::pow(10., values[0]);
+            const double Eup = std::pow(10., values[1]);
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            dataPoint data = {{E, values[offset]}, {values[offset + 1], values[offset + 1]}, {values[offset + 2], values[offset + 2]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("LHAASO all-particle", filename, lineNumber, e.what());
+        }
     }
-    infile.close();
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+
+std::string MyLnA::makeSourceFilename() const {
+    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
+           ToString(m_xQuantity) + ".txt";
+}
+
+void MyLnA::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 4, filename);
+
+    const int offset = lhaasoModelOffset(m_description);
+
+    std::string line;
+    int lineNumber = 4;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 11);
+            const double Elo = std::pow(10., values[0]);
+            const double Eup = std::pow(10., values[1]);
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            dataPoint data = {{E, values[offset]}, {values[offset + 1], values[offset + 1]}, {values[offset + 2], values[offset + 2]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("LHAASO lnA", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
 }
 }  // namespace LHAASO
+
+namespace TUNKA {
+void MyAllParticle::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 6, filename);
+
+    std::string line;
+    int lineNumber = 6;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            const auto values = parseDelimitedRow(line, ";", 6);
+            dataPoint data = {{values[0], values[1]}, {values[2], values[3]}, {values[4], values[5]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("TUNKA", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace TUNKA
+
+namespace TALE {
+void MyLnA::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 4, filename);
+
+    std::string line;
+    int lineNumber = 4;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, 15);
+            const double Elo = std::pow(10., values[0]) / 1e9;  // [eV -> GeV]
+            const double Eup = std::pow(10., values[1]) / 1e9;  // [eV -> GeV]
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            dataPoint data = {{E, values[11]}, {values[12], values[12]}, {values[13], values[14]}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("TALE lnA", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace TALE
+
+namespace YAKUTSK {
+void MyLnA::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 5, filename);
+
+    std::string line;
+    int lineNumber = 5;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceTokens(line, 8);
+            const double E = std::stod(values[0]) / 1e9;  // [eV -> GeV]
+            const double lnAValue = std::stod(values[6]);
+            const double errStat = std::stod(values[7]);
+            dataPoint data = {{E, lnAValue}, {errStat, errStat}, {0., 0.}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("Yakutsk lnA", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace YAKUTSK
+
+namespace VERITAS {
+void MyLeptons::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 1, filename);
+
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty()) {
+            continue;
+        }
+
+        try {
+            auto values = parseWhitespaceRow(line, 8);
+            values[1] *= 1e3;     // TeV -> GeV
+            values[2] *= 1e3;     // TeV -> GeV
+            values[6] *= 1e4;     // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
+            values[7] *= 1e4;     // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
+
+            const double syst_error_low = 0.33 * values[6];
+            const double syst_error_high = 0.64 * values[6];
+            const double xMean = Utils::computeMeanEnergy(values[1], values[2], m_energyMode);
+            dataPoint data = {{xMean, values[6]}, {values[7], values[7]}, {syst_error_low, syst_error_high}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("VERITAS leptons", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace VERITAS
 
 // ARGO
 // void MyLightARGO::readfile(std::string filename) {
@@ -245,27 +571,6 @@ void MyNuclei::readfile(std::string filename) {
 //     }
 //     infile.close();
 // }
-
-namespace VERITAS {
-void MyLeptons::readfile(std::string filename) {
-    std::fstream infile(filename.c_str());
-    skipHeaderLines(infile, 1);
-
-    double E, E_min, E_max, N_events, fraction, fraction_error, flux, stat_error;
-    while (infile >> E >> E_min >> E_max >> N_events >> fraction >> fraction_error >> flux >> stat_error) {
-        E_min *= 1e3;       // TeV -> GeV
-        E_max *= 1e3;       // TeV -> GeV
-        flux *= 1e4;        // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
-        stat_error *= 1e4;  // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
-        const double syst_error_low = 0.33 * flux;
-        const double syst_error_high = 0.64 * flux;
-        const double xMean = Utils::computeMeanEnergy(E_min, E_max, m_energyMode);
-        dataPoint data = {{xMean, flux}, {stat_error, stat_error}, {syst_error_low, syst_error_high}};
-        m_dataTable.push_back(data);
-    }
-    infile.close();
-}
-}  // namespace VERITAS
 
 // void MyAllAuger2021::readfile(std::string filename) {
 //     std::fstream infile(filename.c_str());

@@ -48,6 +48,7 @@ enum CrExperiments {
     tracer,
     tunka133,
     tunkarex,
+    yakutsk,
     veritas
 };
 
@@ -109,6 +110,8 @@ inline std::string ToString(CrExperiments v) {
             return "TUNKA-133";
         case tunkarex:
             return "TUNKA-Rex";
+        case yakutsk:
+            return "Yakutsk";
         case veritas:
             return "VERITAS";
         default:
@@ -135,6 +138,7 @@ inline std::string ToString(XQuantities v) {
 
 enum YQuantities {
     allParticle,
+    lnA,
     electron,
     positron,
     lepton,
@@ -200,6 +204,8 @@ inline std::string ToString(YQuantities v) {
     switch (v) {
         case allParticle:
             return "allParticle";
+        case lnA:
+            return "lnA";
         case electron:
             return "e-";
         case positron:

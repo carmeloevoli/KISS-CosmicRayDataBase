@@ -4,3 +4,4 @@ build/
 BIN/
 */__pycache__/
 *.pyc
+source/mytables/old/

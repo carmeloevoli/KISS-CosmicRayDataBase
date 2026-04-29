@@ -1,11 +1,16 @@
 #ifndef KISS_EXPERIMENTS_TALE_H_
 #define KISS_EXPERIMENTS_TALE_H_
 
-#include "KISS/KCDC.h"
+#include "KISS/CRDB.h"
+#include "KISS/mytables.h"
 
 namespace TA {
 
 void run() {
+    {
+        KISS::TALE::MyLnA data(KISS::geometrical);
+        data.run();
+    }
     {
         KISS::CRDB data(KISS::tale, KISS::totalEnergy, KISS::allParticle, KISS::geometrical);
         data.setDOI("10.3847/1538-4357/aada05");

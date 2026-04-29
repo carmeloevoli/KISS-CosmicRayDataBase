@@ -27,8 +27,10 @@ int main() {
         TIBET::run();
         TUNKA::run();
         VERITAS::run();
+        YAKUTSK::run();
     } catch (std::exception& e) {
         std::cout << "!Fatal Error: " << e.what() << '\n';
     }
+    KISS::CrDataset::printMissingInputSummary();
     return 0;
 }
