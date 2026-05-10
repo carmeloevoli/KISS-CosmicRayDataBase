@@ -296,6 +296,48 @@ void MyLight::readfile(std::string filename) {
 }
 }  // namespace HAWC
 
+namespace KASCADE {
+void MyKuznetsov2024::readfile(std::string filename) {
+    std::fstream infile = openInputFile(filename);
+    skipHeaderLines(infile, 2, filename);
+
+    const auto expectedColumns = (m_yQuantity == allParticle || m_yQuantity == lnA) ? 7 : 5;
+
+    std::string line;
+    int lineNumber = 2;
+    while (std::getline(infile, line)) {
+        ++lineNumber;
+        if (line.empty() || line[0] == '#') {
+            continue;
+        }
+
+        try {
+            const auto values = parseWhitespaceRow(line, expectedColumns);
+            const double Elo = std::pow(10., values[0]);
+            const double Eup = std::pow(10., values[1]);
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
+            const double errStat = values[3];
+
+            double errSystLow = values[4];
+            double errSystHigh = values[4];
+            if (expectedColumns == 7) {
+                errSystLow = Utils::quadrature(values[4], values[5]);
+                errSystHigh = Utils::quadrature(values[4], values[6]);
+            }
+
+            dataPoint data = {{E, values[2]}, {errStat, errStat}, {errSystLow, errSystHigh}};
+            m_dataTable.push_back(data);
+        } catch (const std::exception& e) {
+            reportInvalidRow("KASCADE Kuznetsov 2024", filename, lineNumber, e.what());
+        }
+    }
+
+    if (infile.bad()) {
+        throw std::runtime_error("I/O error while reading " + filename);
+    }
+}
+}  // namespace KASCADE
+
 namespace LHAASO {
 std::string MyNuclei::makeSourceFilename() const {
     std::string quantity;

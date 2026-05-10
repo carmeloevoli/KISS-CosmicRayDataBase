@@ -1,7 +1,9 @@
 #ifndef KISS_EXPERIMENTS_KASCADE_H_
 #define KISS_EXPERIMENTS_KASCADE_H_
 
+#include "KISS/CRDB.h"
 #include "KISS/KCDC.h"
+#include "KISS/mytables.h"
 
 namespace KASCADE {
 
@@ -88,6 +90,34 @@ void run() {
         data.setDescription("SIBYLL-2.1");
         data.setDOI("10.1016/j.astropartphys.2005.04.001");
         data.setADSbibcode("2005APh....24....1A");
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::allParticle, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::lnA, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::H, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::He, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::C, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::Si, KISS::geometrical);
+        data.run();
+    }
+    {
+        KISS::KASCADE::MyKuznetsov2024 data(KISS::Fe, KISS::geometrical);
         data.run();
     }
 }

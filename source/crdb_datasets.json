@@ -738,6 +738,20 @@
         "experiment": "KASCADE-Grande",
         "sub_experiment": "KASCADE-Grande (2003/01-2009/03) QGSJet-II-04",
         "filename": "KASCADE-Grande_QGSJET-II-04_light_totalEnergy.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE-Grande",
+        "sub_experiment": "KASCADE-Grande (2003/12-2009/03) QGSJet-II-2",
+        "filename": "KASCADE-Grande_QGSJet-II-2_H_totalEnergy.txt"
+      },
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "KASCADE-Grande",
+        "sub_experiment": "KASCADE-Grande (2003/12-2011/10) SIBYLL2.3",
+        "filename": "KASCADE-Grande_SIBYLL-2.3_H_totalEnergy.txt"
       }
     ],
     "NUCLEON": [

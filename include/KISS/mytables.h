@@ -80,6 +80,22 @@ class MyLight : public CrDataset {
 };
 }  // namespace HAWC
 
+namespace KASCADE {
+class MyKuznetsov2024 : public CrDataset {
+   public:
+    MyKuznetsov2024(YQuantities primary, EnergyModes mode) : CrDataset(kascade, totalEnergy, primary, mode) {
+        setSource(mytables);
+        setDescription("Kuznetsov2024");
+        setDOI("10.48550/arXiv.2312.08279");
+        setADSbibcode("2023arXiv231208279K");
+        setUrl("https://arxiv.org/pdf/2312.08279");
+        setComments("Tables 1 and 3 include theoretical uncertainties; reader combines them with basic systematic uncertainties in quadrature.");
+    }
+
+    void readfile(std::string filename) override;
+};
+}  // namespace KASCADE
+
 namespace GRAPES {
 class MyProtons : public CrDataset {
    public:
