@@ -59,8 +59,8 @@ class MyPrimary : public CrDataset {
    public:
     MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
         setSource(mytables);
-        setDOI("10.48550/arXiv.2511.05409");
-        setADSbibcode("2025arXiv251105409D");
+        setDOI("10.1038/s41586-026-10472-0");
+        setADSbibcode("2026Natur.653...52D");
     }
 
     void readfile(std::string filename);
@@ -89,7 +89,9 @@ class MyKuznetsov2024 : public CrDataset {
         setDOI("10.48550/arXiv.2312.08279");
         setADSbibcode("2023arXiv231208279K");
         setUrl("https://arxiv.org/pdf/2312.08279");
-        setComments("Tables 1 and 3 include theoretical uncertainties; reader combines them with basic systematic uncertainties in quadrature.");
+        setComments(
+            "Tables 1 and 3 include theoretical uncertainties; reader combines them with basic systematic "
+            "uncertainties in quadrature.");
     }
 
     void readfile(std::string filename) override;
@@ -145,7 +147,9 @@ class MyLnA : public CrDataset {
         setDOI("10.1016/j.asr.2019.07.019");
         setADSbibcode("2019AdSpR..64.2570K");
         setUrl("https://arxiv.org/pdf/1908.01508.pdf");
-        setComments("Source file preserves Xmax and sigma(Xmax) columns; tables report only statistical uncertainties for lnA.");
+        setComments(
+            "Source file preserves Xmax and sigma(Xmax) columns; tables report only statistical uncertainties for "
+            "lnA.");
     }
 
     void readfile(std::string filename) override;
