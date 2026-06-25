@@ -84,7 +84,7 @@ Running the executable processes the enabled experiment loaders and writes the c
 
 ## Download
 
-Latest packaged tables: [`kiss_tables_20260625_dc4b944.tar.gz`](tarballs/kiss_tables_20260625_dc4b944.tar.gz) (see `MANIFEST.json` inside for the exact commit and generation date).
+Latest packaged tables: [`kiss_tables_20260625_dc4b944.tar.gz`](https://github.com/carmeloevoli/KISS-CosmicRayDataBase/raw/master/tarballs/kiss_tables_20260625_dc4b944.tar.gz) (see `MANIFEST.json` inside for the exact commit and generation date).
 
 ## Regenerating and Packaging
 
