@@ -82,6 +82,10 @@ cmake --build build
 
 Running the executable processes the enabled experiment loaders and writes the converted tables into `build/output/`.
 
+## Download
+
+Latest packaged tables: [`kiss_tables_20260625_dc4b944.tar.gz`](tarballs/kiss_tables_20260625_dc4b944.tar.gz) (see `MANIFEST.json` inside for the exact commit and generation date).
+
 ## Regenerating and Packaging
 
 The curated `kiss_tables/` directory and the distributable archive are produced in two stages.
