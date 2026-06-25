@@ -4,7 +4,7 @@
 
 namespace KISS {
 
-enum Sources { crdb, kcdc, ssdc, mytables };
+enum Sources { crdb, kcdc, ssdc, mytables, unknownSource };
 
 inline std::string ToString(Sources v) {
     switch (v) {
@@ -14,8 +14,12 @@ inline std::string ToString(Sources v) {
             return "KCDC";
         case ssdc:
             return "SSDC";
-        default:
+        case mytables:
             return "mytables";
+        case unknownSource:
+            return "unknown";
+        default:
+            throw std::invalid_argument("Source not found.");
     }
 }
 

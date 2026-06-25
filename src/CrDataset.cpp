@@ -41,13 +41,17 @@ void CrDataset::printMissingInputSummary() {
     std::cout << "\033[1;33m> missing input files: " << missingInputCount() << "\033[0m\n";
 }
 
-std::string CrDataset::makeSourceFilename() const {
+std::string CrDataset::buildSourcePath(const std::string& yLabel, bool withDescription,
+                                       const std::string& extension) const {
     std::string s = kDataDir;
     s += ToString(m_source) + "/" + ToString(m_experiment);
-    if (m_description != "") s += "_" + m_description;
-    s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);
-    s += ".txt";
+    if (withDescription && m_description != "") s += "_" + m_description;
+    s += "_" + yLabel + "_" + ToString(m_xQuantity) + extension;
     return s;
+}
+
+std::string CrDataset::makeSourceFilename() const {
+    return buildSourcePath(ToString(m_yQuantity), /*withDescription=*/true);
 }
 
 std::string CrDataset::makeOutputFilename() const {

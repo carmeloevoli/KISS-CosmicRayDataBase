@@ -39,7 +39,7 @@ class CrDataset {
 
    protected:
     CrExperiments m_experiment;
-    Sources m_source;
+    Sources m_source = unknownSource;
     XQuantities m_xQuantity;
     YQuantities m_yQuantity;
     EnergyModes m_energyMode;
@@ -53,6 +53,11 @@ class CrDataset {
     std::vector<dataPoint> m_dataTable;
 
    protected:
+    // Assembles "<kDataDir><source>/<experiment>[_<description>]_<yLabel>_<xQuantity><extension>".
+    // Shared by the makeSourceFilename() overrides, which differ only in the y-label, whether the
+    // description is appended, and the file extension.
+    std::string buildSourcePath(const std::string& yLabel, bool withDescription,
+                                const std::string& extension = ".txt") const;
     virtual std::string makeSourceFilename() const;
     virtual std::string makeOutputFilename() const;
     virtual void readfile(std::string filename) = 0;

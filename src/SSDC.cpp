@@ -44,12 +44,7 @@ bool IsRatio(YQuantities yQuantity) {
 }
 
 std::string SSDC::makeSourceFilename() const {
-    std::string s = kDataDir;
-    s += ToString(m_source) + "/" + ToString(m_experiment);
-    if (m_description != "") s += "_" + m_description;
-    s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);
-    s += ".xml";
-    return s;
+    return buildSourcePath(ToString(m_yQuantity), /*withDescription=*/true, ".xml");
 }
 
 void SSDC::readfile(std::string filename) {
