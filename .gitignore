@@ -1,10 +1,7 @@
 *.DS_Store
 build/
 *.code-workspace
-BIN/
 */__pycache__/
 *.pyc
 data/mytables/old/
 data/CRDB/*.txt
-kiss_tables_*.tar.gz
-tarballs/
