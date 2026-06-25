@@ -5,4 +5,5 @@ BIN/
 */__pycache__/
 *.pyc
 source/mytables/old/
+source/CRDB/*.txt
 kiss_tables_*.tar.gz
