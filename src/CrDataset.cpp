@@ -1,9 +1,12 @@
 // Copyright 2020 Carmelo Evoli - MIT License
 #include "KISS/CrDataset.h"
 
+#include <filesystem>
 #include <fstream>
 #include <regex>
 #include <string>
+
+#include "KISS/config.h"
 
 namespace KISS {
 
@@ -38,7 +41,7 @@ void CrDataset::printMissingInputSummary() {
 }
 
 std::string CrDataset::makeSourceFilename() const {
-    std::string s = "data/";
+    std::string s = kDataDir;
     s += ToString(m_source) + "/" + ToString(m_experiment);
     if (m_description != "") s += "_" + m_description;
     s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);
@@ -47,7 +50,7 @@ std::string CrDataset::makeSourceFilename() const {
 }
 
 std::string CrDataset::makeOutputFilename() const {
-    std::string s = "output/";
+    std::string s = kOutputDir;
     s += ToString(m_experiment);
     if (m_description != "") s += "_" + m_description;
     s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);
@@ -73,6 +76,7 @@ bool CrDataset::load() {
 
 void CrDataset::save() const {
     const auto filename = makeOutputFilename();
+    std::filesystem::create_directories(std::filesystem::path(filename).parent_path());
     std::cout << "\033[1;32m> saving data on file " << filename << "\033[0m\n";
     std::ofstream asciiFile(filename.c_str());
     asciiFile << "#Source: " << ToString(m_source) << "\n";

@@ -3,6 +3,7 @@
 
 #include <algorithm>
 
+#include "KISS/config.h"
 #include "KISS/utils.h"
 #include "pugixml/pugixml.hpp"
 
@@ -43,7 +44,7 @@ bool IsRatio(YQuantities yQuantity) {
 }
 
 std::string SSDC::makeSourceFilename() const {
-    std::string s = "data/";
+    std::string s = kDataDir;
     s += ToString(m_source) + "/" + ToString(m_experiment);
     if (m_description != "") s += "_" + m_description;
     s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);
