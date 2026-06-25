@@ -5,7 +5,7 @@ This folder contains plain-text tables manually converted from figures, tables, 
 ## Conventions
 
 - Each dataset should have a short provenance note in this README when it is added.
-- The `old/` subfolder keeps superseded drafts or previous local versions; files in the top-level `source/mytables/` directory are the current versions used by KISS.
+- The `old/` subfolder keeps superseded drafts or previous local versions; files in the top-level `data/mytables/` directory are the current versions used by KISS.
 - File naming should follow the same pattern used by `CrDataset::makeSourceFilename()`, so the text tables can be loaded without extra glue code.
 
 ## Current Entries
@@ -77,7 +77,7 @@ Files:
 
 - Source paper: LHAASO Collaboration, "All-particle energy spectrum and mean logarithmic mass of cosmic rays with LHAASO"
 - DOI: `10.1103/PhysRevLett.132.131002`
-- Local source: `source/mytables/pdfs/SuppMaterial_PhysRevLett.132.131002.pdf`
+- Local source: `data/mytables/pdfs/SuppMaterial_PhysRevLett.132.131002.pdf`
 - Added on: April 29, 2026
 - Provenance: manually transcribed from Supplementary Tables `S5` and `S6`
 - Quantities: differential all-particle flux and mean logarithmic mass `lnA` as functions of total energy
@@ -123,7 +123,7 @@ Files:
 - Quantities: differential all-particle flux as a function of total energy
 - Units: energy in `GeV`; flux in `m^-2 s^-1 sr^-1 GeV^-1`
 - Stored columns: `E`, then `flux stat` triplets for `QGSJET+HD`, `QGSJET+PD`, and `SIBYLL+HD`
-- Note: the archived per-model drafts in `source/mytables/old/` were checked against Table `5` and match the published values
+- Note: the archived per-model drafts in `data/mytables/old/` were checked against Table `5` and match the published values
 
 Files:
 
@@ -148,7 +148,7 @@ Files:
 - Source paper: Tunka-133 Collaboration, "Cosmic ray energy spectrum and mass composition from \(2\cdot10^{15}\) to \(3\cdot10^{18}\) eV by data of the Tunka-133 array"
 - DOI: `10.1016/j.astropartphys.2019.102406`
 - Added on: April 23, 2026
-- Provenance: local text export previously stored under `source/KCDC/`; moved to `mytables` because the file stores separate statistical and systematic uncertainties and needs a dedicated reader
+- Provenance: local text export previously stored under `data/KCDC/`; moved to `mytables` because the file stores separate statistical and systematic uncertainties and needs a dedicated reader
 - Quantities: differential all-particle flux as a function of total energy
 - Units: energy in `GeV`; flux in `m^-2 s^-1 sr^-1 GeV^-1`
 - Stored columns: `E Flux UncertLow UncertHigh SysUncertLow SysUncertHigh`
@@ -163,7 +163,7 @@ Files:
 - Source paper: CALET Collaboration, "Extended Measurement of the Cosmic-Ray Electron and Positron Spectrum from 11 GeV to 4.8 TeV with the Calorimetric Electron Telescope on the International Space Station"
 - DOI: `10.1103/PhysRevLett.131.191001`
 - Added on: April 23, 2026
-- Provenance: manually transcribed from Table `I`; promoted from `source/mytables/old/` to the active directory so it can be loaded directly by KISS
+- Provenance: manually transcribed from Table `I`; promoted from `data/mytables/old/` to the active directory so it can be loaded directly by KISS
 - Quantities: differential all-electron (`e+ + e-`) flux as a function of total energy
 - Units: energy in `GeV`; flux in `GeV^-1 m^-2 s^-1 sr^-1`
 - Stored columns: `E_min E_max E_mean flux stat_lo stat_up syst_lo syst_up`
@@ -214,7 +214,7 @@ Files:
 - DOI: `10.1103/PhysRevLett.132.051002`
 - Added on: April 28, 2026
 - Provenance: manually transcribed from Table `S5` of the supplemental material
-- Local source: `source/mytables/pdfs/SuppMaterial_PhysRevLett.132.051002.pdf`
+- Local source: `data/mytables/pdfs/SuppMaterial_PhysRevLett.132.051002.pdf`
 - Quantities: differential proton flux as a function of total energy
 - Units: energy in `GeV`; flux in `m^-2 s^-1 sr^-1 GeV^-1`
 - Stored columns: `E flux stat syst_up syst_lo`

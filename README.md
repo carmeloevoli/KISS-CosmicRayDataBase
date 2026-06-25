@@ -46,24 +46,26 @@ original paper:
 
 Please cite the publication referenced in each table when using its data.
 
-## About `source/mytables/`
+## About `data/mytables/`
 
-Some newer results and supplementary tables are not yet available in CRDB or KCDC. In those cases, this repository includes local plain-text tables in `source/mytables/`.
+Some newer results and supplementary tables are not yet available in CRDB or KCDC. In those cases, this repository includes local plain-text tables in `data/mytables/`.
 
 These files are:
 
 - manually transcribed from the original papers or supplementary material
 - included only to cover gaps where upstream database entries are not yet available
-- documented with provenance notes in [source/mytables/README.md](source/mytables/README.md)
+- documented with provenance notes in [data/mytables/README.md](data/mytables/README.md)
 
 The `mytables` directory is therefore a convenience layer for missing recent data, not a claim of ownership over those measurements.
 
 ## Repository Layout
 
-- `source/CRDB/` stores source files retrieved from CRDB
-- `source/KCDC/` stores source files retrieved from KCDC
-- `source/mytables/` stores manually added tables for datasets not yet available upstream
+- `src/` and `include/` contain the C++ converter source code
+- `data/CRDB/` stores input files retrieved from CRDB
+- `data/KCDC/` stores input files retrieved from KCDC
+- `data/mytables/` stores manually added tables for datasets not yet available upstream
 - `build/output/` contains the converted plain-text tables produced by the executable
+- `kiss_tables/` holds the curated copy of the converted tables
 
 ## Build
 

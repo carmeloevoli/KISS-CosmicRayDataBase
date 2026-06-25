@@ -40,20 +40,20 @@ list(APPEND KISS_INCLUDES libs/pugixml/include)
 # endif(GSL_FOUND)
 
 # copy data files in build
-set(DATA_DIR "source/")
-file(COPY ${DATA_DIR} DESTINATION ${PROJECT_BINARY_DIR}/source)
+set(DATA_DIR "data/")
+file(COPY ${DATA_DIR} DESTINATION ${PROJECT_BINARY_DIR}/data)
 
 # file(GLOB KISS_DATA "${DATA_DIR}/KCDC/*.txt")
-# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/KCDC/)
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/data/KCDC/)
 
 # file(GLOB KISS_DATA "${DATA_DIR}/CRDB/*.txt")
-# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/CRDB/)
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/data/CRDB/)
 
 # file(GLOB KISS_DATA "${DATA_DIR}/SSDC/*.xml")
-# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/SSDC/)
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/data/SSDC/)
 
 # file(GLOB KISS_DATA "${DATA_DIR}/mytables/*.txt")
-# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/source/mytables/)
+# file(COPY ${KISS_DATA} DESTINATION ${PROJECT_BINARY_DIR}/data/mytables/)
 
 # create the output dir
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/output)

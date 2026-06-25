@@ -43,7 +43,7 @@ bool IsRatio(YQuantities yQuantity) {
 }
 
 std::string SSDC::makeSourceFilename() const {
-    std::string s = "source/";
+    std::string s = "data/";
     s += ToString(m_source) + "/" + ToString(m_experiment);
     if (m_description != "") s += "_" + m_description;
     s += "_" + ToString(m_yQuantity) + "_" + ToString(m_xQuantity);

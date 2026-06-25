@@ -351,7 +351,7 @@ std::string MyNuclei::makeSourceFilename() const {
         quantity = ToString(m_yQuantity);
     }
 
-    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + quantity + "_" +
+    return "data/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + quantity + "_" +
            ToString(m_xQuantity) + ".txt";
 }
 
@@ -392,7 +392,7 @@ void MyNuclei::readfile(std::string filename) {
 }
 
 std::string MyAllParticle::makeSourceFilename() const {
-    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
+    return "data/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
            ToString(m_xQuantity) + ".txt";
 }
 
@@ -428,7 +428,7 @@ void MyAllParticle::readfile(std::string filename) {
 }
 
 std::string MyLnA::makeSourceFilename() const {
-    return "source/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
+    return "data/" + ToString(m_source) + "/" + ToString(m_experiment) + "_" + ToString(m_yQuantity) + "_" +
            ToString(m_xQuantity) + ".txt";
 }
 

@@ -237,7 +237,7 @@ def TUNKA(**kwargs):
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(
-        description="Query CRDB and export selected datasets into source/CRDB.",
+        description="Query CRDB and export selected datasets into data/CRDB.",
     )
     parser.add_argument(
         "experiments",
