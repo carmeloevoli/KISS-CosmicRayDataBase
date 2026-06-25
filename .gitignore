@@ -7,3 +7,4 @@ BIN/
 data/mytables/old/
 data/CRDB/*.txt
 kiss_tables_*.tar.gz
+tarballs/

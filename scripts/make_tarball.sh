@@ -9,12 +9,13 @@
 # The manifest travels inside the archive so provenance survives renaming.
 # The working tree is left untouched (staging happens in a temp dir).
 #
-# Usage: scripts/make_tarball.sh [output_dir]   (default: repository root)
+# Usage: scripts/make_tarball.sh [output_dir]   (default: tarballs/)
 
 set -euo pipefail
 
 cd "$(git rev-parse --show-toplevel)"
-out_dir="${1:-$PWD}"
+out_dir="${1:-tarballs}"
+mkdir -p "$out_dir"
 
 if [ ! -d kiss_tables ]; then
     echo "error: kiss_tables/ not found in repository root" >&2

@@ -82,19 +82,39 @@ cmake --build build
 
 Running the executable processes the enabled experiment loaders and writes the converted tables into `build/output/`.
 
-## Packaging
+## Regenerating and Packaging
 
-To distribute the converted tables, package `kiss_tables/` into a provenance-stamped archive:
+The curated `kiss_tables/` directory and the distributable archive are produced in two stages.
+
+**1. Regenerate `kiss_tables/`** — rebuilds, runs the converter, and mirrors the output into
+`kiss_tables/`:
 
 ```bash
-scripts/make_tarball.sh            # writes the tarball to the repository root
+scripts/regenerate.sh
+```
+
+If the converter reports any missing input files, `kiss_tables/` is left untouched (an
+incomplete run will not delete good tables). Fetch the missing source data first, e.g.
+`python data/get_crdb_data.py` for the CRDB tables.
+
+**2. Package a tarball** — after reviewing `git diff kiss_tables/` and committing, build a
+provenance-stamped archive into `tarballs/`:
+
+```bash
+scripts/make_tarball.sh            # writes tarballs/kiss_tables_<UTCdate>_<gitshort>.tar.gz
 scripts/make_tarball.sh /some/dir  # or to a directory of your choice
 ```
 
-This produces `kiss_tables_<UTCdate>_<gitshort>.tar.gz` containing a `MANIFEST.json`
-(generation date, git commit/branch, table count) alongside the tables, so the archive
-records how and when it was generated. Archives built from an uncommitted working tree are
-tagged with a `-dirty` suffix.
+The archive contains a `MANIFEST.json` (generation date, git commit/branch, table count)
+alongside the tables, so it records how and when it was generated. Archives built from an
+uncommitted working tree are tagged with a `-dirty` suffix.
+
+To run both stages at once (the tarball will be `-dirty` if `kiss_tables/` changed and was not
+committed first):
+
+```bash
+scripts/regenerate.sh --tarball
+```
 
 ## Attribution Reminder
 
