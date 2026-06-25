@@ -17,11 +17,11 @@ int g_missingInputCount = 0;
 
 }  // namespace
 
-void CrDataset::setDOI(std::string str) { m_doi = str; }  // TODO use regex
+void CrDataset::setDOI(const std::string& str) { m_doi = str; }  // TODO use regex
 
-void CrDataset::setADSbibcode(std::string str) { m_ads = str; }  // TODO use regex
+void CrDataset::setADSbibcode(const std::string& str) { m_ads = str; }  // TODO use regex
 
-void CrDataset::setUrl(std::string url) {
+void CrDataset::setUrl(const std::string& url) {
     std::string pattern = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$";
     std::regex url_regex(pattern);
     if (std::regex_match(url, url_regex)) {
@@ -31,9 +31,9 @@ void CrDataset::setUrl(std::string url) {
     }
 }
 
-void CrDataset::setComments(std::string str) { m_comments = str; }
+void CrDataset::setComments(const std::string& str) { m_comments = str; }
 
-void CrDataset::setDescription(std::string str) { m_description = str; }
+void CrDataset::setDescription(const std::string& str) { m_description = str; }
 
 int CrDataset::missingInputCount() { return g_missingInputCount; }
 

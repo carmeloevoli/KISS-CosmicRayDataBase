@@ -29,11 +29,11 @@ class CrDataset {
     inline void setYQuantity(YQuantities y) { m_yQuantity = y; }
     inline void setMeanEnergyMode(EnergyModes mode) { m_energyMode = mode; }
 
-    void setDOI(std::string str);
-    void setADSbibcode(std::string str);
-    void setUrl(std::string str);
-    void setComments(std::string str);
-    void setDescription(std::string str);
+    void setDOI(const std::string& str);
+    void setADSbibcode(const std::string& str);
+    void setUrl(const std::string& str);
+    void setComments(const std::string& str);
+    void setDescription(const std::string& str);
     static int missingInputCount();
     static void printMissingInputSummary();
 
@@ -60,7 +60,7 @@ class CrDataset {
                                 const std::string& extension = ".txt") const;
     virtual std::string makeSourceFilename() const;
     virtual std::string makeOutputFilename() const;
-    virtual void readfile(std::string filename) = 0;
+    virtual void readfile(const std::string& filename) = 0;
     bool load();
     void save() const;
 };

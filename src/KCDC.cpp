@@ -19,7 +19,7 @@ void skipHeaderLines(std::istream& infile, int count) {
 
 }  // namespace
 
-void KCDC::readfile(std::string filename) {
+void KCDC::readfile(const std::string& filename) {
     std::fstream infile(filename.c_str());
     skipHeaderLines(infile, 6);
 

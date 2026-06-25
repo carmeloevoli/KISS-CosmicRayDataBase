@@ -18,7 +18,7 @@ void skipHeaderLines(std::istream& infile, int count) {
 
 }  // namespace
 
-void CRDB::readfile(std::string filename) {
+void CRDB::readfile(const std::string& filename) {
     std::fstream infile(filename.c_str());
     skipHeaderLines(infile, 2);
 

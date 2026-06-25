@@ -16,6 +16,11 @@ namespace KISS {
 
 namespace {
 
+// Energy/flux unit conversions, to GeV (energies) and GeV^-1 (fluxes).
+constexpr double kPeVtoGeV = 1e6;  // 1 PeV = 1e6 GeV
+constexpr double kTeVtoGeV = 1e3;  // 1 TeV = 1e3 GeV
+constexpr double keVperGeV = 1e9;  // 1 GeV = 1e9 eV
+
 std::fstream openInputFile(const std::string& filename) {
     std::fstream infile(filename.c_str());
     if (!infile) {
@@ -97,7 +102,7 @@ int lhaasoModelOffset(const std::string& him) {
 }  // namespace
 
 namespace CALET {
-void MyLeptons::readfile(std::string filename) {
+void MyLeptons::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -124,7 +129,7 @@ void MyLeptons::readfile(std::string filename) {
     }
 }
 
-void MyHeavy::readfile(std::string filename) {
+void MyHeavy::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -155,7 +160,7 @@ void MyHeavy::readfile(std::string filename) {
 }  // namespace CALET
 
 namespace DAMPE {
-void MyBoron::readfile(std::string filename) {
+void MyBoron::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -184,7 +189,7 @@ void MyBoron::readfile(std::string filename) {
     }
 }
 
-void MyLight::readfile(std::string filename) {
+void MyLight::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -212,7 +217,7 @@ void MyLight::readfile(std::string filename) {
     }
 }
 
-void MyPrimary::readfile(std::string filename) {
+void MyPrimary::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -242,7 +247,7 @@ void MyPrimary::readfile(std::string filename) {
 }  // namespace DAMPE
 
 namespace GRAPES {
-void MyProtons::readfile(std::string filename) {
+void MyProtons::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -270,7 +275,7 @@ void MyProtons::readfile(std::string filename) {
 }  // namespace GRAPES
 
 namespace HAWC {
-void MyLight::readfile(std::string filename) {
+void MyLight::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -298,7 +303,7 @@ void MyLight::readfile(std::string filename) {
 }  // namespace HAWC
 
 namespace KASCADE {
-void MyKuznetsov2024::readfile(std::string filename) {
+void MyKuznetsov2024::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 2, filename);
 
@@ -355,7 +360,7 @@ std::string MyNuclei::makeSourceFilename() const {
     return buildSourcePath(quantity, /*withDescription=*/false);
 }
 
-void MyNuclei::readfile(std::string filename) {
+void MyNuclei::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 4, filename);
 
@@ -374,10 +379,10 @@ void MyNuclei::readfile(std::string filename) {
 
             const double Elo = std::pow(10., values[0]);
             const double Eup = std::pow(10., values[1]);
-            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * 1e6;  // [PeV -> GeV]
-            const double flux = values[offset] / 1e6;                                 // [PeV^-1 -> GeV^-1]
-            const double errStat = values[offset + 1] / 1e6;                          // [PeV^-1 -> GeV^-1]
-            const double errSyst = values[offset + 2] / 1e6;                          // [PeV^-1 -> GeV^-1]
+            const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode) * kPeVtoGeV;  // [PeV -> GeV]
+            const double flux = values[offset] / kPeVtoGeV;                           // [PeV^-1 -> GeV^-1]
+            const double errStat = values[offset + 1] / kPeVtoGeV;                    // [PeV^-1 -> GeV^-1]
+            const double errSyst = values[offset + 2] / kPeVtoGeV;                    // [PeV^-1 -> GeV^-1]
 
             dataPoint data = {{E, flux}, {errStat, errStat}, {errSyst, errSyst}};
             m_dataTable.push_back(data);
@@ -395,7 +400,7 @@ std::string MyAllParticle::makeSourceFilename() const {
     return buildSourcePath(ToString(m_yQuantity), /*withDescription=*/false);
 }
 
-void MyAllParticle::readfile(std::string filename) {
+void MyAllParticle::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 4, filename);
 
@@ -430,7 +435,7 @@ std::string MyLnA::makeSourceFilename() const {
     return buildSourcePath(ToString(m_yQuantity), /*withDescription=*/false);
 }
 
-void MyLnA::readfile(std::string filename) {
+void MyLnA::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 4, filename);
 
@@ -463,7 +468,7 @@ void MyLnA::readfile(std::string filename) {
 }  // namespace LHAASO
 
 namespace TUNKA {
-void MyAllParticle::readfile(std::string filename) {
+void MyAllParticle::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 6, filename);
 
@@ -491,7 +496,7 @@ void MyAllParticle::readfile(std::string filename) {
 }  // namespace TUNKA
 
 namespace TALE {
-void MyLnA::readfile(std::string filename) {
+void MyLnA::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 4, filename);
 
@@ -505,8 +510,8 @@ void MyLnA::readfile(std::string filename) {
 
         try {
             const auto values = parseWhitespaceRow(line, 15);
-            const double Elo = std::pow(10., values[0]) / 1e9;  // [eV -> GeV]
-            const double Eup = std::pow(10., values[1]) / 1e9;  // [eV -> GeV]
+            const double Elo = std::pow(10., values[0]) / keVperGeV;  // [eV -> GeV]
+            const double Eup = std::pow(10., values[1]) / keVperGeV;  // [eV -> GeV]
             const double E = Utils::computeMeanEnergy(Elo, Eup, m_energyMode);
             dataPoint data = {{E, values[11]}, {values[12], values[12]}, {values[13], values[14]}};
             m_dataTable.push_back(data);
@@ -522,7 +527,7 @@ void MyLnA::readfile(std::string filename) {
 }  // namespace TALE
 
 namespace YAKUTSK {
-void MyLnA::readfile(std::string filename) {
+void MyLnA::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 5, filename);
 
@@ -536,7 +541,7 @@ void MyLnA::readfile(std::string filename) {
 
         try {
             const auto values = parseWhitespaceTokens(line, 8);
-            const double E = std::stod(values[0]) / 1e9;  // [eV -> GeV]
+            const double E = std::stod(values[0]) / keVperGeV;  // [eV -> GeV]
             const double lnAValue = std::stod(values[6]);
             const double errStat = std::stod(values[7]);
             dataPoint data = {{E, lnAValue}, {errStat, errStat}, {0., 0.}};
@@ -553,7 +558,7 @@ void MyLnA::readfile(std::string filename) {
 }  // namespace YAKUTSK
 
 namespace VERITAS {
-void MyLeptons::readfile(std::string filename) {
+void MyLeptons::readfile(const std::string& filename) {
     std::fstream infile = openInputFile(filename);
     skipHeaderLines(infile, 1, filename);
 
@@ -567,8 +572,8 @@ void MyLeptons::readfile(std::string filename) {
 
         try {
             auto values = parseWhitespaceRow(line, 8);
-            values[1] *= 1e3;     // TeV -> GeV
-            values[2] *= 1e3;     // TeV -> GeV
+            values[1] *= kTeVtoGeV;  // TeV -> GeV
+            values[2] *= kTeVtoGeV;  // TeV -> GeV
             values[6] *= 1e4;     // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
             values[7] *= 1e4;     // cm^-2 s^-1 GeV^-1 -> m^-2 s^-1 GeV^-1
 
@@ -589,7 +594,7 @@ void MyLeptons::readfile(std::string filename) {
 }  // namespace VERITAS
 
 // ARGO
-// void MyLightARGO::readfile(std::string filename) {
+// void MyLightARGO::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     skipHeaderLines(infile, 1);
 
@@ -602,7 +607,7 @@ void MyLeptons::readfile(std::string filename) {
 // }
 
 // HESS
-// void MyLeptonHESS::readfile(std::string filename) {
+// void MyLeptonHESS::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     double E, flux, errStatLo, errStatUp, errSystLo, errSystUp;
 //     while (infile >> E >> flux >> errStatLo >> errStatUp >> errSystLo >> errSystUp) {
@@ -612,7 +617,7 @@ void MyLeptons::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllAuger2021::readfile(std::string filename) {
+// void MyAllAuger2021::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     const int num_of_header_lines = 1;
 //     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
@@ -633,7 +638,7 @@ void MyLeptons::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllAuger2019::readfile(std::string filename) {
+// void MyAllAuger2019::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     const int num_of_header_lines = 4;
 //     for (int i = 0; i < num_of_header_lines; ++i) infile.ignore(MAX_NUM_OF_CHAIR_IN_A_LINE, '\n');
@@ -652,7 +657,7 @@ void MyLeptons::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllTale::readfile(std::string filename) {
+// void MyAllTale::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     skipHeaderLines(infile, 1);
 
@@ -671,7 +676,7 @@ void MyLeptons::readfile(std::string filename) {
 //     infile.close();
 // }
 
-// void MyAllTibet::readfile(std::string filename) {
+// void MyAllTibet::readfile(const std::string& filename) {
 //     std::fstream infile(filename.c_str());
 //     skipHeaderLines(infile, 1);
 

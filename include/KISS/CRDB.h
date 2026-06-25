@@ -16,7 +16,7 @@ class CRDB : public CrDataset {
         setUrl("https://lpsc.in2p3.fr/crdb");
     }
 
-    void readfile(std::string filename);
+    void readfile(const std::string& filename);
 };
 
 }  // namespace KISS

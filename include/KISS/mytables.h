@@ -17,7 +17,7 @@ class MyLeptons : public CrDataset {
         setADSbibcode("2023PhRvL.131s1001A");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 
 class MyHeavy : public CrDataset {
@@ -28,7 +28,7 @@ class MyHeavy : public CrDataset {
         setADSbibcode("2025PhRvL.135b1002A");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace CALET
 
@@ -41,7 +41,7 @@ class MyBoron : public CrDataset {
         setADSbibcode("2025PhRvL.134s1001A");
     }
 
-    void readfile(std::string filename);
+    void readfile(const std::string& filename);
 };
 
 class MyLight : public CrDataset {
@@ -52,7 +52,7 @@ class MyLight : public CrDataset {
         setADSbibcode("2024PhRvD.109l1101A");
     }
 
-    void readfile(std::string filename);
+    void readfile(const std::string& filename);
 };
 
 class MyPrimary : public CrDataset {
@@ -63,7 +63,7 @@ class MyPrimary : public CrDataset {
         setADSbibcode("2026Natur.653...52D");
     }
 
-    void readfile(std::string filename);
+    void readfile(const std::string& filename);
 };
 }  // namespace DAMPE
 
@@ -76,7 +76,7 @@ class MyLight : public CrDataset {
         setADSbibcode("2022PhRvD.105f3021A");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace HAWC
 
@@ -94,7 +94,7 @@ class MyKuznetsov2024 : public CrDataset {
             "uncertainties in quadrature.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace KASCADE
 
@@ -107,7 +107,7 @@ class MyProtons : public CrDataset {
         setADSbibcode("2024PhRvL.132e1002V");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace GRAPES
 
@@ -120,7 +120,7 @@ class MyAllParticle : public CrDataset {
         setADSbibcode("2020APh...11702406B");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace TUNKA
 
@@ -135,7 +135,7 @@ class MyLnA : public CrDataset {
         setComments("Source file preserves Xmax and sigma(Xmax) columns; reader uses the final lnA block.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace TALE
 
@@ -152,7 +152,7 @@ class MyLnA : public CrDataset {
             "lnA.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace YAKUTSK
 
@@ -167,7 +167,7 @@ class MyNuclei : public CrDataset {
         setUrl("https://arxiv.org/pdf/2511.05013");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 
    protected:
     std::string makeSourceFilename() const override;
@@ -184,7 +184,7 @@ class MyAllParticle : public CrDataset {
         setComments("Systematic uncertainties exclude hadronic interaction model uncertainty.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 
    protected:
     std::string makeSourceFilename() const override;
@@ -201,7 +201,7 @@ class MyLnA : public CrDataset {
         setComments("Systematic uncertainties exclude hadronic interaction model uncertainty.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 
    protected:
     std::string makeSourceFilename() const override;
@@ -218,7 +218,7 @@ class MyLnA : public CrDataset {
 //         setADSbibcode("");
 //     }
 
-//     void readfile(std::string filename) override;
+//     void readfile(const std::string& filename) override;
 // };
 
 namespace VERITAS {
@@ -231,7 +231,7 @@ class MyLeptons : public CrDataset {
         setComments("Possible unit-label issue in Table 1: flux may already be quoted in GeV^-1.");
     }
 
-    void readfile(std::string filename) override;
+    void readfile(const std::string& filename) override;
 };
 }  // namespace VERITAS
 
@@ -243,7 +243,7 @@ class MyLeptons : public CrDataset {
 //         setADSbibcode("2015PhRvD..91k2017B");
 //     }
 
-//     void readfile(std::string filename) override;
+//     void readfile(const std::string& filename) override;
 // };
 
 // class MyAllTale : public CrDataset {
@@ -254,7 +254,7 @@ class MyLeptons : public CrDataset {
 //         setADSbibcode("2018ApJ...865...74A");
 //     }
 
-//     void readfile(std::string filename) override;
+//     void readfile(const std::string& filename) override;
 // };
 
 // class MyAllTibet : public CrDataset {
@@ -266,7 +266,7 @@ class MyLeptons : public CrDataset {
 //         setDescription(description);
 //     }
 
-//     void readfile(std::string filename) override;
+//     void readfile(const std::string& filename) override;
 // };
 
 // TO BE DONE
@@ -279,7 +279,7 @@ class MyLeptons : public CrDataset {
 //         setADSbibcode("2001APh....16...13A");
 //     }
 
-//     void readfile(std::string filename) override{};
+//     void readfile(const std::string& filename) override{};
 // };
 
 // class MyAllTunka133 : public CrDataset {
@@ -290,7 +290,7 @@ class MyLeptons : public CrDataset {
 //         setADSbibcode("2020APh...11702406B");
 //     }
 
-//     void readfile(std::string filename) override{};
+//     void readfile(const std::string& filename) override{};
 // };
 
 // class MyAllTunkaRex : public CrDataset {
@@ -301,7 +301,7 @@ class MyLeptons : public CrDataset {
 //         setADSbibcode("2019ICRC...36..319K");
 //     }
 
-//     void readfile(std::string filename) override{};
+//     void readfile(const std::string& filename) override{};
 // };
 
 // class MyAllARGO : public CrDataset {

@@ -16,7 +16,7 @@ class KCDC : public CrDataset {
         setUrl("https://kcdc.ikp.kit.edu/spectra/");
     }
 
-    void readfile(std::string filename);
+    void readfile(const std::string& filename);
 };
 
 }  // namespace KISS
