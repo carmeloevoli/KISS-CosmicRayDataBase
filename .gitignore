@@ -5,3 +5,4 @@ BIN/
 */__pycache__/
 *.pyc
 source/mytables/old/
+kiss_tables_*.tar.gz

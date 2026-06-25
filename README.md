@@ -13,7 +13,7 @@ The main upstream sources used by this project are:
 
 All credit for the original data, database infrastructure, curation effort, and long-term maintenance belongs to those projects and to the experimental collaborations that produced the measurements.
 
-If a dataset is available in CRDB or KCDC, those websites should be considered the authoritative upstream source, and they should receive the credit.
+If a dataset is available in [CRDB](https://ui.adsabs.harvard.edu/abs/2023EPJC...83..971M/abstract) or KCDC, those websites should be considered the authoritative upstream source, and they should receive the credit.
 The repository may still contain some support code for other sources, but CRDB and KCDC are the main upstream data providers for this project.
 
 ## What This Code Does
@@ -25,6 +25,26 @@ This codebase:
 - writes the converted tables to `build/output/`
 
 In other words, this repository is a formatting and conversion layer, not a replacement for CRDB or KCDC.
+
+## Table Format
+
+Each converted table begins with a comment header (lines starting with `#`) that records the
+provenance of the dataset. In particular, the `#Ref:` line tracks the scientific publication the
+measurements come from, given as its DOI and ADS bibcode, so every table can be traced back to the
+original paper:
+
+```
+#Source: CRDB
+#Ref: 10.1016/j.physrep.2020.09.003 (2021PhR...894....1A)
+#Experiment: AMS-02
+#Y Quantity: B_C
+#X Quantity: rigidity
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments:
+#Columns: x, y, y statistical errors, y systematic errors
+```
+
+Please cite the publication referenced in each table when using its data.
 
 ## About `source/mytables/`
 
@@ -59,6 +79,20 @@ cmake --build build
 ```
 
 Running the executable processes the enabled experiment loaders and writes the converted tables into `build/output/`.
+
+## Packaging
+
+To distribute the converted tables, package `kiss_tables/` into a provenance-stamped archive:
+
+```bash
+scripts/make_tarball.sh            # writes the tarball to the repository root
+scripts/make_tarball.sh /some/dir  # or to a directory of your choice
+```
+
+This produces `kiss_tables_<UTCdate>_<gitshort>.tar.gz` containing a `MANIFEST.json`
+(generation date, git commit/branch, table count) alongside the tables, so the archive
+records how and when it was generated. Archives built from an uncommitted working tree are
+tagged with a `-dirty` suffix.
 
 ## Attribution Reminder
 
