@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <fstream>
 #include <regex>
+#include <stdexcept>
 #include <string>
 
 #include "KISS/config.h"
@@ -79,6 +80,9 @@ void CrDataset::save() const {
     std::filesystem::create_directories(std::filesystem::path(filename).parent_path());
     std::cout << "\033[1;32m> saving data on file " << filename << "\033[0m\n";
     std::ofstream asciiFile(filename.c_str());
+    if (!asciiFile) {
+        throw std::runtime_error("cannot open output file for writing: " + filename);
+    }
     asciiFile << "#Source: " << ToString(m_source) << "\n";
     asciiFile << "#Ref: " << m_doi << " (" << m_ads << ")\n";
     asciiFile << "#Experiment: " << ToString(m_experiment);

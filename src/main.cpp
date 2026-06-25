@@ -1,4 +1,5 @@
 // Copyright 2020 Carmelo Evoli - MIT License
+#include <cstdlib>
 #include <iostream>
 
 #include "include/kiss.h"
@@ -29,8 +30,9 @@ int main() {
         VERITAS::run();
         YAKUTSK::run();
     } catch (std::exception& e) {
-        std::cout << "!Fatal Error: " << e.what() << '\n';
+        std::cerr << "!Fatal Error: " << e.what() << '\n';
+        return EXIT_FAILURE;
     }
     KISS::CrDataset::printMissingInputSummary();
-    return 0;
+    return EXIT_SUCCESS;
 }
