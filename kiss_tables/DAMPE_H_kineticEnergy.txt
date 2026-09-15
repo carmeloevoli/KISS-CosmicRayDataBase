@@ -1,9 +1,9 @@
-#Source: mytables
+#Source: CRDB
 #Ref: 10.1038/s41586-026-10472-0 (2026Natur.653...52D)
 #Experiment: DAMPE
 #Y Quantity: H
 #X Quantity: kineticEnergy
-#Url: 
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Columns: x, y, y statistical errors, y systematic errors
 4.981e+01 2.810e-01 5.000e-04 5.000e-04 1.389e-02 1.389e-02 

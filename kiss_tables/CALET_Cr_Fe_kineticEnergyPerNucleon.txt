@@ -1,0 +1,15 @@
+#Source: CRDB
+#Ref: 10.1103/PhysRevLett.135.021002 (2025PhRvL.135b1002A)
+#Experiment: CALET
+#Y Quantity: Cr_Fe
+#X Quantity: kineticEnergyPerNucleon
+#Url: https://lpsc.in2p3.fr/crdb
+#Comments: 
+#Columns: x, y, y statistical errors, y systematic errors
+1.257e+01 9.070e-02 1.900e-03 1.900e-03 3.600e-03 2.300e-03 
+1.991e+01 7.980e-02 1.900e-03 1.900e-03 3.600e-03 2.900e-03 
+3.161e+01 7.230e-02 2.300e-03 2.300e-03 3.300e-03 1.200e-03 
+5.011e+01 6.300e-02 2.900e-03 2.900e-03 1.800e-03 5.000e-04 
+7.944e+01 5.820e-02 3.800e-03 3.800e-03 2.800e-03 6.000e-04 
+1.259e+02 5.540e-02 5.200e-03 5.200e-03 4.200e-03 2.100e-03 
+1.995e+02 4.210e-02 6.200e-03 6.200e-03 4.000e-03 6.500e-03 

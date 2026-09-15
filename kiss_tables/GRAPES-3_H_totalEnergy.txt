@@ -1,9 +1,9 @@
-#Source: mytables
+#Source: CRDB
 #Ref: 10.1103/PhysRevLett.132.051002 (2024PhRvL.132e1002V)
 #Experiment: GRAPES-3
 #Y Quantity: H
 #X Quantity: totalEnergy
-#Url: 
+#Url: https://lpsc.in2p3.fr/crdb
 #Comments: 
 #Columns: x, y, y statistical errors, y systematic errors
 5.010e+04 2.800e-09 1.000e-11 1.000e-11 1.900e-10 1.300e-10 

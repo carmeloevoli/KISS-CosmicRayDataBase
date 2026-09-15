@@ -7,6 +7,7 @@
     "CREAM",
     "DAMPE",
     "FERMI",
+    "GRAPES-3",
     "HAWC",
     "HESS",
     "KASCADE",
@@ -18,7 +19,8 @@
     "TA",
     "TIBET",
     "TRACER",
-    "TUNKA"
+    "TUNKA",
+    "VERITAS"
   ],
   "experiments": {
     "AMS02": [
@@ -393,6 +395,13 @@
     ],
     "CALET": [
       {
+        "quantity": "e-+e+",
+        "energy_type": "EK",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/10-2022/12)",
+        "filename": "CALET_e+e-_kineticEnergy.txt"
+      },
+      {
         "quantity": "H",
         "energy_type": "EKN",
         "experiment": "CALET",
@@ -461,6 +470,34 @@
         "experiment": "CALET",
         "sub_experiment": "CALET (2015/10-2019/10)",
         "filename": "CALET_C_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ti",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/11-2023/10)",
+        "filename": "CALET_Ti_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ti/Fe",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/11-2023/10)",
+        "filename": "CALET_Ti_Fe_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Cr",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/11-2023/10)",
+        "filename": "CALET_Cr_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Cr/Fe",
+        "energy_type": "EKN",
+        "experiment": "CALET",
+        "sub_experiment": "CALET (2015/11-2023/10)",
+        "filename": "CALET_Cr_Fe_kineticEnergyPerNucleon.txt"
       },
       {
         "quantity": "Fe",
@@ -568,15 +605,29 @@
         "quantity": "H",
         "energy_type": "EK",
         "experiment": "DAMPE",
-        "sub_experiment": "DAMPE (2016/01-2018/06)",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
         "filename": "DAMPE_H_kineticEnergy.txt"
       },
       {
         "quantity": "He",
         "energy_type": "EK",
         "experiment": "DAMPE",
-        "sub_experiment": "DAMPE (2016/01-2020/06)",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
         "filename": "DAMPE_He_kineticEnergy.txt"
+      },
+      {
+        "quantity": "H-He-group",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2015/12-2021/12)",
+        "filename": "DAMPE_light_kineticEnergy.txt"
+      },
+      {
+        "quantity": "B",
+        "energy_type": "EKN",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2023/12)",
+        "filename": "DAMPE_B_kineticEnergyPerNucleon.txt"
       },
       {
         "quantity": "B/C",
@@ -591,6 +642,41 @@
         "experiment": "DAMPE",
         "sub_experiment": "DAMPE (2016/01-2021/12)",
         "filename": "DAMPE_B_O_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "C",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
+        "filename": "DAMPE_C_kineticEnergy.txt"
+      },
+      {
+        "quantity": "O",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
+        "filename": "DAMPE_O_kineticEnergy.txt"
+      },
+      {
+        "quantity": "Ni",
+        "energy_type": "EKN",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
+        "filename": "DAMPE_Ni_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Ni/Fe",
+        "energy_type": "EKN",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
+        "filename": "DAMPE_Ni_Fe_kineticEnergyPerNucleon.txt"
+      },
+      {
+        "quantity": "Fe",
+        "energy_type": "EK",
+        "experiment": "DAMPE",
+        "sub_experiment": "DAMPE (2016/01-2024/12)",
+        "filename": "DAMPE_Fe_kineticEnergy.txt"
       }
     ],
     "FERMI": [
@@ -623,6 +709,15 @@
         "filename": "FERMI_e+e-_totalEnergy.txt"
       }
     ],
+    "GRAPES-3": [
+      {
+        "quantity": "H",
+        "energy_type": "ETOT",
+        "experiment": "GRAPES-3",
+        "sub_experiment": "GRAPES-3 (2014/01-2015/10)",
+        "filename": "GRAPES-3_H_totalEnergy.txt"
+      }
+    ],
     "HAWC": [
       {
         "quantity": "AllParticles",
@@ -630,6 +725,13 @@
         "experiment": "HAWC",
         "sub_experiment": "HAWC (2018-2019) QGSJet-II-04",
         "filename": "HAWC_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "H-He-group",
+        "energy_type": "ETOT",
+        "experiment": "HAWC",
+        "sub_experiment": "HAWC (2015/06-2019/06) QGSJet-II-04",
+        "filename": "HAWC_light_totalEnergy.txt"
       }
     ],
     "HESS": [
@@ -976,20 +1078,34 @@
     ],
     "TUNKA": [
       {
-        "quantity": "H",
+        "quantity": "AllParticles",
         "energy_type": "ETOT",
         "experiment": "TUNKA",
-        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
-        "filename": "TUNKA-133_H_totalEnergy.txt",
-        "combo_level": 1
+        "sub_experiment": "Tunka-133  (2009/10-2012/04) QGSJet01",
+        "filename": "TUNKA-133_QGSJet01_allParticle_totalEnergy.txt"
       },
       {
-        "quantity": "He",
+        "quantity": "AllParticles",
         "energy_type": "ETOT",
         "experiment": "TUNKA",
-        "sub_experiment": "TUNKA-133 Array (2009/10-2012/04) QGSJet01",
-        "filename": "TUNKA-133_He_totalEnergy.txt",
-        "combo_level": 1
+        "sub_experiment": "Tunka-133 (2009-2017)",
+        "filename": "TUNKA-133_allParticle_totalEnergy.txt"
+      },
+      {
+        "quantity": "AllParticles",
+        "energy_type": "ETOT",
+        "experiment": "TUNKA",
+        "sub_experiment": "Tunka-HiScore (2021-2024)",
+        "filename": "TUNKA-HiScore_allParticle_totalEnergy.txt"
+      }
+    ],
+    "VERITAS": [
+      {
+        "quantity": "e-+e+",
+        "energy_type": "ETOT",
+        "experiment": "VERITAS",
+        "sub_experiment": "VERITAS (2009/09-2012/07)",
+        "filename": "VERITAS_e+e-_totalEnergy.txt"
       }
     ]
   }

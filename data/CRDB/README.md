@@ -55,5 +55,5 @@ convention lets KISS locate the source table for each dataset without extra glue
 
 ## Experiments currently included
 
-AMS-02, Auger, BESS-TeV, CALET, CREAM, DAMPE, FERMI, HAWC, HESS, ISS-CREAM, IceTop, KASCADE,
-KASCADE-Grande, NUCLEON, PAMELA, TA, TALE, Tibet, TRACER, TUNKA-133.
+AMS-02, Auger, BESS-TeV, CALET, CREAM, DAMPE, FERMI, GRAPES-3, HAWC, HESS, ISS-CREAM, IceTop, KASCADE,
+KASCADE-Grande, NUCLEON, PAMELA, TA, TALE, Tibet, TRACER, TUNKA-133, TUNKA-HiScore, VERITAS.

@@ -8,78 +8,6 @@
 
 namespace KISS {
 
-namespace CALET {
-class MyLeptons : public CrDataset {
-   public:
-    MyLeptons(EnergyModes mode) : CrDataset(calet, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.131.191001");
-        setADSbibcode("2023PhRvL.131s1001A");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-
-class MyHeavy : public CrDataset {
-   public:
-    MyHeavy(YQuantities Y, EnergyModes mode) : CrDataset(calet, kEnergyPerNucleon, Y, mode) {
-        setSource(mytables);
-        setDOI("10.1103/py17-74rk");
-        setADSbibcode("2025PhRvL.135b1002A");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-}  // namespace CALET
-
-namespace DAMPE {
-class MyBoron : public CrDataset {
-   public:
-    MyBoron(EnergyModes mode) : CrDataset(dampe, kEnergyPerNucleon, B, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.134.191001");
-        setADSbibcode("2025PhRvL.134s1001A");
-    }
-
-    void readfile(const std::string& filename);
-};
-
-class MyLight : public CrDataset {
-   public:
-    MyLight(EnergyModes mode) : CrDataset(dampe, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevD.109.L121101");
-        setADSbibcode("2024PhRvD.109l1101A");
-    }
-
-    void readfile(const std::string& filename);
-};
-
-class MyPrimary : public CrDataset {
-   public:
-    MyPrimary(YQuantities primary, EnergyModes mode) : CrDataset(dampe, kEnergy, primary, mode) {
-        setSource(mytables);
-        setDOI("10.1038/s41586-026-10472-0");
-        setADSbibcode("2026Natur.653...52D");
-    }
-
-    void readfile(const std::string& filename);
-};
-}  // namespace DAMPE
-
-namespace HAWC {
-class MyLight : public CrDataset {
-   public:
-    MyLight(EnergyModes mode) : CrDataset(hawc, totalEnergy, light, mode) {
-        setSource(mytables);
-        setDOI("doi.org/10.1103/PhysRevD.105.063021");
-        setADSbibcode("2022PhRvD.105f3021A");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-}  // namespace HAWC
-
 namespace KASCADE {
 class MyKuznetsov2024 : public CrDataset {
    public:
@@ -97,32 +25,6 @@ class MyKuznetsov2024 : public CrDataset {
     void readfile(const std::string& filename) override;
 };
 }  // namespace KASCADE
-
-namespace GRAPES {
-class MyProtons : public CrDataset {
-   public:
-    MyProtons(EnergyModes mode) : CrDataset(grapes, totalEnergy, H, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevLett.132.051002");
-        setADSbibcode("2024PhRvL.132e1002V");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-}  // namespace GRAPES
-
-namespace TUNKA {
-class MyAllParticle : public CrDataset {
-   public:
-    MyAllParticle(EnergyModes mode) : CrDataset(tunka133, totalEnergy, allParticle, mode) {
-        setSource(mytables);
-        setDOI("10.1016/j.astropartphys.2019.102406");
-        setADSbibcode("2020APh...11702406B");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-}  // namespace TUNKA
 
 namespace TALE {
 class MyLnA : public CrDataset {
@@ -220,20 +122,6 @@ class MyLnA : public CrDataset {
 
 //     void readfile(const std::string& filename) override;
 // };
-
-namespace VERITAS {
-class MyLeptons : public CrDataset {
-   public:
-    MyLeptons(EnergyModes mode) : CrDataset(veritas, totalEnergy, lepton, mode) {
-        setSource(mytables);
-        setDOI("10.1103/PhysRevD.98.062004");
-        setADSbibcode("2018PhRvD..98f2004A");
-        setComments("Possible unit-label issue in Table 1: flux may already be quoted in GeV^-1.");
-    }
-
-    void readfile(const std::string& filename) override;
-};
-}  // namespace VERITAS
 
 // class MyLightARGO : public CrDataset {
 //    public:

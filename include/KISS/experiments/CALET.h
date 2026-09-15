@@ -2,13 +2,14 @@
 #define KISS_EXPERIMENTS_CALET_H_
 
 #include "KISS/CRDB.h"
-#include "KISS/mytables.h"
 
 namespace CALET {
 
 void run() {
     {
-        KISS::CALET::MyLeptons data(KISS::geometrical);
+        KISS::CRDB data(KISS::calet, KISS::kEnergy, KISS::lepton, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.131.191001");
+        data.setADSbibcode("2023PhRvL.131s1001A");
         data.run();
     }
     {
@@ -42,11 +43,27 @@ void run() {
         data.run();
     }
     {
-        KISS::CALET::MyHeavy data(KISS::Cr, KISS::geometrical);
+        KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Cr, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.135.021002");
+        data.setADSbibcode("2025PhRvL.135b1002A");
         data.run();
     }
     {
-        KISS::CALET::MyHeavy data(KISS::Ti, KISS::geometrical);
+        KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Ti, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.135.021002");
+        data.setADSbibcode("2025PhRvL.135b1002A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Cr_Fe, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.135.021002");
+        data.setADSbibcode("2025PhRvL.135b1002A");
+        data.run();
+    }
+    {
+        KISS::CRDB data(KISS::calet, KISS::kEnergyPerNucleon, KISS::Ti_Fe, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevLett.135.021002");
+        data.setADSbibcode("2025PhRvL.135b1002A");
         data.run();
     }
     {

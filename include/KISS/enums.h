@@ -51,6 +51,7 @@ enum CrExperiments {
     tibet,
     tracer,
     tunka133,
+    tunkahiscore,
     tunkarex,
     yakutsk,
     veritas
@@ -112,6 +113,8 @@ inline std::string ToString(CrExperiments v) {
             return "TRACER";
         case tunka133:
             return "TUNKA-133";
+        case tunkahiscore:
+            return "TUNKA-HiScore";
         case tunkarex:
             return "TUNKA-Rex";
         case yakutsk:
@@ -185,6 +188,7 @@ enum YQuantities {
     Be_C,
     Be_O,
     C_O,
+    Cr_Fe,
     F_B,
     F_Si,
     Fe_He,
@@ -200,8 +204,10 @@ enum YQuantities {
     N_O,
     Ne_Mg,
     Ne_O,
+    Ni_Fe,
     Si_Mg,
-    Si_O
+    Si_O,
+    Ti_Fe
 };
 
 inline std::string ToString(YQuantities v) {
@@ -294,6 +300,8 @@ inline std::string ToString(YQuantities v) {
             return "Be_O";
         case C_O:
             return "C_O";
+        case Cr_Fe:
+            return "Cr_Fe";
         case F_B:
             return "F_B";
         case F_Si:
@@ -324,10 +332,14 @@ inline std::string ToString(YQuantities v) {
             return "Ne_Mg";
         case Ne_O:
             return "Ne_O";
+        case Ni_Fe:
+            return "Ni_Fe";
         case Si_Mg:
             return "Si_Mg";
         case Si_O:
             return "Si_O";
+        case Ti_Fe:
+            return "Ti_Fe";
         default:
             throw std::invalid_argument("Y Quantity not found.");
     }

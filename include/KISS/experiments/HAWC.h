@@ -1,13 +1,15 @@
 #ifndef KISS_EXPERIMENTS_HAWC_H_
 #define KISS_EXPERIMENTS_HAWC_H_
 
-#include "KISS/mytables.h"
+#include "KISS/CRDB.h"
 
 namespace HAWC {
 
 void run() {
     {
-        KISS::HAWC::MyLight data(KISS::geometrical);
+        KISS::CRDB data(KISS::hawc, KISS::totalEnergy, KISS::light, KISS::geometrical);
+        data.setDOI("10.1103/PhysRevD.105.063021");
+        data.setADSbibcode("2022PhRvD.105f3021A");
         data.run();
     }
     {
